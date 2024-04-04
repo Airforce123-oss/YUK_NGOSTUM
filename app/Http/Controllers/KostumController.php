@@ -8,7 +8,7 @@ class KostumController extends Controller
 {
    function index()
    {
-    return ' <h1> Lorem ............</h1>';
+    return ' <h1> lorem ipsum ............</h1>';
    }
    function detail($id)
    {
