@@ -21,11 +21,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/',[HalamanController::class, 'index']);
+Auth::routes();
+
+//Route::get('/',[HalamanController::class, 'index']);
 Route::get('/kontak',[HalamanController::class, 'kontak']);
 Route::get('/tentang',[HalamanController::class, 'tentang']);
 
 Route::get('user', [KostumController::class, 'index']);
+Route::get('user/{id}', [KostumController::class, 'detail'])->where('id', '[0-9]+');
 
 Route::get('/sesi', [SessionController::class, 'index']);
 

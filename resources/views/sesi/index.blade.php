@@ -23,6 +23,9 @@
         <div class="mb-3 d-grid">
             <button name="submit" type="submit" class="btn btn-primary">login</button>
         </div>
+        <div class="container" style="text-align: center">
+            <p>&copy; 2024 - YukNgostum</p>
+        </div>
     </form>
 </div>
 @endsection
