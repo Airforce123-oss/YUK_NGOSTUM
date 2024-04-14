@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CostumeController;
 use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\KostumController;
 use App\Http\Controllers\SessionController;
@@ -21,7 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+//Auth::routes();
 
 //Route::get('/',[HalamanController::class, 'index']);
 Route::get('/kontak',[HalamanController::class, 'kontak']);
@@ -37,3 +38,8 @@ Route::post('/sesi/logout', [SessionController::class, 'logout']);
 
 Route::get('/sesi/register', [SessionController::class, 'register']);
 Route::post('/sesi/create', [SessionController::class, 'create']);
+
+//toko
+Route::get('/manajemen-kostum', [CostumeController::class, 'index']);
+
+Route::get('/tambah-kostum', [CostumeController::class, 'tambahCostume']);

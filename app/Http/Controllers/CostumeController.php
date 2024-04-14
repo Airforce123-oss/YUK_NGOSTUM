@@ -13,6 +13,7 @@ class CostumeController extends Controller
         $costumes = Costume::paginate(8);
 
         //mengembalikan view, halaman manajemen kostum
+        return view('toko.manajemen-kostum', compact('costumes'));
     }
 
     public function insert(Request $request)
@@ -46,5 +47,6 @@ class CostumeController extends Controller
     public function tambahCostume()
     {
         //mengembalikan view, form tambah kostum
+        return view('toko.tambah-kostum');
     }
 }
