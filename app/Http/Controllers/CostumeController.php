@@ -18,12 +18,12 @@ class CostumeController extends Controller
 
     public function insert(Request $request)
     {
-        $rules = [
-            'nama' => 'required|min:3',
-            'image' => 'required',
-            'deskripsi' => 'reqired',
-            'harga' => 'required|numbers|min:1000'
-        ];
+        $request->validate([
+            'nama' => 'required|min:3|unique:costumes,nama',
+            'image' => 'required|mimes:jpg,jpeg,png|max:2048',
+            'deskripsi' => 'required',
+            'harga' => 'required|numeric|min:1000'
+        ]);
 
         $request = request();
 
@@ -50,7 +50,7 @@ class CostumeController extends Controller
     }
 
         //kembalikan ke halaman manajemen kostum
-        return redirect('/manajemen-kostum');
+        return redirect('/manajemen-kostum')->with('success', 'Kostum berhasil ditambahkan.');
     }
 
     public function tambahCostume()
