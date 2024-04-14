@@ -42,4 +42,5 @@ Route::post('/sesi/create', [SessionController::class, 'create']);
 //toko
 Route::get('/manajemen-kostum', [CostumeController::class, 'index']);
 
-Route::get('/tambah-kostum', [CostumeController::class, 'tambahCostume']);
+Route::get('/tambah-kostum', [CostumeController::class, 'tambahCostume'])->name('tambah-kostum');
+Route::post('/tambah-kostum', [CostumeController::class, 'insert']);

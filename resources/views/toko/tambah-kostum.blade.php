@@ -1,7 +1,7 @@
 @extends('layout.aplikasi')
 
 @section('content')
-<div class="breadcomb-area" style="margin-top: 20px;"">
+<div class="breadcomb-area" style="margin-top: 20px;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -26,7 +26,7 @@
 
 <div class="form-example-area">
     <div class="container">
-        <form method="post" action="">
+        <form method="post" action="{{ route('tambah-kostum')}}" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -39,7 +39,7 @@
                                             <i class="notika-icon notika-support"></i>
                                         </div>
                                         <div class="nk-int-st" style="margin-bottom: 20px;">
-                                            <input type="text" class="form-control" placeholder="Nama" name="name" required value="">
+                                            <input type="text" class="form-control" placeholder="Nama" name="nama" required>
                                         </div>
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@
                                             <i class="notika-icon notika-mail"></i>
                                         </div>
                                         <div class="nk-int-st" style="margin-bottom: 20px;">
-                                            <input type="text" class="form-control" placeholder="Gambar" name="email" required value="">
+                                            <input type="file" class="form-control" placeholder="Gambar" name="image" required>
                                         </div>
                                     </div>
                                 </div>
@@ -63,7 +63,7 @@
                                             <i class="notika-icon notika-mail"></i>
                                         </div>
                                         <div class="nk-int-st" style="margin-bottom: 20px;">
-                                            <input type="text" class="form-control" placeholder="Deskripsi" name="email" required value="">
+                                            <input type="text" class="form-control" placeholder="Deskripsi" name="deskripsi" required>
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
                                             <i class="notika-icon notika-mail"></i>
                                         </div>
                                         <div class="nk-int-st" style="margin-bottom: 20px;">
-                                            <input type="text" class="form-control" placeholder="Harga" name="email" required value="">
+                                            <input type="text" class="form-control" placeholder="Harga" name="harga" required>
                                         </div>
                                     </div>
                                 </div>
@@ -91,5 +91,3 @@
         </form>
     </div>
 </div>
-
-

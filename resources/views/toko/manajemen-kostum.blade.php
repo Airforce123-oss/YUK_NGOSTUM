@@ -24,9 +24,9 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3 d-flex justify-content-end">
                             <div class="breadcomb-report" style="margin-top: 20px;">
-                                {{-- <a class="btn btn-success " href="{{ route('manajemenCostume.add')}}" role="button" style="background-color:#17F9E3;">
+                                <a class="btn btn-success " href="{{ route('tambah-kostum')}}" role="button" style="background-color:#17F9E3;">
                                         <i class="notika-icon notika-edit"></i> Tambah Costume
-                                </a> --}}
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -71,8 +71,8 @@
                                             <button class="btn btn-danger">Delete</button>
                                         </a>
                                     </td>
-                                    @endforeach
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
