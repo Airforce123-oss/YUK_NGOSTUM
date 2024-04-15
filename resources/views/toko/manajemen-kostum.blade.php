@@ -55,6 +55,7 @@
                             <tbody>
                                 <tr>
                                     @foreach ($costumes as $index => $costume )
+                                    <td>{{ $costumes -> firstItem() + $key }}</td>
                                     <th scope="row">{{ $index + 1 }}</th>
                                     <td><div class="kostum-nama">{{$costume->nama}}</div></td>
                                     <td><img src="{{asset($costume->image) }} " alt="card-1" class="card-img-top" style="width: 200px; height: 200px;"></a></td>
@@ -75,6 +76,20 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <div>
+                            Showing
+                            {{ $costumes -> firstItem() }}
+                            to
+                            {{ $costumes -> lastItem() }}
+                            of
+                            {{ $costumes -> total() }}
+                            entries
+                            <div aria-label="Page navigation"> 
+                                {{ $costumes->links() }}
+                            </div>
+                        </div>
+                    
+                      
                     </div>
                 </div>
             </div>
@@ -82,14 +97,8 @@
     </div>
 </div>
 
-<nav aria-label="Page navigation example">
-    <ul class="pagination  justify-content-center">
-      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
-  </nav>
+
+
+
 
 @endsection
