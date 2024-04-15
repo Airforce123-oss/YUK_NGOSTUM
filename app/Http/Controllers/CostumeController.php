@@ -10,7 +10,7 @@ class CostumeController extends Controller
     public function index()
     {
         $costumes = Costume::all();
-        $costumes = Costume::paginate(8);
+        $costumes = Costume::paginate(4);
 
         //mengembalikan view, halaman manajemen kostum
         return view('toko.manajemen-kostum', compact('costumes'));
