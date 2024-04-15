@@ -52,7 +52,7 @@ class SessionController extends Controller
         Session::flash('email', $request->email);
         $request -> validate([
             'name' => 'required',
-            'email' => 'required|email|unique::users',
+            'email' => 'required|email|unique:users',
             'password' => 'required|min:6'
         ], [
             'name.required' => 'Nama wajib diisi',
