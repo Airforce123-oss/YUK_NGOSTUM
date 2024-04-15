@@ -10,7 +10,7 @@
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="name" name="email" id="email" value="{{ Session::get('name') }}" class="form-control">
+            <input type="name" name="name" id="name" value="{{ Session::get('name') }}" class="form-control">
             @error('name')
             <div class="text-danger">{{ $message }}</div>
             @enderror
