@@ -110,6 +110,16 @@ transition: 1s;
 </style>
 <body>
 <main>
+    
+
+
+
+
+
+
+
+
+
       <!-- Header Section -->
     <nav class="p-4 flex justify-between items-center" style="background-color:#038175 ">
         <div class="text-white text-lg font-bold" style="font-size: 30px; "><span style="color: red;">Yuk</span><span style="color: white;">Ngostum </span></div>
@@ -150,34 +160,37 @@ transition: 1s;
             </div>
         </div>
     </div>
+    <div class="costume" style="text-align: center; margin-top:20px;">    
+        <h2>Costume</h2>
+    </div>
+
     <div class="gallery">
         <div class="gallery-item">
-            <h2>Anime</h2>
             <img src="https://via.placeholder.com/200" alt="Anime 1">
             <img src="https://via.placeholder.com/200" alt="Anime 2">
             <img src="https://via.placeholder.com/200" alt="Anime 3">
         </div>
         <div class="gallery-item">
-            <h2>Karnaval</h2>
+    
             <img src="https://via.placeholder.com/200" alt="Karnaval 1">
             <img src="https://via.placeholder.com/200" alt="Karnaval 2">
             <img src="https://via.placeholder.com/200" alt="Karnaval 3">
         </div>
         <div class="gallery-item">
-            <h2>Adat</h2>
+        
             <img src="https://via.placeholder.com/200" alt="Adat 1">
             <img src="https://via.placeholder.com/200" alt="Adat 2">
             <img src="https://via.placeholder.com/200" alt="Adat 3">
         </div>
     </div>
-      
-        
-             
+    <!-- 
+    
+    -->     
+          
    
 </main>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-0Tg1wZTC8whrTzAmBx8hH1/HUZv+jEjKAwiVITMNRE8V3zVZ/sS8kB6I95tZOy0k" crossorigin="anonymous"></script>
-
 
     </body>
 </html>
