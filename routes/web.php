@@ -6,6 +6,7 @@ use App\Http\Controllers\KostumController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,26 +22,38 @@ use Illuminate\Contracts\Session\Session;
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
 
-//Auth::routes();
 
-//Route::get('/',[HalamanController::class, 'index']);
-Route::get('/kontak',[HalamanController::class, 'kontak']);
-Route::get('/tentang',[HalamanController::class, 'tentang']);
+Route::get('/sesi', [SessionController::class, 'login']);
+Route::post('/sesi/login', [SessionController::class, 'dologin'])->name('session-login');
 
-Route::get('user', [KostumController::class, 'index']);
-Route::get('user/{id}', [KostumController::class, 'detail'])->where('id', '[0-9]+');
 
-Route::get('/sesi', [SessionController::class, 'index']);
+Route::middleware(['auth','role:user'])->group(function()
+{
+    Route::get('/dashboard', [KostumController::class, 'index'])->name('user');
+});
 
-Route::post('/sesi/login', [SessionController::class, 'login']);
-Route::post('/sesi/logout', [SessionController::class, 'logout']);
+Route::middleware(['auth','role:toko'])->group(function()
+{
+    Route::get('/manajemen-kostum', [CostumeController::class, 'index'])->name('toko');
+    Route::get('/tambah-kostum', [CostumeController::class, 'tambahCostume'])->name('tambah-kostum');
+    Route::post('/tambah-kostum', [CostumeController::class, 'insert']);
+});
 
-Route::get('/sesi/register', [SessionController::class, 'register']);
-Route::post('/sesi/create', [SessionController::class, 'create']);
+Route::middleware(['auth','role:admin'])->group(function()
+{
+    
+});
 
 //toko
-Route::get('/manajemen-kostum', [CostumeController::class, 'index']);
+//ManajemenKostum, Tambah, Update, Delete
+// Route::middleware('role:toko')->get('/manajemen-kostum', [CostumeController::class, 'index']);
+// Route::group(['middleware' => 'role:2'], function(){
+//     Route::get('toko', [CostumeController::class, 'index']);
+//     Route::get('/tambah-kostum', [CostumeController::class, 'tambahCostume'])->name('tambah-kostum');
+//     Route::post('/tambah-kostum', [CostumeController::class, 'insert']);
+// });
 
-Route::get('/tambah-kostum', [CostumeController::class, 'tambahCostume'])->name('tambah-kostum');
-Route::post('/tambah-kostum', [CostumeController::class, 'insert']);
+//Admin
+//ngatur akun, info event

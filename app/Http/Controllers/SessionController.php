@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -10,33 +11,54 @@ use Illuminate\Support\Facades\Session;
 
 class SessionController extends Controller
 {
-    
-    function index(){
-        return view('sesi/index');
+
+    use AuthenticatesUsers;
+
+    public function login() {
+        return view('sesi.index');
     }
-    function login(Request $request) {
-        Session::flash('email', $request->email);
-        $request -> validate([
-            'email' => 'required',
-            'password' => 'required'
+
+    function dologin(Request $request) {
+        // Validate the request data
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6'
         ], [
             'email.required' => 'Email wajib diisi',
+            'email.email' => 'Email tidak valid',
             'password.required' => 'Password wajib diisi',
+            'password.min' => 'Password harus setidaknya 6 karakter'
         ]);
-
+    
+        // Attempt to authenticate the user
         $infologin = [
-            'email' => $request-> email,
-            'password' => $request -> password
+            'email' => $request->email,
+            'password' => $request->password
         ];
-
-        if(Auth::attempt($infologin)){
-            //jika otentikasi sukses
-            return redirect('user')->with('Sukses', 'Login Berhasil');
-        } else {
-            // jika otentikasi gagal
-           return redirect('sesi') -> withErrors('Username dan Password yang dimasukkan tidak valid');
+    
+        if (Auth::attempt($infologin)) {
+            // Authentication successful, regenerate session
+            $request->session()->regenerate();
+    
+            // Redirect based on user role
+            if (auth()->user()->role === 'admin') 
+            {
+                return redirect()->route('admin');
+            } 
+            elseif (auth()->user()->role === 'toko') 
+            {
+                return redirect()->route('toko');
+            } 
+            else 
+            {
+                return redirect()->route('user');
+            }
         }
+    
+        // Authentication failed, redirect back with an error message
+        return redirect()->route('sesi')->withErrors(['login' => 'Email atau password tidak valid']);
     }
+    
     function logout() {
         Auth::logout();
         return redirect('sesi')-> with('Sukses', 'Berhasil Logout');
@@ -75,12 +97,26 @@ class SessionController extends Controller
             'password' => $request -> password
         ];
 
-        if(Auth::attempt($infologin)){
-            //jika otentikasi sukses
-            return redirect('user')->with('Sukses', 'Login Berhasil');
-        } else {
-            // jika otentikasi gagal
-           return redirect('sesi') -> withErrors('Username dan Password yang dimasukkan tidak valid');
+        if (Auth::attempt($infologin)) {
+            // Authentication successful, regenerate session
+            $request->session()->regenerate();
+    
+            // Redirect based on user role
+            if (auth()->user()->role === 'admin') 
+            {
+                return redirect()->route('admin');
+            } 
+            elseif (auth()->user()->role === 'toko') 
+            {
+                return redirect()->route('toko');
+            } 
+            else 
+            {
+                return redirect()->route('user');
+            }
         }
+    
+        // Authentication failed, redirect back with an error message
+        return redirect()->route('sesi')->withErrors(['login' => 'Email atau password tidak valid']);
     }
 }

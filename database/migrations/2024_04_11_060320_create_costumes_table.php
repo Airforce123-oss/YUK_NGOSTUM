@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('image');
             $table->text('deskripsi');
             $table->double('harga');
+            $table->unsignedBigInteger('store_id')->nullable();
+            $table->foreign('store_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

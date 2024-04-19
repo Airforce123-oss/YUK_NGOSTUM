@@ -17,4 +17,8 @@ class Costume extends Model
     ];
 
     protected $table = 'costumes';
+
+    public function users(){
+        return $this->belongsTo(User::class, 'store_id');
+    }
 }
