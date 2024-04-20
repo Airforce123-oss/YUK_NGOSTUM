@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Costume;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class CostumeController extends Controller
@@ -11,7 +12,7 @@ class CostumeController extends Controller
     {
         $costumes = Costume::all();
         $costumes = Costume::paginate(8);
-
+    
         //mengembalikan view, halaman manajemen kostum
         return view('toko.manajemen-kostum', compact('costumes'));
     }
