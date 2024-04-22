@@ -4,6 +4,7 @@ use App\Http\Controllers\CostumeController;
 use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\KostumController;
 use App\Http\Controllers\SessionController;
+use App\Models\Costume;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
@@ -31,7 +32,7 @@ Route::post('/sesi/login', [SessionController::class, 'dologin'])->name('session
 
 Route::middleware(['auth','role:user'])->group(function()
 {
-    Route::get('/dashboard', [KostumController::class, 'index'])->name('user');
+    Route::get('/dashboard', [CostumeController::class, 'tampilanDashboard'])->name('user');
 });
 
 Route::middleware(['auth','role:toko'])->group(function()
