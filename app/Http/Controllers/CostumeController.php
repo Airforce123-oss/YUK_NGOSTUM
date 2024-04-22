@@ -19,6 +19,16 @@ class CostumeController extends Controller
         return view('toko.manajemen-kostum', compact('costumes'));
     }
 
+    public function tampilanDashboard()
+    {
+    // Ambil data kostum yang memiliki store_id sesuai dengan ID pengguna yang sedang login
+        $costumes = Costume::all();
+
+
+        //mengembalikan view, halaman manajemen kostum
+        return view('sesi.dashboard', compact('costumes'));
+    }
+
     public function insert(Request $request)
     {
         $userId = auth()->user()->id;
