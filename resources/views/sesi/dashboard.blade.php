@@ -10,7 +10,7 @@
     <meta name="generator" content="Hugo 0.122.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
-    <title>Dashboard</title>
+    <title>Dashboard Penyewa</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbars/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
@@ -112,14 +112,6 @@ transition: 1s;
 <main>
     
 
-
-
-
-
-
-
-
-
       <!-- Header Section -->
     <nav class="p-4 flex justify-between items-center" style="background-color:#038175 ">
         <div class="text-white text-lg font-bold" style="font-size: 30px; "><span style="color: red;">Yuk</span><span style="color: white;">Ngostum </span></div>
@@ -194,3 +186,5 @@ transition: 1s;
 
     </body>
 </html>
+
+

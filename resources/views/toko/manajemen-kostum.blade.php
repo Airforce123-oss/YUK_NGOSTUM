@@ -5,7 +5,7 @@
 <!---->
 
 
-<div class="breadcomb-area" style="width:100%;  height:100px; margin-top: -28px; background-color: #038175";>
+<div class="breadcomb-area" style="width:100%;  height:100px; margin-top: -10px; background-color: #038175";>
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

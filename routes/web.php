@@ -3,6 +3,8 @@
 use App\Http\Controllers\CostumeController;
 use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\KostumController;
+use App\Http\Controllers\melihatDashboardPenyewa;
+use App\Http\Controllers\DashboardPenyewaController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Contracts\Session\Session;
@@ -24,9 +26,8 @@ Route::get('/', function () {
 
 //Auth::routes();
 
-//Route::get('/',[HalamanController::class, 'index']);
-Route::get('/kontak',[HalamanController::class, 'kontak']);
-Route::get('/tentang',[HalamanController::class, 'tentang']);
+Route::get('/kontak', [HalamanController::class, 'kontak']);
+Route::get('/tentang', [HalamanController::class, 'tentang']);
 
 Route::get('user', [KostumController::class, 'index']);
 Route::get('user/{id}', [KostumController::class, 'detail'])->where('id', '[0-9]+');
@@ -40,7 +41,10 @@ Route::get('/sesi/register', [SessionController::class, 'register']);
 Route::post('/sesi/create', [SessionController::class, 'create']);
 
 //toko
-Route::get('/manajemen-kostum', [CostumeController::class, 'index']);
+Route::get('/toko/manajemen-kostum', [CostumeController::class, 'index']);
 
-Route::get('/tambah-kostum', [CostumeController::class, 'tambahCostume'])->name('tambah-kostum');
-Route::post('/tambah-kostum', [CostumeController::class, 'insert']);
+Route::get('/toko/tambah-kostum', [CostumeController::class, 'tambahCostume'])->name('tambah-kostum');
+Route::post('/toko/tambah-kostum', [CostumeController::class, 'insert']);
+
+//penyewa
+Route::get('/Penyewa/dashboard-penyewa', [DashboardPenyewaController::class, 'index']);
