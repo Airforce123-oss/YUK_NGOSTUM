@@ -64,8 +64,12 @@ class SessionController extends Controller
         return redirect('sesi')-> with('Sukses', 'Berhasil Logout');
     }
 
-    function register() {
+    function userRegister() {
         return view('sesi/register');
+    }
+
+    function tokoRegister() {
+        return view('sesi/toko_register');
     }
 
     function create(Request $request)
@@ -75,12 +79,14 @@ class SessionController extends Controller
         $request -> validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
+            'role' => 'required',
             'password' => 'required|min:6'
         ], [
             'name.required' => 'Nama wajib diisi',
             'email.required' => 'Email wajib diisi',
             'email.email' => 'Silakan masukkan email yang valid',
             'email.unique' => 'Email sudah pernah digunakan, silakan pilih email yang lain',
+            'role.unique' => 'Role wajib dipilih',
             'password.required' => 'Password wajib diisi',
             'password.min' => 'Minimum password ialah adalah 6 karakter'
         ]);
@@ -88,6 +94,7 @@ class SessionController extends Controller
         $data = [
             'name' => $request->name,
             'email' => $request->email,
+            'role' => $request->role,
             'password' => Hash::make($request->password)
         ];
         User::create($data);

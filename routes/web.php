@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('sesi');
 });
 Auth::routes();
 
@@ -29,6 +29,13 @@ Auth::routes();
 Route::get('/sesi', [SessionController::class, 'login']);
 Route::post('/sesi/login', [SessionController::class, 'dologin'])->name('session-login');
 
+//User
+Route::get('/user-register', [SessionController::class, 'userRegister']);
+Route::post('/sesi/register', [SessionController::class, 'create'])->name('session-register');
+
+//Toko
+Route::get('/toko-register', [SessionController::class, 'tokoregister']);
+Route::post('/sesi/register', [SessionController::class, 'create'])->name('session-register');
 
 Route::middleware(['auth','role:user'])->group(function()
 {
