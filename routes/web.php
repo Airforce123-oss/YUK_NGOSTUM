@@ -37,21 +37,18 @@ Route::post('/sesi/register', [SessionController::class, 'create'])->name('sessi
 Route::get('/toko-register', [SessionController::class, 'tokoregister']);
 Route::post('/sesi/register', [SessionController::class, 'create'])->name('session-register');
 
-Route::middleware(['auth','role:user'])->group(function()
-{
+Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/dashboard', [CostumeController::class, 'tampilanDashboard'])->name('user');
 });
 
-Route::middleware(['auth','role:toko'])->group(function()
-{
+Route::middleware(['auth', 'role:toko'])->group(function () {
     Route::get('/manajemen-kostum', [CostumeController::class, 'index'])->name('toko');
     Route::get('/tambah-kostum', [CostumeController::class, 'tambahCostume'])->name('tambah-kostum');
     Route::post('/tambah-kostum', [CostumeController::class, 'insert']);
 });
 
-Route::middleware(['auth','role:admin'])->group(function()
-{
-    
+Route::middleware(['auth', 'role:admin'])->group(function () {
+
 });
 
 //toko

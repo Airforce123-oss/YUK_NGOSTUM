@@ -55,7 +55,6 @@
                             <tbody>
                                 @foreach ($costumes as $key => $costume )
                                 <tr>
-                                    {{-- <th scope="row">{{ $index + 1 }}</th> --}}
                                     <td>{{$costumes->firstItem() + $key}}</td>
                                     <td><div class="kostum-nama">{{$costume->nama}}</div></td>
                                     <td><img src="{{asset($costume->image) }} " alt="card-1" class="card-img-top" style="width: 200px; height: 200px;"></a></td>
@@ -76,6 +75,12 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <div>
+                            {{ $costumes->firstItem()}}
+                            {{ $costumes->lastItem()}}
+                            {{ $costumes->total()  }}
+                        </div>
+                        
                          <div class="d-flex justify-content-center" aria-label="Page navigation"> 
                              {{ $costumes->links() }}
                          </div>
