@@ -53,9 +53,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($costumes as $key => $costume )
                                 <tr>
-                                    @foreach ($costumes as $index => $costume )
-                                    <th scope="row">{{ $index + 1 }}</th>
+                                    {{-- <th scope="row">{{ $index + 1 }}</th> --}}
+                                    <td>{{$costumes->firstItem() + $key}}</td>
                                     <td><div class="kostum-nama">{{$costume->nama}}</div></td>
                                     <td><img src="{{asset($costume->image) }} " alt="card-1" class="card-img-top" style="width: 200px; height: 200px;"></a></td>
                                     <td><div class="kostum-deskripsi">{{$costume->deskripsi}}</div></td>

@@ -12,9 +12,9 @@ class CostumeController extends Controller
         $userId = auth()->user()->id;
     
     // Ambil data kostum yang memiliki store_id sesuai dengan ID pengguna yang sedang login
-        $costumes = Costume::where('store_id', $userId)->paginate(4);
-
-
+        $costumes = Costume::where('store_id', $userId)
+                                    ->orderBy('created_at', 'desc')
+                                    ->paginate(4);
         //mengembalikan view, halaman manajemen kostum
         return view('toko.manajemen-kostum', compact('costumes'));
     }
