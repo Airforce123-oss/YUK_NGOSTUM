@@ -8,7 +8,7 @@
     <h1 class="title" style="text-align: center" >Register</h1>
     <form action="/sesi/register" method="POST">
         @csrf
-        <input type="hidden" value="0" name="role">
+        <input type="hidden" value="1" name="role">
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="name" name="name" id="name" value="{{ Session::get('name') }}" class="form-control">

@@ -169,8 +169,8 @@ transition: 1s;
                 <div class="col-md-3">
                     <div class="card-mb-4" style="padding: 20px">
                         <img src="{{ asset($costume->image) }}" alt="card-1" class="card-img-top" style="width: 200px; height: 200px;">
-                        <div class="kostum-nama" style="text-align: center">{{$costume->nama}}</div>
-                        <div class="kostum-harga">Rp{{$costume->harga}}</div>
+                        <div class="kostum-nama text-center pt-2 font-bold text-uppercase">{{$costume->nama}}</div>
+                        <div class="kostum-harga text-left ">Rp{{$costume->harga}}</div>
                     </div>
                 </div>
             @endforeach
