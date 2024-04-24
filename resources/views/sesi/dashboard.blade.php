@@ -18,8 +18,9 @@
 
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
-    body {
+    body, {
   padding-bottom: 20px;
+  background-image: url('/images/background.png')
 }
 
 .navbar {
@@ -110,16 +111,6 @@ transition: 1s;
 </style>
 <body>
 <main>
-    
-
-
-
-
-
-
-
-
-
       <!-- Header Section -->
     <nav class="p-4 flex justify-between items-center" style="background-color:#038175 ">
         <div class="text-white text-lg font-bold" style="font-size: 30px; "><span style="color: red;">Yuk</span><span style="color: white;">Ngostum </span></div>
@@ -137,8 +128,9 @@ transition: 1s;
 
       <!-- Banner Section -->
       
-      <div class="w-full h-[712px] flex flex-col relative bg-white"> 
+      <div class="w-full h-[800px] flex flex-col relative bg-white" style=" background-image: url('/images/background.png')"> 
         <div class="mb-8 text-center" style="font-family:Poppins; color: #038175; font-size:35px;"> INFO EVENT</div>
+
         <!--  Banner Data -->
         <div class="wrapper">
             <div class="slides">
