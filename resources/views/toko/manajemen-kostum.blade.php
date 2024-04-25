@@ -75,12 +75,11 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <div>
+                        {{-- <div>
                             {{ $costumes->firstItem()}}
                             {{ $costumes->lastItem()}}
                             {{ $costumes->total()  }}
-                        </div>
-                        
+                        </div> --}}
                          <div class="d-flex justify-content-center" aria-label="Page navigation"> 
                              {{ $costumes->links() }}
                          </div>
