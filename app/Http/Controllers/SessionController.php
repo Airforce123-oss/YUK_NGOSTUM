@@ -14,11 +14,13 @@ class SessionController extends Controller
 
     use AuthenticatesUsers;
 
-    public function login() {
+    public function login()
+    {
         return view('sesi.index');
     }
 
-    function dologin(Request $request) {
+    function dologin(Request $request)
+    {
         // Validate the request data
         $request->validate([
             'email' => 'required|email',
@@ -29,54 +31,52 @@ class SessionController extends Controller
             'password.required' => 'Password wajib diisi',
             'password.min' => 'Password harus setidaknya 6 karakter'
         ]);
-    
+
         // Attempt to authenticate the user
         $infologin = [
             'email' => $request->email,
             'password' => $request->password
         ];
-    
+
         if (Auth::attempt($infologin)) {
             // Authentication successful, regenerate session
             $request->session()->regenerate();
-    
+
             // Redirect based on user role
-            if (auth()->user()->role === 'admin') 
-            {
+            if (auth()->user()->role === 'admin') {
                 return redirect()->route('admin');
-            } 
-            elseif (auth()->user()->role === 'toko') 
-            {
+            } elseif (auth()->user()->role === 'toko') {
                 return redirect()->route('toko');
-            } 
-            else 
-            {
+            } else {
                 return redirect()->route('user');
             }
         }
-    
+
         // Authentication failed, redirect back with an error message
         return redirect()->route('sesi')->withErrors(['login' => 'Email atau password tidak valid']);
     }
-    
-    function logout() {
+
+    function logout()
+    {
         Auth::logout();
-        return redirect('sesi')-> with('Sukses', 'Berhasil Logout');
+        return redirect('sesi')->with('Sukses', 'Berhasil Logout');
     }
 
-    function userRegister() {
+    function userRegister()
+    {
         return view('sesi/register');
     }
 
-    function tokoRegister() {
+    function tokoRegister()
+    {
         return view('sesi/toko_register');
     }
 
     function create(Request $request)
-    {   
+    {
         Session::flash('name', $request->name);
         Session::flash('email', $request->email);
-        $request -> validate([
+        $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'role' => 'required',
@@ -100,29 +100,24 @@ class SessionController extends Controller
         User::create($data);
 
         $infologin = [
-            'email' => $request-> email,
-            'password' => $request -> password
+            'email' => $request->email,
+            'password' => $request->password
         ];
 
         if (Auth::attempt($infologin)) {
             // Authentication successful, regenerate session
             $request->session()->regenerate();
-    
+
             // Redirect based on user role
-            if (auth()->user()->role === 'admin') 
-            {
+            if (auth()->user()->role === 'admin') {
                 return redirect()->route('admin');
-            } 
-            elseif (auth()->user()->role === 'toko') 
-            {
+            } elseif (auth()->user()->role === 'toko') {
                 return redirect()->route('toko');
-            } 
-            else 
-            {
+            } else {
                 return redirect()->route('user');
             }
         }
-    
+
         // Authentication failed, redirect back with an error message
         return redirect()->route('sesi')->withErrors(['login' => 'Email atau password tidak valid']);
     }
