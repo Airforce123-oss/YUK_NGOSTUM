@@ -23,6 +23,10 @@
                     </div>
   
                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Daftarkan Akun kamu</h5>
+
+                    <div>
+                      <input type="hidden" name="role" id="role" value="0">
+                    </div>
   
                     <div data-mdb-input-init class="form-outline mb-4">
                       <label class="form-label" for="form2Example17">Nama</label> 
