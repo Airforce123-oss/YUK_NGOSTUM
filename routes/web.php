@@ -2,6 +2,7 @@
 use App\Http\Controllers\CostumeController;
 use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\KostumController;
+use App\Http\Controllers\landingPageController;
 use App\Http\Controllers\SessionController;
 use App\Models\Costume;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,9 @@ Auth::routes();
 
 Route::get('/sesi', [SessionController::class, 'login']);
 Route::post('/sesi/login', [SessionController::class, 'dologin'])->name('session-login');
+
+// Landing Page
+Route::get('/landing-page', [landingPageController::class, 'index']);
 
 //User
 Route::get('/user-register', [SessionController::class, 'userRegister']);

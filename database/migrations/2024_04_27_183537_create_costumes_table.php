@@ -14,13 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('costumes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nama');
-            $table->string('image');
-            $table->text('deskripsi');
-            $table->double('harga');
-            $table->unsignedBigInteger('store_id')->nullable();
-            $table->foreign('store_id')->references('id')->on('users')->onDelete('cascade');
+            $table->id();
             $table->timestamps();
         });
     }

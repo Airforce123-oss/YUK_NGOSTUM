@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+ul li a {
+    @apply rounded py-[7px] px-[13px] text-[17px] ;
+}
+

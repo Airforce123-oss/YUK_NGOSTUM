@@ -42,7 +42,7 @@
                 <div class="data-table-list">
                     <div class="table-responsive">
                         <table id="data-table-basic" class="table table-striped">
-                            <thead>
+                            <thead> 
                                 <tr>
                                     <th>No.</th>
                                     <th width="30%">Nama</th>
@@ -75,11 +75,10 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{-- <div>
-                            {{ $costumes->firstItem()}}
-                            {{ $costumes->lastItem()}}
+                         <div>
+                            Total Item:
                             {{ $costumes->total()  }}
-                        </div> --}}
+                        </div> 
                          <div class="d-flex justify-content-center" aria-label="Page navigation"> 
                              {{ $costumes->links() }}
                          </div>

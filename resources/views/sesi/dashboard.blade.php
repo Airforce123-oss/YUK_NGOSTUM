@@ -8,24 +8,34 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 
     <meta name="generator" content="Hugo 0.122.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
-    <title>Dashboard</title>
+    <title>Dashboard</title> 
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbars/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link rel="stylesheet" href=".public/css/app.css">
-
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-0Tg1wZTC8whrTzAmBx8hH1/HUZv+jEjKAwiVITMNRE8V3zVZ/sS8kB6I95tZOy0k" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand&display=swap');
     body, {
   padding-bottom: 20px;
   background-image: url('/images/background.png')
 }
 
+#check:checked ~ ul {
+    left: 0;
+}
+
 .navbar {
   margin-bottom: 20px;
 }
+
 
 .images {
     display: flex;
@@ -109,27 +119,42 @@ transition: 1s;
 }
 
 </style>
-<body>
+<body class="">
 <main>
-      <!-- Header Section -->
-    <nav class="p-4 flex justify-between items-center" style="background-color:#038175 ">
-        <div class="text-white text-lg font-bold" style="font-size: 30px; "><span style="color: red;">Yuk</span><span style="color: white;">Ngostum </span></div>
-        
-    
-            
+
+    <nav class="p-5 bg-[#038175] shadow md:flex md:items-center md:justify-between h-25 ">
+        <div class="flex justify-between items-center">
+            <span class="text-2xl font-[Poppins] cursor-pointer">
+                <h1 class="h-10 inline" style="color: white">YUK NGOSTUM</h1>
+             </span>
+             <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+                <ion-icon name="menu"></ion-icon> 
+             </span>
         </div>
-        <div class="text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l7-7m2 7l7-7" />
-            </svg>
-        </div>
+
+        <ul class="md:flex md:items-center z-[1] md:z-auto md:static absolute w-full left-0 md:w-auto">
+            <li class="mx-4 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-white duration-500" style="color: white !important; text-decoration: none;">Cari Costume</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none;">Notifikasi</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none;">Lainnya</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none;">Profil</a>
+            </li>
+        </ul> 
+
     </nav>
 
+
+    
       <!-- Banner Section -->
       
-      <div class="w-full h-[800px] flex flex-col relative bg-white" style=" background-image: url('/images/background.png')"> 
-        <div class="mb-8 text-center" style="font-family:Poppins; color: #038175; font-size:35px;"> INFO EVENT</div>
+      <div class="w-full h-[800px] flex flex-col relative bg-white mt-[-40]" style=" background-image: url('/images/background.png')"> 
+        <div class="mb-8 text-center mt-[20px]" style="font-family:Poppins; color: #038175; font-size:35px;"><h1>INFO EVENT</h1></div>
 
         <!--  Banner Data -->
         <div class="wrapper">
@@ -152,8 +177,9 @@ transition: 1s;
             </div>
         </div>
     </div>
-    <div class="costume" style="text-align: center; margin-top:20px;">    
-        <h2>Costume</h2>
+     <!-- Costume -->
+    <div class="costume" style="text-align: center; margin-top:20px; font-size:30px; ">    
+        <h2>COSTUME</h2>
     </div>
     <div class="container p-5">
         <div class="row">
@@ -163,40 +189,21 @@ transition: 1s;
                         <img src="{{ asset($costume->image) }}" alt="card-1" class="card-img-top" style="width: 200px; height: 200px;">
                         <div class="kostum-nama text-center pt-2 font-bold text-uppercase">{{$costume->nama}}</div>
                         <div class="kostum-harga text-left ">Rp{{$costume->harga}}</div>
+                        
                     </div>
                 </div>
             @endforeach
         </div>
-
     </div>
-
-    {{-- <div class="gallery">
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/200" alt="Anime 1">
-            <img src="https://via.placeholder.com/200" alt="Anime 2">
-            <img src="https://via.placeholder.com/200" alt="Anime 3">
-        </div> --}}
-        {{-- <div class="gallery-item">
-    
-            <img src="https://via.placeholder.com/200" alt="Karnaval 1">
-            <img src="https://via.placeholder.com/200" alt="Karnaval 2">
-            <img src="https://via.placeholder.com/200" alt="Karnaval 3">
-        </div> --}}
-        {{-- <div class="gallery-item">
-        
-            <img src="https://via.placeholder.com/200" alt="Adat 1">
-            <img src="https://via.placeholder.com/200" alt="Adat 2">
-            <img src="https://via.placeholder.com/200" alt="Adat 3">
-        </div> --}}
-    {{-- </div> --}}
-    <!-- 
-    
-    -->     
-          
-   
 </main>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-0Tg1wZTC8whrTzAmBx8hH1/HUZv+jEjKAwiVITMNRE8V3zVZ/sS8kB6I95tZOy0k" crossorigin="anonymous"></script>
-
     </body>
 </html>
+
+<script setup>
+    import { onMounted } from "vue";
+    import { initFlowbite } from "flowbite";
+    
+    onMounted(() => {
+        initFlowbite();
+    });
+    </script>

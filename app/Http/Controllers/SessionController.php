@@ -14,7 +14,7 @@ class SessionController extends Controller
 
     use AuthenticatesUsers;
 
-    public function login()
+    public function login(Request $request)
     {
         return view('sesi.index');
     }
@@ -56,7 +56,7 @@ class SessionController extends Controller
         return redirect()->route('sesi')->withErrors(['login' => 'Email atau password tidak valid']);
     }
 
-    function logout()
+    function logout(Request $request)
     {
         Auth::logout();
         return redirect('sesi')->with('Sukses', 'Berhasil Logout');
