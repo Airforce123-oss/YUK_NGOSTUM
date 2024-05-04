@@ -78,9 +78,6 @@
         }
     </script>
     
-
-
-
     <script>
         function klikPencariCostum() {
             let dialog1 = document.getElementById('dialog1');
@@ -138,7 +135,7 @@
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand&display=swap');
      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand&display=swap');
-    body {
+    body{
     padding-bottom: 20px;
     background-image: url('/images/background.png');
     padding: 0;
@@ -206,38 +203,66 @@ transition: 1s;
     }
 }
 
+@media screen and (max-width: 1024px) {
+    body {
+        padding: 0 20px;
+    }
+
+    .wrapper {
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0 10px;
+    }
+    .wrapper {
+        width: 100%;
+    }
+}
+
 .section {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+    height:60vh;
+    display:flex;
+    justify-content:center;
     align-items: center;
+    //margin-bottom: 20px;
 }
 .slider {
     width: 800px;  
-    height: 500px;
+    height: 700px;
     border-radius: 10px;
     overflow: hidden;
+    margin-top: 20%;
 }
 .slide {
     width: 500%;
     height: 500px;
     display: flex;
+    margin-top: 20vh;
 }
 .slide input {
     display: none;
 }
+
 .st {
-    width: 50%;
+    height: 280vh;
+    width: 100%;
     transition: 2s;
 }
 .st img {
     width: 800px;
-    height: 500px;
-   // width: 800px;
-    //height: 500px;
+    height: 600px;
 }
+
+.lowerContent {
+    margin-top: 343px;
+}
+
 .nav-m {
     position: absolute;
     width: 800px;
@@ -342,21 +367,22 @@ transition: 1s;
         </ul> 
 
     </nav>
-
       <!-- Banner Section -->
-      <div class="w-full h-[200px] flex flex-col relative bg-white mt-[-40]" style=" background-image: url('/images/background.png')"> 
-    
+
+    <div class="w-full h-[80px] flex flex-col relative bg-white mt-[-40px]" style=" background-image: url('/images/background.png')"> 
+
+        <div class="wrapper text-left" style="margin-right: 60%; margin-left:30px; margin-top:-30px;">
+    <div class="m-auto font-[Poppins] font-bold" style="color: #038175; font-size:30px; margin-top: -20px;">
+        <p>Lagi Ada Event Cosplay?, Bingung 
+           Sewa Baju?, di Yuk Ngostum Aja
+           Simpel dan Gercep</p> 
+    </div>  
+   </div>
+  </div>
         <!--  Banner Data -->
-        <div class="wrapper text-left" style="margin-right: 60%;">
-            <div class="m-auto font-[Poppins]" style="color: #038175; font-size:40px; margin-top: -20px;">
-                <p>Lagi Ada Event Cosplay?, Bingung 
-                   Sewa Baju?, di Yuk Ngostum Aja
-                   Simpel dan Gercep</p>
-            </div>  
-        </div>
-    </div>
+
     <!-- Slider -->
-    <section class="section" style="margin-top: -330px;">
+    <section class="section" style="margin-top: -300px;">
         <div class="slider">
             <div class="slide">
                 <input type="radio" name="radio-btn" id="radio1"> 
@@ -364,7 +390,7 @@ transition: 1s;
                 <input type="radio" name="radio-btn" id="radio3">
                 <input type="radio" name="radio-btn" id="radio4">
 
-                <div class="st first">
+                <div class="st first" id="first">
                     <img src="/images/nippon.png" alt="a">
                 </div>
 
@@ -395,7 +421,24 @@ transition: 1s;
             </div>
         </div>
     </section>
-
+    <div class="lowerContent">
+        <div class="rounded-[9px] bg-[#ECECEC] p-[13px_24px_28px_24px] w-screen box-sizing-border" style="margin-top: -1%;">
+            <div class="relative flex flex-col box-sizing-border">
+              <div class="m-[0_0_3px_0] inline-block break-words font-['Poppins'] font-semibold text-[25px] leading-[1.355] text-[#038175]">
+                Daftarkan Toko Sewa Kostum Anda di Yuk Ngostum
+              </div>
+              <div class="m-[0_0_14px_0] inline-block self-start break-words font-['Poppins'] font-normal text-[15px] leading-[1.355] text-[#038175]">
+                Berbagai fitur dan layanan untuk meningkatkan bisnis sewa kostum anda
+              </div>
+              <span class="m-[0_12px_0_12px] self-start break-words font-['Poppins'] font-medium text-[15px] leading-[1.355] text-[#F14336]">
+                Pelajari Lebih Lanjut
+              </span>
+            </div>
+            <div class="rounded-[5px] border-[1px_solid_#F14336] absolute left-[24px] bottom-[19px] w-[173px] h-[36px]">
+            </div>
+          </div>
+    </div>
+    
 </main>
      <!-- "Overlays modal" masuk -->
 
@@ -404,8 +447,8 @@ transition: 1s;
             <div class="p-4 md:p-5">
                 <form class="space-y-4 " action="#">
                     <div class="p-1">
-                        <h1 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" style="text-align: center; font-size: 40px; color:#038175; font-weight: bold;">MASUK YUK NGOSTUM</h1>
-                        <h1 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" style="text-align: center; font-size: 20px;">Saya Ingin Menjadi</h1>
+                        <h1 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" style="text-align: center; font-size: 30px; color:#038175; font-weight: bold;">MASUK YUK NGOSTUM</h1>
+                        <h1 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" style="text-align: center; font-size: 15px;">Saya Ingin Menjadi</h1>
                         <button class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white mt-10 font-[Poppins]" style="color: white; font-size: 20px; background-color:#038175;" onclick="klikPencariCostum()">Pencari Kostum</button>
                     </div>
                     <div>
@@ -419,7 +462,7 @@ transition: 1s;
         <!-- "Overlays modal" Pencari Kostum -->
         <!-- Login form -->
         <div id="dialog1" class="fixed left-0 top-2 bg-black bg-opacity-50 w-screen h-screen flex justify-center items-center opacity-0 hidden transition-opacity duration-500" style="margin-top: -10px;" onmousedown="hideDialog1(event)">
-            <div class="bg-white rounded-shadow-md bg-opacity-100 p-8 w-[30%] h-[38%] m-auto rounded-[30px]">
+            <div class="bg-white rounded-shadow-md bg-opacity-100 p-8 w-[30%] h-[58%] m-auto rounded-[30px]">
                <div class="p-4 md:p-5">
                    <form class="space-y-4 " action="#">
                     <div class="text-center font-[Poppins] font-bold" style="font-size: 40px; color: #038175;">LOGIN PENCARI KOSTUM</div>
@@ -452,7 +495,7 @@ transition: 1s;
            </div>
            <!-- Daftar form -->
            <div id="dialog2" class="fixed left-0 top-2 bg-black bg-opacity-50 w-screen h-screen flex justify-center items-center opacity-0 hidden transition-opacity duration-500" style="margin-top: -10px;" onmousedown="hideDialog2(event)">
-            <div class="bg-white rounded-shadow-md bg-opacity-100 p-8 w-[30%] h-[58%] m-auto rounded-[30px]">
+            <div class="bg-white rounded-shadow-md bg-opacity-100 p-8 w-[30%] h-[85%] m-auto rounded-[30px]">
                <div class="p-4 md:p-5">
                    <form class="space-y-4 " action="#">
                     <div class="text-center font-[Poppins] font-bold" style="font-size: 40px; color: #038175;">DAFTAR PENCARI KOSTUM</div>
@@ -496,7 +539,7 @@ transition: 1s;
            <!--  "overlays modal" Pemilik Kostum start-->
            <!-- Login form -->
            <div id="dialog3" class="fixed left-0 top-2 bg-black bg-opacity-50 w-screen h-screen flex justify-center items-center opacity-0 hidden transition-opacity duration-500" style="margin-top: -10px;" onmousedown="hideDialog3(event)">
-            <div class="bg-white rounded-shadow-md bg-opacity-100 p-8 w-[30%] h-[38%] m-auto rounded-[30px]">
+            <div class="bg-white rounded-shadow-md bg-opacity-100 p-8 w-[30%] h-[58%] m-auto rounded-[30px]">
                <div class="p-4 md:p-5">
                    <form class="space-y-4 " action="#" onsubmit="handleSubmit(event)">
                     <div class="text-center font-[Poppins] font-bold" style="font-size: 40px; color: #038175;">LOGIN PEMILIK KOSTUM</div>
@@ -530,7 +573,7 @@ transition: 1s;
 
           <!-- Daftar form -->
            <div id="dialog4" class="fixed left-0 top-2 bg-black bg-opacity-50 w-screen h-screen flex justify-center items-center opacity-0 hidden transition-opacity duration-500" style="margin-top: -10px;" onmousedown="hideDialog4(event)">
-            <div class="bg-white rounded-shadow-md bg-opacity-100 p-8 w-[30%] h-[58%] m-auto rounded-[30px]">
+            <div class="bg-white rounded-shadow-md bg-opacity-100 p-8 w-[30%] h-[85%] m-auto rounded-[30px]">
                <div class="p-4 md:p-5">
                    <form class="space-y-4 " action="#">
                     <div class="text-center font-[Poppins] font-bold" style="font-size: 40px; color: #038175;">DAFTAR PEMILIK KOSTUM</div>
@@ -571,23 +614,6 @@ transition: 1s;
 
             <!--  "overlays modal" Pemilik Kostum end-->
            <!-- Overlays end-->
-
-           <div class="rounded-[9px] bg-[#ECECEC] p-[13px_24px_28px_24px] w-screen box-sizing-border" style="margin-top: -1%;">
-            <div class="relative flex flex-col box-sizing-border">
-              <div class="m-[0_0_3px_0] inline-block break-words font-['Poppins'] font-semibold text-[25px] leading-[1.355] text-[#038175]">
-                Daftarkan Toko Sewa Kostum Anda di Yuk Ngostum
-              </div>
-              <div class="m-[0_0_14px_0] inline-block self-start break-words font-['Poppins'] font-normal text-[15px] leading-[1.355] text-[#038175]">
-                Berbagai fitur dan layanan untuk meningkatkan bisnis sewa kostum anda
-              </div>
-              <span class="m-[0_12px_0_12px] self-start break-words font-['Poppins'] font-medium text-[15px] leading-[1.355] text-[#F14336]">
-                Pelajari Lebih Lanjut
-              </span>
-            </div>
-            <div class="rounded-[5px] border-[1px_solid_#F14336] absolute left-[24px] bottom-[19px] w-[173px] h-[36px]">
-            </div>
-          </div>
-
     </body>
 </html>
 
