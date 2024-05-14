@@ -4,6 +4,7 @@ use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\KostumController;
 use App\Http\Controllers\landingPageController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\updateCostumeController;
 use App\Models\Costume;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Contracts\Session\Session;
@@ -40,6 +41,8 @@ Route::post('/sesi/register', [SessionController::class, 'create'])->name('sessi
 Route::get('/toko-register', [SessionController::class, 'tokoregister']);
 Route::post('/sesi/register', [SessionController::class, 'create'])->name('session-register');
 
+
+
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/dashboard', [CostumeController::class, 'tampilanDashboard'])->name('user');
 });
@@ -48,6 +51,7 @@ Route::middleware(['auth', 'role:toko'])->group(function () {
     Route::get('/manajemen-kostum', [CostumeController::class, 'index'])->name('toko');
     Route::get('/tambah-kostum', [CostumeController::class, 'tambahCostume'])->name('tambah-kostum');
     Route::post('/tambah-kostum', [CostumeController::class, 'insert']);
+    Route::get('/update-kostum', [CostumeController::class, 'updateCostume'])->name('update-kostum');
 });
 
 Route::middleware(['auth', 'role:admin'])->group(function () {

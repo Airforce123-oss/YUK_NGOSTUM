@@ -2,40 +2,24 @@
 
 @section('konten')
 
-<!---->
+<!-- start -->
 
-
-<div class="breadcomb-area" style="width:100%;  height:100px; margin-top: -28px; background-color: #038175";>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="breadcomb-list">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="breadcomb-wp">
-                                <div class="breadcomb-icon">
-                                    <i class="notika-icon notika-edit"></i>
-                                </div>
-                                <div class="breadcomb-ctn" style="margin-top: 10px;">
-                                    <h2>COSTUME</h2>
-                                    <p>Daftar Costume</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3 d-flex justify-content-end">
-                            <div class="breadcomb-report" style="margin-top: 20px;">
-                                <a class="btn btn-success " href="{{ route('tambah-kostum')}}" role="button" style="background-color:#17F9E3;">
-                                        <i class="notika-icon notika-edit"></i> Tambah Costume
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<body class="font-[Poppins] h-screen" style="background-image: url(/images/background.png); margin-top: -30px;">
+    <header class="bg-[#038175]">
+        <nav class="flex justify-between items-center w-[92%]  mx-auto">
+            <div class="h-[56px]" style="margin-top: 30px; ">
+                <h1 class="w-90 cursor-pointer text-[#FFFFFF] font-bold">Tambahkan Kostum</h1>
             </div>
-        </div>
-    </div>
-</div>
-<div class="data-table-area" style="margin-top: 20px;">
+            <div class="flex items-center gap-6">
+                <a class="bg-[#a6c1ee] text-black px-5 py-2 rounded-full hover:bg-[#87acec]" href="{{ route('tambah-kostum')}}" role="button" style="background-color:#17F9E3; color:black;">
+                    <i class="notika-icon notika-edit"></i> Tambah Costume
+            </a>
+            </div>
+    </header>
+
+<!-- end -->
+
+<div class="data-table-area bg-[white]" style="margin-top: 20px; border: 2px solid #17F9E3;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -62,7 +46,7 @@
                                     <td><div class="kostum-harga">{{$costume->harga}}</div></td>
 
                                     <td>
-                                        <a href="/update-kostum/{{$costume->id}}">
+                                        <a href="/update-kostum" role="button">
                                             <button class="btn btn-primary mr-2">Update</button>
                                         </a>
                                     </td>

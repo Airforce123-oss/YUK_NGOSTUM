@@ -1,7 +1,6 @@
 @extends('layout.aplikasi')
 
 @section('content')
-
 <div class="breadcomb-area" style="margin-top: 20px;">
     <div class="container">
         <div class="row">
@@ -14,7 +13,7 @@
                                     <i class="notika-icon notika-edit"></i>
                                 </div>
                                 <div class="breadcomb-ctn">
-                                    <h2>Tambah Costume</h2>
+                                    <h2>Update Costume</h2>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +83,7 @@
                     
                         </div>
                         <div class="form-example-int mg-t-15">
-                            <button class="btn btn-success notika-btn-success" style="background-color: #038175;" type="submit">Tambah</button>
+                            <button class="btn btn-success notika-btn-success" style="background-color: #038175;" type="submit">Update</button>
                         </div>
                     </div>
                 </div>
