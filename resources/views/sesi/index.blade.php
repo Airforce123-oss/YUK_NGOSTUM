@@ -47,7 +47,7 @@
   
                 
                     <div>
-                        <p >Belum punya Akun? <a href="{{'user-register'}}">Register</a></p>
+                        <p class="mb-4">Belum punya Akun? <a href="{{'user-register'}}">Register</a></p>
                         <p style="margin-top: -15px;">Do you want to join with us? <a href="{{'toko-register'}}">Click Here</a> </p>
                         </div>
                   </form>
