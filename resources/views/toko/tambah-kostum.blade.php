@@ -1,6 +1,6 @@
 @extends('layout.aplikasi')
 
-@section('content')
+@section('konten')
 
 <div class="breadcomb-area" style="margin-top: 20px;">
     <div class="container">

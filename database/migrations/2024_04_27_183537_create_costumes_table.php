@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('costumes', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('image');
+            $table->text('deskripsi');
+            $table->double('harga');
+            $table->foreignId('store_id')->nullable();            
             $table->timestamps();
         });
     }
