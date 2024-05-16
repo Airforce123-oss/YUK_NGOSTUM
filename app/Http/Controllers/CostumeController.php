@@ -79,4 +79,10 @@ class CostumeController extends Controller
     {
         return view('toko.update-kostum');
     }
+
+    public function hapusCostume($id)
+    {
+        $costumes = Costume::findOrFail($id);
+        $costumes->delete();
+    }
 }
