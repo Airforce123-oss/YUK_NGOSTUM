@@ -40,7 +40,7 @@
                                             <i class="notika-icon notika-support"></i>
                                         </div>
                                         <div class="nk-int-st" style="margin-bottom: 20px;">
-                                            <input type="text" class="form-control" placeholder="Nama" name="nama" required>
+                                            <input type="text" class="form-control" placeholder="Nama" name="nama" value="{{$costume->nama}}" required>
                                         </div>
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@
                                             <i class="notika-icon notika-mail"></i>
                                         </div>
                                         <div class="nk-int-st" style="margin-bottom: 20px;">
-                                            <input type="text" class="form-control" placeholder="Deskripsi" name="deskripsi" required>
+                                            <input type="text" class="form-control" placeholder="Deskripsi" name="deskripsi" value="{{$costume->deskripsi}}" required>
                                         </div>
                                     </div>
                                 </div>
@@ -76,7 +76,7 @@
                                             <i class="notika-icon notika-mail"></i>
                                         </div>
                                         <div class="nk-int-st" style="margin-bottom: 20px;">
-                                            <input type="text" class="form-control" placeholder="Harga" name="harga" required>
+                                            <input type="text" class="form-control" placeholder="Harga" name="harga" value="{{$costume->harga}}" required>
                                         </div>
                                     </div>
                                 </div>
