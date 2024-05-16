@@ -22,16 +22,13 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return redirect('sesi');
+    return redirect('landing-page');
 });
 Auth::routes();
 
 
 Route::get('/sesi', [SessionController::class, 'login']);
 Route::post('/sesi/login', [SessionController::class, 'dologin'])->name('session-login');
-
-// Landing Page
-Route::get('/landing-page', [landingPageController::class, 'index']);
 
 //User
 Route::get('/user-register', [SessionController::class, 'userRegister']);
@@ -45,17 +42,16 @@ Route::post('/sesi/register', [SessionController::class, 'create'])->name('sessi
 
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/dashboard', [CostumeController::class, 'tampilanDashboard'])->name('user');
+    Route::get('/landing-page', [landingPageController::class, 'landingPage'])->name('user');
+
 });
 
 Route::middleware(['auth', 'role:toko'])->group(function () {
     Route::get('/manajemen-kostum', [CostumeController::class, 'index'])->name('toko');
     Route::get('/tambah-kostum', [CostumeController::class, 'tambahCostume'])->name('tambah-kostum');
     Route::post('/tambah-kostum', [CostumeController::class, 'insert']);
-    
     Route::post('/update-kostum', [CostumeController::class, 'update'])->name('update-kostum');
     Route::get('/update-kostum/{id}', [CostumeController::class, 'updateCostume']);
-    //Route::get('/update-kostum', [CostumeController::class, 'updateCostume'])->name('update-kostum');
-    
     Route::get('/delete-kostum/{id}', [CostumeController::class, 'hapusCostume']);
 });
 

@@ -14,7 +14,7 @@
                                     <i class="notika-icon notika-edit"></i>
                                 </div>
                                 <div class="breadcomb-ctn">
-                                    <h2>Tambah Costume</h2>
+                                    <h2 class="text-[30px] font-bold">Tambah Costume</h2>
                                 </div>
                             </div>
                         </div>
@@ -25,7 +25,7 @@
     </div>
 </div>
 
-<div class="form-example-area">
+<div class="form-example-area" style="margin-top: 20px;">
     <div class="container">
         <form method="post" action="{{ route('tambah-kostum')}}" enctype="multipart/form-data">
             {{csrf_field()}}

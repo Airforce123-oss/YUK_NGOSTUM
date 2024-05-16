@@ -11,7 +11,7 @@
                 <h1 class="w-90 cursor-pointer text-[#FFFFFF] font-bold">Tambahkan Kostum</h1>
             </div>
             <div class="flex items-center gap-6">
-                <a class="bg-[#a6c1ee] text-black px-5 py-2 rounded-full hover:bg-[#87acec]" href="{{ route('tambah-kostum')}}" role="button" style="background-color:#17F9E3; color:black;">
+                <a class="bg-[#543310] text-white px-5 py-2 rounded-full hover:bg-[#87acec]" href="{{ route('tambah-kostum')}}" role="button" style="background-color:#17F9E3; color:black;">
                     <i class="notika-icon notika-edit"></i> Tambah Costume
             </a>
             </div>
@@ -72,21 +72,4 @@
         </div>
     </div>
 </div>
-
-<script>
-    function confirmDelete() {
-        return confirm('Apakah Anda yakin ingin menghapus kostum ini?');
-    }
-    </script>
-
-{{-- <nav aria-label="Page navigation example">
-    <ul class="pagination  justify-content-center">
-      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
-  </nav> --}}
-
 @endsection
