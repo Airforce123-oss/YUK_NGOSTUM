@@ -46,7 +46,7 @@
                                     <td><div class="kostum-harga">{{$costume->harga}}</div></td>
 
                                     <td>
-                                        <a href="/update-kostum" role="button">
+                                        <a href="/update-kostum/{{$costume->id}}" role="button">
                                             <button class="btn btn-primary mr-2">Update</button>
                                         </a>
                                     </td>

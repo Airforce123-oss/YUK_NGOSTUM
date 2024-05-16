@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Costume;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use PhpParser\Node\Stmt\Return_;
 
 class CostumeController extends Controller
@@ -80,7 +81,36 @@ class CostumeController extends Controller
     {
         $costumes = Costume::findOrFail($request->id);
 
-        $request = request();
+        $request->validate([
+            'nama' => 'required|min:3|unique:costumes,nama',
+            'image' => 'sometimes|mimes:jpg,jpeg,png|max:2048',
+            'deskripsi' => 'required',
+            'harga' => 'required|numeric|min:1000'
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imageLama = $costumes->image;
+            
+            if (Storage::exists($imageLama)) {
+                Storage::delete($imageLama);
+            }
+
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $upload_path = 'gambar-kostum/';
+            $image->move(public_path($upload_path), $imageName);
+
+            // Update path gambar baru di database
+            $costumes->image = $upload_path . $imageName;
+        }
+
+        $costumes->nama = $request->nama;
+        $costumes->deskripsi = $request->deskripsi;
+        $costumes->harga = $request->harga;
+        $costumes->save();
+
+        // $costumes->update($request->all());
+        return redirect('/manajemen-kostum');
     }
 
     public function updateCostume($id)
