@@ -82,7 +82,7 @@ class CostumeController extends Controller
         $costumes = Costume::findOrFail($request->id);
 
         $request->validate([
-            'nama' => 'required|min:3|unique:costumes,nama',
+            'nama' => 'required|min:3|unique:costumes,nama,'. $costumes->id,
             'image' => 'sometimes|mimes:jpg,jpeg,png|max:2048',
             'deskripsi' => 'required',
             'harga' => 'required|numeric|min:1000'
