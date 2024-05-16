@@ -28,6 +28,7 @@
     <div class="container">
         <form method="post" action="/update-kostum" enctype="multipart/form-data">
             {{csrf_field()}}
+            @method('PUT')
             {{-- <input type="hidden" name="id" value="{{$costume->id}}"> --}}
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -40,7 +41,7 @@
                                             <i class="notika-icon notika-support"></i>
                                         </div>
                                         <div class="nk-int-st" style="margin-bottom: 20px;">
-                                            <input type="text" class="form-control" placeholder="Nama" name="nama" value="{{$costume->nama}}" required>
+                                            <input type="text" class="form-control" placeholder="Nama" name="nama" value="{{$costumes->nama}}" required>
                                         </div>
                                     </div>
                                 </div>
