@@ -25,7 +25,7 @@
      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand&display=swap');
     body, {
   padding-bottom: 20px;
-  background-image: url('/images/background.png')
+  
 }
 
 #check:checked ~ ul {
@@ -119,10 +119,10 @@ transition: 1s;
 }
 
 </style>
-<body class="">
+<body style=" background-image: url('/images/background.png')">
 <main>
 
-    <nav class="p-5 bg-[#038175] shadow md:flex md:items-center md:justify-between h-25 ">
+    <nav class="p-5 bg-[#038175] shadow md:flex md:items-center md:justify-between h-20" style="margin-bottom: 90px; ">
         <div class="flex justify-between items-center">
             <span class="text-2xl font-[Poppins] cursor-pointer">
                 <h1 class="h-10 inline" style="color: white">YUK NGOSTUM</h1>
@@ -134,26 +134,23 @@ transition: 1s;
 
         <ul class="md:flex md:items-center z-[1] md:z-auto md:static absolute w-full left-0 md:w-auto">
             <li class="mx-4 my-6 md:my-0">
-                <a href="#" class="text-xl hover:text-white duration-500" style="color: white !important; text-decoration: none;">Cari Costume</a>
+                <a href="#" class="text-xl hover:text-white duration-500" style="color: white !important; text-decoration: none; font-size:20px;">Cari Costume Apa?</a>
             </li>
             <li class="mx-4 my-6 md:my-0">
-                <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none;">Notifikasi</a>
+                <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Notifikasi</a>
             </li>
             <li class="mx-4 my-6 md:my-0">
-                <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none;">Lainnya</a>
+                <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Lainnya</a>
             </li>
-            <li class="mx-4 my-6 md:my-0">
-                <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none;">Profil</a>
-            </li>
-        </ul> 
-
+            <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white hover:bg-black-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="showDialog()" type="button" style="font-size:20px;">
+                Profil
+                </button>
     </nav>
-
 
     
       <!-- Banner Section -->
       
-      <div class="w-full h-[800px] flex flex-col relative bg-white mt-[-40]" style=" background-image: url('/images/background.png')"> 
+      <div class="w-full h-[800px] flex flex-col relative mt-[-40]" style=""> 
         <div class="mb-8 text-center mt-[20px]" style="font-family:Poppins; color: #038175; font-size:35px;"><h1>INFO EVENT</h1></div>
 
         <!--  Banner Data -->
@@ -178,17 +175,17 @@ transition: 1s;
         </div>
     </div>
      <!-- Costume -->
-    <div class="costume" style="text-align: center; margin-top:20px; font-size:30px; ">    
+    <div class="costume text-center mt-5 font-bold">    
         <h2>COSTUME</h2>
     </div>
-    <div class="container p-5">
+    <div class="container p-5 border-2 border-black bg-[#F1F1F1] rounded-lg">
         <div class="row">
             @foreach ($costumes as $costume )
                 <div class="col-md-3">
-                    <div class="card-mb-4" style="padding: 20px">
-                        <img src="{{ asset($costume->image) }}" alt="card-1" class="card-img-top" style="width: 200px; height: 200px;">
+                    <div class="card-mb-4 mt-4 p-9 rounded-lg border-4 border-gray-400" style="padding: 20px">
+                        <img src="{{ asset($costume->image) }}" alt="card-1" class="card-img-top mx-auto" style="width: 200px; height: 200px;">
                         <div class="kostum-nama text-center pt-2 font-bold text-uppercase">{{$costume->nama}}</div>
-                        <div class="kostum-harga text-left ">Rp{{$costume->harga}}</div>
+                        <div class="kostum-harga text-center ">Rp{{$costume->harga}}</div>
                         
                     </div>
                 </div>

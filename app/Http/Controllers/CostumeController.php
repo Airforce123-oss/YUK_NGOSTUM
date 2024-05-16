@@ -77,6 +77,6 @@ class CostumeController extends Controller
 
     public function updateCostume()
     {
-        return view('toko.update-kostum');
+        //return view('toko.update-kostum');
     }
 }
