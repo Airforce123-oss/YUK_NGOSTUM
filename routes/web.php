@@ -52,6 +52,7 @@ Route::middleware(['auth', 'role:toko'])->group(function () {
     Route::get('/tambah-kostum', [CostumeController::class, 'tambahCostume'])->name('tambah-kostum');
     Route::post('/tambah-kostum', [CostumeController::class, 'insert']);
     Route::get('/update-kostum', [CostumeController::class, 'updateCostume'])->name('update-kostum');
+    Route::get('/delete-kostum/{id}', [CostumeController::class, 'hapusCostume']);
 });
 
 Route::middleware(['auth', 'role:admin'])->group(function () {

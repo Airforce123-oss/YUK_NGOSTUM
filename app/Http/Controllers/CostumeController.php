@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Costume;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Return_;
 
 class CostumeController extends Controller
 {
@@ -75,8 +76,16 @@ class CostumeController extends Controller
         return view('toko.tambah-kostum');
     }
 
-    public function updateCostume()
+    public function update(Request $request)
     {
+        $costumes = Costume::findOrFail($request->id);
+
+        $request = request();
+    }
+
+    public function updateCostume($id)
+    {
+        $costumes = Costume::findOrFail($id);
         return view('toko.update-kostum');
     }
 
@@ -84,5 +93,7 @@ class CostumeController extends Controller
     {
         $costumes = Costume::findOrFail($id);
         $costumes->delete();
+
+        return redirect('/manajemen-kostum');
     }
 }
