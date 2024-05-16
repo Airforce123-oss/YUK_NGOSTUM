@@ -116,7 +116,7 @@ class CostumeController extends Controller
     public function updateCostume($id)
     {
         $costumes = Costume::findOrFail($id);
-        return view('toko.update-kostum');
+        return view('toko.update-kostum', compact('costumes'));
     }
 
     public function hapusCostume($id)

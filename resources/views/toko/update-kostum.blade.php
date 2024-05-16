@@ -28,8 +28,7 @@
     <div class="container">
         <form method="post" action="/update-kostum" enctype="multipart/form-data">
             {{csrf_field()}}
-            @method('PUT')
-            {{-- <input type="hidden" name="id" value="{{$costume->id}}"> --}}
+            <input type="hidden" name="id" value="{{$costumes->id}}">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-example-wrap">
@@ -53,7 +52,7 @@
                                             <i class="notika-icon notika-mail"></i>
                                         </div>
                                         <div class="nk-int-st" style="margin-bottom: 20px;">
-                                            <input type="file" class="form-control" placeholder="Gambar" name="image" required>
+                                            <input type="file" class="form-control" placeholder="Gambar" name="image">
                                         </div>
                                     </div>
                                 </div>
@@ -65,7 +64,7 @@
                                             <i class="notika-icon notika-mail"></i>
                                         </div>
                                         <div class="nk-int-st" style="margin-bottom: 20px;">
-                                            <input type="text" class="form-control" placeholder="Deskripsi" name="deskripsi" value="{{$costume->deskripsi}}" required>
+                                            <input type="text" class="form-control" placeholder="Deskripsi" name="deskripsi" value="{{$costumes->deskripsi}}" required>
                                         </div>
                                     </div>
                                 </div>
@@ -77,7 +76,7 @@
                                             <i class="notika-icon notika-mail"></i>
                                         </div>
                                         <div class="nk-int-st" style="margin-bottom: 20px;">
-                                            <input type="text" class="form-control" placeholder="Harga" name="harga" value="{{$costume->harga}}" required>
+                                            <input type="text" class="form-control" placeholder="Harga" name="harga" value="{{$costumes->harga}}" required>
                                         </div>
                                     </div>
                                 </div>
