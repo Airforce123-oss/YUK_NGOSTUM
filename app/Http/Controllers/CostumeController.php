@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Costume;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use PhpParser\Node\Stmt\Return_;
 
 class CostumeController extends Controller
 {
@@ -75,8 +77,53 @@ class CostumeController extends Controller
         return view('toko.tambah-kostum');
     }
 
-    public function updateCostume()
+    public function update(Request $request)
     {
-        //return view('toko.update-kostum');
+        $costumes = Costume::findOrFail($request->id);
+
+        $request->validate([
+            'nama' => 'required|min:3|unique:costumes,nama,'. $costumes->id,
+            'image' => 'sometimes|mimes:jpg,jpeg,png|max:2048',
+            'deskripsi' => 'required',
+            'harga' => 'required|numeric|min:1000'
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imageLama = $costumes->image;
+            
+            if (Storage::exists($imageLama)) {
+                Storage::delete($imageLama);
+            }
+
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $upload_path = 'gambar-kostum/';
+            $image->move(public_path($upload_path), $imageName);
+
+            // Update path gambar baru di database
+            $costumes->image = $upload_path . $imageName;
+        }
+
+        $costumes->nama = $request->nama;
+        $costumes->deskripsi = $request->deskripsi;
+        $costumes->harga = $request->harga;
+        $costumes->save();
+
+        // $costumes->update($request->all());
+        return redirect('/manajemen-kostum');
+    }
+
+    public function updateCostume($id)
+    {
+        $costumes = Costume::findOrFail($id);
+        return view('toko.update-kostum', compact('costumes'));
+    }
+
+    public function hapusCostume($id)
+    {
+        $costumes = Costume::findOrFail($id);
+        $costumes->delete();
+
+        return redirect('/manajemen-kostum');
     }
 }
