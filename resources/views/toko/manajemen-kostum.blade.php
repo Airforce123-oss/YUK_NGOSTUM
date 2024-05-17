@@ -8,7 +8,7 @@
     <header class="bg-[#038175]">
         <nav class="flex justify-between items-center w-[92%]  mx-auto">
             <div class="h-[56px]" style="margin-top: 30px; ">
-                <h1 class="w-90 cursor-pointer text-[#FFFFFF] font-bold">Tambahkan Kostum</h1>
+                <h1 class="w-90 cursor-pointer text-[#FFFFFF]">Tambahkan Kostum</h1>
             </div>
             <div class="flex items-center gap-6">
                 <a class="bg-[#543310] text-white px-5 py-2 rounded-full hover:bg-[#87acec]" href="{{ route('tambah-kostum')}}" role="button" style="background-color:#17F9E3; color:black;">

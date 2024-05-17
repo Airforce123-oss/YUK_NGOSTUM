@@ -82,7 +82,7 @@ class CostumeController extends Controller
         $costumes = Costume::findOrFail($request->id);
 
         $request->validate([
-            'nama' => 'required|min:3|unique:costumes,nama,'. $costumes->id,
+            'nama' => 'required|min:3|unique:costumes,nama,' . $costumes->id,
             'image' => 'sometimes|mimes:jpg,jpeg,png|max:2048',
             'deskripsi' => 'required',
             'harga' => 'required|numeric|min:1000'
@@ -90,7 +90,7 @@ class CostumeController extends Controller
 
         if ($request->hasFile('image')) {
             $imageLama = $costumes->image;
-            
+
             if (Storage::exists($imageLama)) {
                 Storage::delete($imageLama);
             }
@@ -126,4 +126,10 @@ class CostumeController extends Controller
 
         return redirect('/manajemen-kostum');
     }
+    public function detailCostume($id)
+    {
+        $costume = Costume::findOrFail($id);
+        return view('toko.detail-kostum', compact('costume'));
+    }
+
 }

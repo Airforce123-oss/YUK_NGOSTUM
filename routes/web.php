@@ -40,6 +40,8 @@ Route::post('/sesi/register', [SessionController::class, 'create'])->name('sessi
 Route::get('/toko-register', [SessionController::class, 'tokoregister']);
 Route::post('/sesi/register', [SessionController::class, 'create'])->name('session-register');
 
+Route::post('toko.detail-kostum', [SessionController::class, 'detailCostume']);
+Route::get('/detail-kostum/{id}', [CostumeController::class, 'detailCostume'])->name('detail.costume');
 
 
 Route::middleware(['auth', 'role:user'])->group(function () {
