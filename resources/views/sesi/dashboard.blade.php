@@ -175,14 +175,14 @@ transition: 1s;
         </div>
     </div>
      <!-- Costume -->
-    <div class="costume text-center mt-5 font-bold">    
+    <div class="costume text-center mt-5 font">    
         <h2>COSTUME</h2>
     </div>
-    <div class="container p-5 border-2 border-black bg-[#F1F1F1] rounded-lg">
+    <div class="container p-5 border-2 border-black bg-[#edece8] rounded-lg">
         <div class="row">
             @foreach ($costumes as $costume )
                 <div class="col-md-3">
-                    <div class="card-mb-4 mt-4 p-9 rounded-lg border-4 border-gray-400" style="padding: 20px">
+                    <div class="card-mb-4 mt-4 p-9 rounded-lg border-4 border-gray-500 bg-[#adc7b1]" style="padding: 20px">
                         <img src="{{ asset($costume->image) }}" alt="card-1" class="card-img-top mx-auto" style="width: 200px; height: 200px;">
                         <div class="kostum-nama text-center pt-2 font-bold text-uppercase">{{$costume->nama}}</div>
                         <div class="kostum-harga text-center ">Rp{{$costume->harga}}</div>

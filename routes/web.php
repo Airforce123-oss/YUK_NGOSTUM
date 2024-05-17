@@ -26,6 +26,8 @@ Route::get('/', function () {
 });
 Auth::routes();
 
+Route::get('/landing-page', [landingPageController::class, 'landingPage'])->name('user');
+
 
 Route::get('/sesi', [SessionController::class, 'login']);
 Route::post('/sesi/login', [SessionController::class, 'dologin'])->name('session-login');
@@ -42,7 +44,6 @@ Route::post('/sesi/register', [SessionController::class, 'create'])->name('sessi
 
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/dashboard', [CostumeController::class, 'tampilanDashboard'])->name('user');
-    Route::get('/landing-page', [landingPageController::class, 'landingPage'])->name('user');
 
 });
 
