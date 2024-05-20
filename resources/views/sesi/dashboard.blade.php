@@ -22,6 +22,7 @@
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand&display=swap');
      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand&display=swap');
     body, {
   padding-bottom: 20px;
@@ -175,19 +176,20 @@ transition: 1s;
         </div>
     </div>
      <!-- Costume -->
-    <div class="costume text-center mt-5 font-bold">    
+    <div class="costume text-center mt-5 font">    
         <h2>COSTUME</h2>
     </div>
-    <div class="container p-5 border-2 border-black bg-[#F1F1F1] rounded-lg">
+    <div class="container p-5 border-2 border-black bg-[#edece8] rounded-lg">
         <div class="row">
             @foreach ($costumes as $costume )
                 <div class="col-md-3">
-                    <div class="card-mb-4 mt-4 p-9 rounded-lg border-4 border-gray-400" style="padding: 20px">
-                        <img src="{{ asset($costume->image) }}" alt="card-1" class="card-img-top mx-auto" style="width: 200px; height: 200px;">
-                        <div class="kostum-nama text-center pt-2 font-bold text-uppercase">{{$costume->nama}}</div>
-                        <div class="kostum-harga text-center ">Rp{{$costume->harga}}</div>
-                        
-                    </div>
+                    <a href="{{ route('detail.costume', ['id' => $costume->id]) }}" class="no-underline text-black">
+                        <div class="card-mb-4 mt-4 p-9 rounded-lg border-4 border-gray-500 bg-[#adc7b1]" style="padding: 20px">
+                            <img src="{{ asset($costume->image) }}" alt="card-1" class="card-img-top mx-auto" style="width: 200px; height: 200px;">
+                            <div class="kostum-nama text-center pt-2 font-bold text-uppercase">{{$costume->nama}}</div>
+                            <div class="kostum-harga text-center ">Rp{{$costume->harga}}</div>
+                        </div>
+                    </a>
                 </div>
             @endforeach
         </div>
