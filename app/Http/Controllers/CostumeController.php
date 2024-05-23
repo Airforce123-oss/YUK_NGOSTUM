@@ -131,5 +131,9 @@ class CostumeController extends Controller
         $costume = Costume::findOrFail($id);
         return view('toko.detail-kostum', compact('costume'));
     }
-
+    public function melihatBookingRequest()
+    {
+        $costumes = Costume::all();
+        return view('toko.melihat-booking-request', compact('costumes'));
+    }
 }

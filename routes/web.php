@@ -4,6 +4,7 @@ use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\KostumController;
 use App\Http\Controllers\landingPageController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\tokoController;
 use App\Http\Controllers\updateCostumeController;
 use App\Models\Costume;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +43,10 @@ Route::post('/sesi/register', [SessionController::class, 'create'])->name('sessi
 
 Route::post('toko.detail-kostum', [SessionController::class, 'detailCostume']);
 Route::get('/detail-kostum/{id}', [CostumeController::class, 'detailCostume'])->name('detail.costume');
+
+Route::get('toko-preview', [tokoController::class, 'previewToko']);
+Route::get('/melihat-booking-request', [CostumeController::class, 'melihatBookingRequest']);
+
 
 
 Route::middleware(['auth', 'role:user'])->group(function () {
