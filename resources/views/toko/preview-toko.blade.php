@@ -27,30 +27,23 @@
             </button>
 </nav>
 
-<main class="container mx-auto p-4 rounded border-2 border-black bg-[#edece8]">
-    <div class="rounded-lg shadow-lg p-6 mb-20 bg-white">
-        <h2 class="text-5xl font-bold mb-4 text-center">DETAIL</h2>
-        <div class="flex">
-            <div class="w-1/2 bg-gray-200 flex items-center justify-center rounded-lg">
-                <img class="text-gray-500 rounded-xl" src="{{ asset($costume->image) }}"></img>
-            </div>
-            <div class="w-1/2 pl-4 " style="margin-left: 40px;">
-                <h3 class="text-[30px] font-semibold mb-2">{{$costume->nama}}</h3>
-                <div class="flex items-center mb-2">
-                    <span class="text-yellow-500">4.5</span>
-                    <span class="text-gray-500 ml-2">13.5RB Penilaian</span>
-                    <span class="text-gray-500 ml-2">15RB Sewa</span>
-                </div>
-                <div class="text-red-500 text-2xl font-bold mb-2">Rp {{$costume->harga}} / Hari</div>
-                <div class="text-gray-700 mb-4">Stok: {{$costume->stok}}</div>
-                <div class="flex items-center mb-4">
-                    <label for="quantity" class="mr-2">Kuantitas</label>
-                    <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" class="border rounded w-16 text-center">
-                </div>
-                <button class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">Sewa Sekarang</button>
-            </div>
-        </div>
-    </div>
-</main>
 
+
+    <div class="w-full h-full container mx-auto mt-8">
+        <div class="container p-5 border-2 border-black bg-[#edece8] rounded-lg">
+            <h2 class="text-center text-2xl font-bold mb-6">Konoha Cosplay</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    @for($i = 0; $i < 11; $i++)
+                    <div class="col-md-8 flex m-auto">
+                        <a href="" class="no-underline text-black">
+                            <div class="card-mb-4 mt-4 p-9 rounded-lg border-4 border-gray-500 bg-[#adc7b1]" style="padding: 20px">
+                                <img src="" alt="card-1" class="card-img-top mx-auto rounded-lg" style="width: 200px; height: 200px;">
+                                <div class="kostum-nama text-center pt-2 font-bold text-uppercase"></div>
+                                <div class="kostum-harga text-center "></div>
+                            </div>
+                        </a>
+                    </div>
+                    @endfor
+                </div>
+        </div>
 @endsection
