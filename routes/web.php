@@ -45,7 +45,7 @@ Route::post('/sesi/register', [SessionController::class, 'create'])->name('sessi
 Route::post('toko.detail-kostum', [SessionController::class, 'detailCostume']);
 Route::get('/detail-kostum/{id}', [CostumeController::class, 'detailCostume'])->name('detail.costume');
 
-Route::get('toko-preview', [tokoController::class, 'previewToko']);
+// Route::get('toko-preview', [tokoController::class, 'previewToko']);
 Route::get('/melihat-booking-request', [CostumeController::class, 'melihatBookingRequest']);
 
 
@@ -62,6 +62,7 @@ Route::middleware(['auth', 'role:toko'])->group(function () {
     Route::post('/update-kostum', [CostumeController::class, 'update'])->name('update-kostum');
     Route::get('/update-kostum/{id}', [CostumeController::class, 'updateCostume']);
     Route::get('/delete-kostum/{id}', [CostumeController::class, 'hapusCostume']);
+    Route::get('toko-preview', [tokoController::class, 'previewToko']);
 });
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
