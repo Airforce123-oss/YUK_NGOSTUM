@@ -9,7 +9,9 @@ class tokoController extends Controller
 {
     public function previewToko()
     {
-        $costumes = Costume::all();
+        $userId = auth()->user()->id;
+        $costumes = Costume::where('store_id', $userId)->get();
+        // $costumes = Costume::all();
         return view('toko.preview-toko', compact('costumes'));
     }
 }

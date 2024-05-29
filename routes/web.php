@@ -30,6 +30,7 @@ Auth::routes();
 Route::get('/landing-page', [landingPageController::class, 'landingPage'])->name('user');
 
 
+Route::get('/landing-page', [landingPageController::class, 'landingPage'])->name('user');
 Route::get('/sesi', [SessionController::class, 'login']);
 Route::post('/sesi/login', [SessionController::class, 'dologin'])->name('session-login');
 
@@ -44,7 +45,7 @@ Route::post('/sesi/register', [SessionController::class, 'create'])->name('sessi
 Route::post('toko.detail-kostum', [SessionController::class, 'detailCostume']);
 Route::get('/detail-kostum/{id}', [CostumeController::class, 'detailCostume'])->name('detail.costume');
 
-Route::get('toko-preview', [tokoController::class, 'previewToko']);
+// Route::get('toko-preview', [tokoController::class, 'previewToko']);
 Route::get('/melihat-booking-request', [CostumeController::class, 'melihatBookingRequest']);
 
 
@@ -61,6 +62,7 @@ Route::middleware(['auth', 'role:toko'])->group(function () {
     Route::post('/update-kostum', [CostumeController::class, 'update'])->name('update-kostum');
     Route::get('/update-kostum/{id}', [CostumeController::class, 'updateCostume']);
     Route::get('/delete-kostum/{id}', [CostumeController::class, 'hapusCostume']);
+    Route::get('toko-preview', [tokoController::class, 'previewToko']);
 });
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
