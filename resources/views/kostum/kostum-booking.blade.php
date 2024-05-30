@@ -48,7 +48,8 @@
                     <label for="quantity" class="mr-2">Kuantitas</label>
                     <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" class="border rounded w-16 text-center">
                 </div> --}}
-                <button class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">Sewa Sekarang</button>
+                <a href="{{ route('bayar.costume', ['id' => $costume->id]) }}" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 no-underline">Sewa Sekarang</a>
+            </div>
             </div>
         </div>
     </div>

@@ -46,7 +46,9 @@ Route::post('/sesi/register', [SessionController::class, 'create'])->name('sessi
 Route::middleware(['auth'])->group(function () {
     Route::get('/detail-kostum/{id}', [CostumeController::class, 'detailCostume'])->name('detail.costume');
     Route::get('/booking-kostum/{id}', [BookingController::class, 'bookingPage'])->name('booking-page');
+    Route::get('/bayar-kostum/{id}', [CostumeController::class, 'pembayaranKostum'])->name('bayar.costume');
 });
+
 
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/dashboard', [CostumeController::class, 'tampilanDashboard'])->name('user');
