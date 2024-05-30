@@ -19,7 +19,7 @@
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-0Tg1wZTC8whrTzAmBx8hH1/HUZv+jEjKAwiVITMNRE8V3zVZ/sS8kB6I95tZOy0k" crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
          @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand&display=swap');
@@ -53,7 +53,7 @@
                             <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
                             <span class="d-none d-sm-inline mx-1">loser</span>
                         </a>
-                        {{-- <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                             <li><a class="dropdown-item" href="#">New project...</a></li>
                             <li><a class="dropdown-item" href="#">Settings</a></li>
                             <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -61,7 +61,7 @@
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="#">Sign out</a></li>
-                        </ul> --}}
+                        </ul> 
                     </div>
                 </div>
             </div>

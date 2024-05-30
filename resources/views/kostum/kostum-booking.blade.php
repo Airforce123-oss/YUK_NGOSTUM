@@ -26,7 +26,6 @@
             Profil
             </button>
 </nav>
-
 <main class="container mx-auto p-4 rounded border-2 border-black bg-[#edece8]">
     <div class="rounded-lg shadow-lg p-6 mb-20 bg-white">
         <h2 class="text-5xl font-bold mb-4 text-center">BOOKING</h2>

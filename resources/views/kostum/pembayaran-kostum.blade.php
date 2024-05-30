@@ -29,12 +29,12 @@
 
 <main class="p-5" style="margin-top: -5%;">
     <div class="mb-4">
-        <h2 class="text-2xl font-semibold text-green-800">PEMBAYARAN</h2>
+        <h2 class="text-2xl font-semibold text-green-800 text-center">CHECKOUT</h2>
     </div>
     <div class="bg-gray-50 p-4 rounded-lg shadow-inner">
         <h3 class="text-lg font-bold text-red-500 mb-2">Alamat Pengiriman</h3>
         <div class="bg-white p-4 rounded-lg shadow-md mb-4">
-            <p class="text-gray-700"></p>
+            <p class="text-gray-700">Jalan Ketintang Wiyata III</p>
         </div>
         <div class="flex items-center justify-between mb-4">
             <div>
