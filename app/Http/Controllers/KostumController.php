@@ -12,8 +12,10 @@ class KostumController extends Controller
     $data = User::all();
     return view('sesi/dashboard')->with('data', $data ); 
    }
-   function detail($id)
-   {
-    return "<h1>Saya penyewa dari controller dengan Id $id </h1>";
-   }
+
+
+   // public function detail()
+   // {
+   //    return view("kostum.detail");
+   // }
 }

@@ -29,7 +29,7 @@
 
 <main class="container mx-auto p-4 rounded border-2 border-black bg-[#edece8]">
     <div class="rounded-lg shadow-lg p-6 mb-20 bg-white">
-        <h2 class="text-5xl font-bold mb-4 text-center">DETAIL</h2>
+        <h2 class="text-5xl font-bold mb-4 text-center">BOOKING</h2>
         <div class="flex">
             <div class="w-1/2 bg-gray-200 flex items-center justify-center rounded-lg">
                 <img class="text-gray-500 rounded-xl" src="{{ asset($costume->image) }}"></img>
@@ -41,12 +41,12 @@
                     <span class="text-gray-500 ml-2">13.5RB Penilaian</span>
                     <span class="text-gray-500 ml-2">15RB Sewa</span>
                 </div>
-                <div class="text-red-500 text-2xl font-bold mb-2">Rp {{$costume->harga}} / Hari</div>
+                <div class="text-red-500 text-2xl font-bold mb-2">Rp {{$costume->harga}} / 3 Hari</div>
                 <div class="text-gray-700 mb-4">Stok: {{$costume->stok}}</div>
-                <div class="flex items-center mb-4">
+                {{-- <div class="flex items-center mb-4">
                     <label for="quantity" class="mr-2">Kuantitas</label>
                     <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" class="border rounded w-16 text-center">
-                </div>
+                </div> --}}
                 <button class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">Sewa Sekarang</button>
             </div>
         </div>

@@ -129,7 +129,7 @@ class CostumeController extends Controller
     public function detailCostume($id)
     {
         $costume = Costume::findOrFail($id);
-        return view('toko.detail-kostum', compact('costume'));
+        return view('kostum.kostum-detail', compact('costume'));
     }
     public function melihatBookingRequest()
     {

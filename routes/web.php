@@ -1,15 +1,16 @@
 <?php
+use App\Models\Costume;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\tokoController;
+use Illuminate\Contracts\Session\Session;
+use App\Http\Controllers\KostumController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CostumeController;
 use App\Http\Controllers\HalamanController;
-use App\Http\Controllers\KostumController;
-use App\Http\Controllers\landingPageController;
 use App\Http\Controllers\SessionController;
-use App\Http\Controllers\tokoController;
+use App\Http\Controllers\landingPageController;
 use App\Http\Controllers\updateCostumeController;
-use App\Models\Costume;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Contracts\Session\Session;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +29,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/landing-page', [landingPageController::class, 'landingPage'])->name('user');
-
-
-Route::get('/landing-page', [landingPageController::class, 'landingPage'])->name('user');
 Route::get('/sesi', [SessionController::class, 'login']);
 Route::post('/sesi/login', [SessionController::class, 'dologin'])->name('session-login');
 
@@ -42,13 +40,12 @@ Route::post('/sesi/register', [SessionController::class, 'create'])->name('sessi
 Route::get('/toko-register', [SessionController::class, 'tokoregister']);
 Route::post('/sesi/register', [SessionController::class, 'create'])->name('session-register');
 
-Route::post('toko.detail-kostum', [SessionController::class, 'detailCostume']);
-Route::get('/detail-kostum/{id}', [CostumeController::class, 'detailCostume'])->name('detail.costume');
+// Route::get('/melihat-booking-request', [CostumeController::class, 'melihatBookingRequest']);
 
-// Route::get('toko-preview', [tokoController::class, 'previewToko']);
-Route::get('/melihat-booking-request', [CostumeController::class, 'melihatBookingRequest']);
-
-
+Route::middleware(['auth'])->group(function () {
+    Route::get('/detail-kostum/{id}', [CostumeController::class, 'detailCostume'])->name('detail.costume');
+    Route::get('/booking-kostum/{id}', [BookingController::class, 'bookingPage'])->name('booking-page');
+});
 
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/dashboard', [CostumeController::class, 'tampilanDashboard'])->name('user');
@@ -68,15 +65,3 @@ Route::middleware(['auth', 'role:toko'])->group(function () {
 Route::middleware(['auth', 'role:admin'])->group(function () {
 
 });
-
-//toko
-//ManajemenKostum, Tambah, Update, Delete
-// Route::middleware('role:toko')->get('/manajemen-kostum', [CostumeController::class, 'index']);
-// Route::group(['middleware' => 'role:2'], function(){
-//     Route::get('toko', [CostumeController::class, 'index']);
-//     Route::get('/tambah-kostum', [CostumeController::class, 'tambahCostume'])->name('tambah-kostum');
-//     Route::post('/tambah-kostum', [CostumeController::class, 'insert']);
-// });
-
-//Admin
-//ngatur akun, info event
