@@ -43,7 +43,10 @@
                 </div>
                 <div class="text-red-500 text-2xl font-bold mb-2">Rp {{$costume->harga}} / 3 Hari</div>
                 <div class="text-gray-700 mb-4">Tanggal Booking</div>
-                <input type="text" id="tanggal" name="tanggal" class="border rounded w-full px-3 py-2" placeholder="Pilih tanggal">
+                <label for="startDate">Start</label>
+                <input id="startDate" class="form-control" type="date" />
+                <label for="endtDate">End</label>
+                <input id="endDate" class="form-control" type="date" />
                 {{-- <div class="flex items-center mb-4">
                     <label for="quantity" class="mr-2">Kuantitas</label>
                     <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" class="border rounded w-16 text-center">

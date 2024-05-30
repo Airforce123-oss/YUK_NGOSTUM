@@ -16,8 +16,11 @@ return new class extends Migration
     {
         Schema::create('rentals', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Costume::class);
-            $table->foreignIdFor(User::class);
+            $table->string('penyewa_name');
+            $table->string('costume_name');
+            $table->foreignId('store_id'); // assuming you have a stores table
+            $table->date('start_date'); 
+            $table->date('end_date');
             $table->timestamps();
         });
     }
