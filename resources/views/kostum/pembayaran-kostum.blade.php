@@ -38,11 +38,11 @@
         </div>
         <div class="flex items-center justify-between mb-4">
             <div>
-                <p class="font-bold">{{$costume->nama}}</p>
+                <p class="font-bold">{{$rental->costume->nama}}</p>
                 <p class="text-gray-500">Pilih Metode Pembayaran</p>
             </div>
             <div class="w-24 h-34 bg-gray-200 flex items-center justify-center">
-                <img class="text-gray-500 rounded-xl" src="{{ asset($costume->image) }}"></img>
+                <img class="text-gray-500 rounded-xl" src="{{ asset($rental->costume->image) }}"></img>
             </div>
         </div>
         <div class="flex space-x-4 mb-4">
@@ -50,7 +50,7 @@
             <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">Di Antarkan</button>
         </div>
         <div class="bg-white p-4 rounded-lg shadow-md">
-            <p class="flex justify-between text-gray-700"><span>Subtotal untuk Produk:</span> <span>Rp  {{$costume->harga}}</span></p>
+            <p class="flex justify-between text-gray-700"><span>Subtotal untuk Produk:</span> <span>Rp  {{$rental->costume->harga}}</span></p>
             <p class="flex justify-between text-gray-700"><span>Total Ongkos Kirim:</span> <span>Rp xxxxx</span></p>
             <p class="flex justify-between text-gray-700"><span>Biaya Layanan:</span> <span>Rp xxxxxx</span></p>
             <p class="flex justify-between text-red-500 font-bold text-lg"><span>Total Pembayaran:</span> <span>Rp xxxxx</span></p>
