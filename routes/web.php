@@ -47,6 +47,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/booking-kostum/{id}', [BookingController::class, 'bookingPage'])->name('booking-page');
 });
 
+
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/dashboard', [CostumeController::class, 'tampilanDashboard'])->name('user');
 
