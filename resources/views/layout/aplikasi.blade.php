@@ -42,7 +42,7 @@
             navLinks.classList.toggle('top-[9%]')
         }
     </script>
-    <script>
+    {{-- <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Reset pemilihan tanggal saat halaman dimuat
             document.getElementById('tanggal').value = '';
@@ -54,7 +54,7 @@
             mode: "range", // Menggunakan mode range
             defaultDate: [new Date(), new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000)] // Default 3 hari dari sekarang
         });
-    </script>
+    </script> --}}
 </body>
 </html>
 

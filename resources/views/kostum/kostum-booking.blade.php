@@ -42,13 +42,19 @@
                     <span class="text-gray-500 ml-2">15RB Sewa</span>
                 </div>
                 <div class="text-red-500 text-2xl font-bold mb-2">Rp {{$costume->harga}} / 3 Hari</div>
-                <div class="text-gray-700 mb-4">Tanggal Booking</div>
-                <input type="text" id="tanggal" name="tanggal" class="border rounded w-full px-3 py-2" placeholder="Pilih tanggal">
-                {{-- <div class="flex items-center mb-4">
-                    <label for="quantity" class="mr-2">Kuantitas</label>
-                    <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" class="border rounded w-16 text-center">
-                </div> --}}
-                <a href="{{ route('bayar.costume', ['id' => $costume->id]) }}" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 no-underline">Sewa Sekarang</a>
+                <form action="/rental" method="post">
+                    @csrf
+                    <label for="costume_name">Costume Name: {{ $costume->nama }}</label>
+                    <input type="hidden" name="costume_id" value="{{ $costume->id }}">
+                    <div class="text-gray-700 mb-4">Tanggal Booking</div>
+                    <label for="start_date">Start Date:</label>
+                        <input type="date" name="start_date" id="start_date">
+                        <br>
+                     <label for="end_date">End Date:</label>
+                        <input type="date" name="end_date" id="end_date">
+                        <br>
+                    <button type="submit" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 no-underline">Sewa Sekarang</button>
+                </form>
             </div>
             </div>
         </div>
