@@ -42,7 +42,8 @@
                     <span class="text-gray-500 ml-2">15RB Sewa</span>
                 </div>
                 <div class="text-red-500 text-2xl font-bold mb-2">Rp {{$costume->harga}} / 3 Hari</div>
-                <div class="text-gray-700 mb-4">Stok: {{$costume->stok}}</div>
+                <div class="text-gray-700 mb-4">Tanggal Booking</div>
+                <input type="text" id="tanggal" name="tanggal" class="border rounded w-full px-3 py-2" placeholder="Pilih tanggal">
                 {{-- <div class="flex items-center mb-4">
                     <label for="quantity" class="mr-2">Kuantitas</label>
                     <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" class="border rounded w-16 text-center">

@@ -28,6 +28,8 @@ Route::get('/', function () {
 });
 Auth::routes();
 
+Route::get('/tes', [CostumeController::class, 'tes']);
+
 Route::get('/landing-page', [landingPageController::class, 'landingPage'])->name('user');
 Route::get('/sesi', [SessionController::class, 'login']);
 Route::post('/sesi/login', [SessionController::class, 'dologin'])->name('session-login');
@@ -40,7 +42,6 @@ Route::post('/sesi/register', [SessionController::class, 'create'])->name('sessi
 Route::get('/toko-register', [SessionController::class, 'tokoregister']);
 Route::post('/sesi/register', [SessionController::class, 'create'])->name('session-register');
 
-// Route::get('/melihat-booking-request', [CostumeController::class, 'melihatBookingRequest']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/detail-kostum/{id}', [CostumeController::class, 'detailCostume'])->name('detail.costume');
@@ -51,7 +52,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/dashboard', [CostumeController::class, 'tampilanDashboard'])->name('user');
-
+    
 });
 
 Route::middleware(['auth', 'role:toko'])->group(function () {
@@ -61,7 +62,8 @@ Route::middleware(['auth', 'role:toko'])->group(function () {
     Route::post('/update-kostum', [CostumeController::class, 'update'])->name('update-kostum');
     Route::get('/update-kostum/{id}', [CostumeController::class, 'updateCostume']);
     Route::get('/delete-kostum/{id}', [CostumeController::class, 'hapusCostume']);
-    Route::get('toko-preview', [tokoController::class, 'previewToko']);
+    Route::get('toko-preview', [tokoController::class, 'previewToko'])->name('preview-toko');
+    Route::get('/melihat-booking-request', [CostumeController::class, 'melihatBookingRequest'])->name('booking-request');
 });
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
