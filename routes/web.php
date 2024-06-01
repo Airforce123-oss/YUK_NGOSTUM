@@ -28,8 +28,6 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-Route::get('/tes', [CostumeController::class, 'tes']);
-
 Route::get('/landing-page', [landingPageController::class, 'landingPage'])->name('user');
 Route::get('/sesi', [SessionController::class, 'login']);
 Route::post('/sesi/login', [SessionController::class, 'dologin'])->name('session-login');
@@ -46,7 +44,7 @@ Route::post('/sesi/register', [SessionController::class, 'create'])->name('sessi
 Route::middleware(['auth'])->group(function () {
     Route::get('/detail-kostum/{id}', [CostumeController::class, 'detailCostume'])->name('detail.costume');
     Route::get('/booking-kostum/{id}', [BookingController::class, 'bookingPage'])->name('booking-page');
-    Route::get('/bayar-kostum/{id}', [CostumeController::class, 'pembayaranKostum'])->name('bayar.costume');
+    Route::get('/bayar-kostum/{rental}', [BookingController::class, 'show'])->name('bayar.costume');
     Route::post('/rental', [BookingController::class, 'store'])->name('store-rental');
 });
 

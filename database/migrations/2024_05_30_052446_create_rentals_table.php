@@ -18,6 +18,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('costume_id');
+            $table->decimal('subtotal', 10, 2)->default(0);
             $table->date('start_date');
             $table->date('end_date');
             $table->timestamps();

@@ -16,6 +16,7 @@ class Rental extends Model
         'user_id',
         'start_date',
         'end_date',
+        'subtotal'
     ];
 
     protected $table = 'rentals';

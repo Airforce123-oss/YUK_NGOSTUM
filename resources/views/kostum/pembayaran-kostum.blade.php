@@ -34,7 +34,7 @@
     <div class="bg-gray-50 p-4 rounded-lg shadow-inner">
         <h3 class="text-lg font-bold text-red-500 mb-2">Alamat Pengiriman</h3>
         <div class="bg-white p-4 rounded-lg shadow-md mb-4">
-            <p class="text-gray-700">Jalan Ketintang Wiyata III</p>
+            <input type="text" name="alamat_lokasi" id="alamat_lokasi">
         </div>
         <div class="flex items-center justify-between mb-4">
             <div>
@@ -50,10 +50,22 @@
             <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">Di Antarkan</button>
         </div>
         <div class="bg-white p-4 rounded-lg shadow-md">
-            <p class="flex justify-between text-gray-700"><span>Subtotal untuk Produk:</span> <span>Rp  {{$rental->costume->harga}}</span></p>
-            <p class="flex justify-between text-gray-700"><span>Total Ongkos Kirim:</span> <span>Rp xxxxx</span></p>
-            <p class="flex justify-between text-gray-700"><span>Biaya Layanan:</span> <span>Rp xxxxxx</span></p>
-            <p class="flex justify-between text-red-500 font-bold text-lg"><span>Total Pembayaran:</span> <span>Rp xxxxx</span></p>
+            <p class="flex justify-between text-gray-700">
+                <span>Subtotal untuk Produk:</span>
+                <span>Rp {{ number_format($subtotal, 0, ',', '.') }}</span>
+            </p>
+            <p class="flex justify-between text-gray-700">
+                <span>Total Ongkos Kirim:</span>
+                <span>Rp {{ number_format($shipping_cost, 0, ',', '.') }}</span>
+            </p>
+            <p class="flex justify-between text-gray-700">
+                <span>Biaya Layanan:</span>
+                <span>Rp {{ number_format($service_fee, 0, ',', '.') }}</span>
+            </p>
+            <p class="flex justify-between text-red-500 font-bold text-lg">
+                <span>Total Pembayaran:</span>
+                <span>Rp {{ number_format($total_payment, 0, ',', '.') }}</span>
+            </p>
         </div>
         <div class="mt-4">
             <button class="bg-green-600 text-white w-full py-2 rounded-lg hover:bg-green-700">Buat Pesanan</button>
