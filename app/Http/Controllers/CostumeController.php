@@ -12,10 +12,11 @@ class CostumeController extends Controller
 {
     public function index()
     {
-        $userId = auth()->user()->id;
+        //$userId = auth()->user()->id;
+        $storeId = auth()->user()->store->id;
 
         // Ambil data kostum yang memiliki store_id sesuai dengan ID pengguna yang sedang login
-        $costumes = Costume::where('store_id', $userId)
+        $costumes = Costume::where('store_id', $storeId)
             ->orderBy('created_at', 'desc')
             ->paginate(4);
         //mengembalikan view, halaman manajemen kostum
@@ -34,7 +35,8 @@ class CostumeController extends Controller
 
     public function insert(Request $request)
     {
-        $userId = auth()->user()->id;
+       //$userId = auth()->user()->id;
+        $storeId = auth()->user()->store->id;
 
         $request->validate([
             'nama' => 'required|min:3|unique:costumes,nama',
@@ -43,7 +45,7 @@ class CostumeController extends Controller
             'harga' => 'required|numeric|min:1000'
         ]);
 
-        $request = request();
+        //$request = request();
 
         // Ambil file gambar
         $image = $request->file('image');
@@ -64,7 +66,7 @@ class CostumeController extends Controller
             $costumes->image = $upload_path . $imageName;
             $costumes->deskripsi = $request->deskripsi;
             $costumes->harga = $request->harga;
-            $costumes->store_id = $userId;
+            $costumes->store_id = $storeId;
             $costumes->save();
         }
 

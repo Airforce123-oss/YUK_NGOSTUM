@@ -17,4 +17,9 @@ class Store extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function costumes()
+    {
+        return $this->hasMany(Costume::class);
+    }
 }

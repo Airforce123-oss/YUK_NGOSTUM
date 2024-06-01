@@ -2,7 +2,7 @@
 use App\Models\Costume;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\tokoController;
+use App\Http\Controllers\TokoController;
 use Illuminate\Contracts\Session\Session;
 use App\Http\Controllers\KostumController;
 use App\Http\Controllers\BookingController;
@@ -53,6 +53,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/dashboard', [CostumeController::class, 'tampilanDashboard'])->name('user');
+    Route::get('/guest-preview/{storeId}', [TokoController::class, 'guestPreviewToko'])->name('guest-previewToko');
     
 });
 
@@ -63,7 +64,7 @@ Route::middleware(['auth', 'role:toko'])->group(function () {
     Route::post('/update-kostum', [CostumeController::class, 'update'])->name('update-kostum');
     Route::get('/update-kostum/{id}', [CostumeController::class, 'updateCostume']);
     Route::get('/delete-kostum/{id}', [CostumeController::class, 'hapusCostume']);
-    Route::get('toko-preview', [tokoController::class, 'previewToko'])->name('preview-toko');
+    Route::get('toko-preview', [TokoController::class, 'previewToko'])->name('preview-toko');
     Route::get('/melihat-booking-request', [CostumeController::class, 'melihatBookingRequest'])->name('booking-request');
 });
 
