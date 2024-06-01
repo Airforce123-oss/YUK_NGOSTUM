@@ -20,6 +20,7 @@ class TokoController extends Controller
 {
     $store = Store::findOrFail($storeId);
     $costumes = Costume::where('store_id', $storeId)->get();
+    //$namaToko = $store->nama_toko;
 
     return view('toko.preview-toko', compact('costumes', 'store', 'storeId'));
 }

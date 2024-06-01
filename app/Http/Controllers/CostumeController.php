@@ -139,10 +139,6 @@ class CostumeController extends Controller
         $costumes = Costume::all();
         return view('toko.melihat-booking-request', compact('costumes'));
     }
-    public function tes()
-    {
-        return view('welcome');
-    }
   
     public function pembayaranKostum($id)
     {
