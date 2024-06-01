@@ -51,6 +51,11 @@ class User extends Authenticatable
         );
     }
 
+    public function store()
+    {
+        return $this->hasOne(Store::class);
+    }
+
     public function costumes(){
         return $this->hasMany(Costume::class, 'store_id');
     }

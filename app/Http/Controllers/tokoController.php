@@ -14,4 +14,9 @@ class tokoController extends Controller
         // $costumes = Costume::all();
         return view('toko.preview-toko', compact('costumes'));
     }
+
+    public function guestPreviewToko()
+    {
+
+    }
 }

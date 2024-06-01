@@ -15,9 +15,12 @@ return new class extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->id();
-            $table->string('nama-toko');
-            $table->foreignId('user_id');
+            $table->unsignedBigInteger('user_id');
+            $table->string('nama_toko');
+            $table->text('alamat_toko');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

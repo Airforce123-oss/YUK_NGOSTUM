@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Store;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -79,8 +80,10 @@ class SessionController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'role' => 'required',
-            'password' => 'required|min:6'
+            'role' => 'required|integer',
+            'password' => 'required|min:6',
+            'nama_toko' => 'required_if:role,1', // Assuming '2' is the role ID for 'toko'
+            'alamat_toko' => 'required_if:role,1'
         ], [
             'name.required' => 'Nama wajib diisi',
             'email.required' => 'Email wajib diisi',
@@ -88,7 +91,9 @@ class SessionController extends Controller
             'email.unique' => 'Email sudah pernah digunakan, silakan pilih email yang lain',
             'role.unique' => 'Role wajib dipilih',
             'password.required' => 'Password wajib diisi',
-            'password.min' => 'Minimum password ialah adalah 6 karakter'
+            'password.min' => 'Minimum password ialah adalah 6 karakter',
+            'nama_toko.required_if' => 'Nama toko wajib diisi',
+            'alamat_toko.required_if' => 'Alamat toko wajib diisi'
         ]);
 
         $data = [
@@ -97,7 +102,16 @@ class SessionController extends Controller
             'role' => $request->role,
             'password' => Hash::make($request->password)
         ];
-        User::create($data);
+        $user = User::create($data);
+
+        // Jika role adalah toko, tambahkan data ke tabel store
+        if ($request->role == 1) {
+            Store::create([
+                'user_id' => $user->id,
+                'nama_toko' => $request->nama_toko, // Pastikan ada input store_name di form toko_register
+                'alamat_toko' => $request->alamat_toko // Pastikan ada input store_address di form toko_register
+            ]);
+        }
 
         $infologin = [
             'email' => $request->email,
