@@ -42,19 +42,6 @@
             navLinks.classList.toggle('top-[9%]')
         }
     </script>
-    {{-- <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Reset pemilihan tanggal saat halaman dimuat
-            document.getElementById('tanggal').value = '';
-        });
-
-        flatpickr("#tanggal", {
-            dateFormat: "Y-m-d", // Format tanggal yang diinginkan
-            minDate: "today", // Batasi tanggal minimum untuk memilih
-            mode: "range", // Menggunakan mode range
-            defaultDate: [new Date(), new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000)] // Default 3 hari dari sekarang
-        });
-    </script> --}}
 </body>
 </html>
 

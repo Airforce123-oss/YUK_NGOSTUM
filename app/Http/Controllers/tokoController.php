@@ -4,14 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Costume;
+use App\Models\Store;
 
-class tokoController extends Controller
+class TokoController extends Controller
 {
     public function previewToko()
     {
-        $userId = auth()->user()->id;
-        $costumes = Costume::where('store_id', $userId)->get();
-        // $costumes = Costume::all();
+        $storeId = auth()->user()->store->id;
+        $costumes = Costume::where('store_id', $storeId)->get();
+
         return view('toko.preview-toko', compact('costumes'));
     }
+
+    public function guestPreviewToko($storeId)
+{
+    $store = Store::findOrFail($storeId);
+    $costumes = Costume::where('store_id', $storeId)->get();
+
+    return view('toko.guest-preview-toko', compact('costumes', 'store', 'storeId'));
+}
 }

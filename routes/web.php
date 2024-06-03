@@ -2,7 +2,7 @@
 use App\Models\Costume;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\tokoController;
+use App\Http\Controllers\TokoController;
 use Illuminate\Contracts\Session\Session;
 use App\Http\Controllers\KostumController;
 use App\Http\Controllers\BookingController;
@@ -28,8 +28,6 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-Route::get('/tes', [CostumeController::class, 'tes']);
-
 Route::get('/landing-page', [landingPageController::class, 'landingPage'])->name('user');
 Route::get('/sesi', [SessionController::class, 'login']);
 Route::post('/sesi/login', [SessionController::class, 'dologin'])->name('session-login');
@@ -46,13 +44,15 @@ Route::post('/sesi/register', [SessionController::class, 'create'])->name('sessi
 Route::middleware(['auth'])->group(function () {
     Route::get('/detail-kostum/{id}', [CostumeController::class, 'detailCostume'])->name('detail.costume');
     Route::get('/booking-kostum/{id}', [BookingController::class, 'bookingPage'])->name('booking-page');
-    Route::get('/bayar-kostum/{id}', [CostumeController::class, 'pembayaranKostum'])->name('bayar.costume');
+    Route::get('/bayar-kostum/{rental}', [BookingController::class, 'show'])->name('bayar.costume');
     Route::post('/rental', [BookingController::class, 'store'])->name('store-rental');
+    // Route::post('/pembayaran/{rentalId}', [BookingController::class, 'checkout'])->name('pay-rental');
 });
 
 
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/dashboard', [CostumeController::class, 'tampilanDashboard'])->name('user');
+    Route::get('/guest-preview/{storeId}', [TokoController::class, 'guestPreviewToko'])->name('guest-previewToko');
     
 });
 
@@ -63,7 +63,7 @@ Route::middleware(['auth', 'role:toko'])->group(function () {
     Route::post('/update-kostum', [CostumeController::class, 'update'])->name('update-kostum');
     Route::get('/update-kostum/{id}', [CostumeController::class, 'updateCostume']);
     Route::get('/delete-kostum/{id}', [CostumeController::class, 'hapusCostume']);
-    Route::get('toko-preview', [tokoController::class, 'previewToko'])->name('preview-toko');
+    Route::get('toko-preview', [TokoController::class, 'previewToko'])->name('preview-toko');
     Route::get('/melihat-booking-request', [CostumeController::class, 'melihatBookingRequest'])->name('booking-request');
 });
 
