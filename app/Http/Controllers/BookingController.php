@@ -21,6 +21,9 @@ class BookingController extends Controller
             'costume_id' => 'required',
             'start_date' => 'required|date',
             'end_date' => 'required|date|after_or_equal:start_date',
+            'alamat_pengiriman' => 'required',
+            'metode_pembayaran' => 'required',
+            'metode_pengambilan' => 'required',
         ]);
 
         $user_id = $request->user()->id;
@@ -48,6 +51,28 @@ class BookingController extends Controller
 
         return redirect(route('bayar.costume', $rental->id));
     }
+
+    // public function checkout(Request $request, $rentalId)
+    // {
+    //     // Validasi data tambahan yang diperlukan
+    //     $request->validate([
+    //         'alamat_pengiriman' => 'required',
+    //         'metode_pembayaran' => 'required',
+    //         'metode_pengambilan' => 'required',
+    //     ]);
+
+    //     // Ambil data rental berdasarkan ID
+    //     $rental = Rental::findOrFail($rentalId);
+
+    //     // Update atau tambahkan data tambahan ke rental
+    //     $rental->alamat_pengiriman = $request->alamat_pengiriman;
+    //     $rental->metode_pembayaran = $request->metode_pembayaran;
+    //     $rental->cara_pengambilan = $request->cara_pengambilan;
+    //     $rental->save();
+
+    //     // Redirect pengguna ke halaman konfirmasi atau pembayaran
+    //     return redirect()->route('konfirmasi.pembayaran');
+    // }
 
     public function show($rentalId)
     {

@@ -46,6 +46,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/booking-kostum/{id}', [BookingController::class, 'bookingPage'])->name('booking-page');
     Route::get('/bayar-kostum/{rental}', [BookingController::class, 'show'])->name('bayar.costume');
     Route::post('/rental', [BookingController::class, 'store'])->name('store-rental');
+    // Route::post('/pembayaran/{rentalId}', [BookingController::class, 'checkout'])->name('pay-rental');
 });
 
 

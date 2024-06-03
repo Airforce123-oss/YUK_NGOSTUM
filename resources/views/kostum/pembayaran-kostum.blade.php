@@ -32,23 +32,28 @@
         <h2 class="text-2xl font-semibold text-green-800 text-center">CHECKOUT</h2>
     </div>
     <div class="bg-gray-50 p-4 rounded-lg shadow-inner">
-        <h3 class="text-lg font-bold text-red-500 mb-2">Alamat Pengiriman</h3>
-        <div class="bg-white p-4 rounded-lg shadow-md mb-4">
-            <input type="text" name="alamat_lokasi" id="alamat_lokasi">
-        </div>
-        <div class="flex items-center justify-between mb-4">
-            <div>
-                <p class="font-bold">{{$rental->costume->nama}}</p>
-                <p class="text-gray-500">Pilih Metode Pembayaran</p>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-7 d-flex flex-column justify-content-left right-pane">
+                    <h3 class="text-lg font-bold text-red-500 mb-2">Alamat Pengiriman</h3>
+                    <h3 class="text-lg text-black mb-2">{{ $rental->alamat_pengiriman }}</h3>
+                    
+                        <div>
+                            <h3 class="text-lg font-bold text-red-500 mb-2">Nama Kostum</h3>
+                            <h3 class="text-lg text-black mb-2">{{ $rental->costume->nama }}</h3>
+                            <h3 class="text-lg font-bold text-red-500 mb-2">Metode Pembayaran</h3>
+                            <h3 class="text-lg text-black mb-2">{{ $rental->metode_pembayaran }}</h3>
+                            <h3 class="text-lg font-bold text-red-500 mb-2">Metode Pengambilan</h3>
+                            <h3 class="text-lg text-black mb-2">{{ $rental->metode_pengambilan }}</h3>
+                        </div>
+                </div>
+                    <div class="col-md-4 mx-auto text-center border border-dark border-3 w-30 h-30 bg-gray-200 flex items-left justify-center">
+                        <img class="text-gray-500 rounded-xl" src="{{ asset($rental->costume->image) }}"></img>
+                    </div>
             </div>
-            <div class="w-24 h-34 bg-gray-200 flex items-center justify-center">
-                <img class="text-gray-500 rounded-xl" src="{{ asset($rental->costume->image) }}"></img>
-            </div>
         </div>
-        <div class="flex space-x-4 mb-4">
-            <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">Ambil Ditempat</button>
-            <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">Di Antarkan</button>
-        </div>
+
+      
         <div class="bg-white p-4 rounded-lg shadow-md">
             <p class="flex justify-between text-gray-700">
                 <span>Subtotal untuk Produk:</span>

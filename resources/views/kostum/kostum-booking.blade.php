@@ -41,7 +41,7 @@
                     <span class="text-gray-500 ml-2">15RB Sewa</span>
                 </div>
                 <div class="text-red-500 text-2xl font-bold mb-2">Rp {{$costume->harga}} / 3 Hari</div>
-                <form action="/rental" method="post">
+                <form action="/rental" method="POST">
                     @csrf
                     <label for="costume_name">Costume Name: {{ $costume->nama }}</label>
                     <input type="hidden" name="costume_id" value="{{ $costume->id }}">
@@ -52,6 +52,22 @@
                      <label for="end_date">End Date:</label>
                         <input type="date" name="end_date" id="end_date">
                         <br>
+                    <label for="alamat_pengiriman">Alamat Pengiriman</label><br>
+                    <input type="text" name="alamat_pengiriman" id="alamat_pengiriman">
+                    <p class="text-gray-500">Pilih Metode Pembayaran</p>
+                    <select name="metode_pembayaran" id="metode_pembayaran" class="bg-white border border-gray-300 rounded-lg px-3 py-2 mt-2">
+                        <option value="e_wallet">E-Wallet</option>
+                    </select>
+                    <br>
+                    <p class="text-gray-500">Pilih Metode Pengiriman</p>
+                    <select name="metode_pengambilan" id="metode_pengambilan" class="bg-white border border-gray-300 rounded-lg px-3 py-2 mt-2">
+                        <option value="diantar">Diantar</option>
+                        <option value="diambil">Diambil</option>
+                    </select>
+                    <br>
+                    {{-- <input type="hidden" name="alamat_pengiriman" value=""> --}}
+                    {{-- <input type="hidden" name="metode_pembayaran" value=""> --}}
+                    {{-- <input type="hidden" name="metode_pengambilan" value=""> --}}
                     <button type="submit" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 no-underline">Sewa Sekarang</button>
                 </form>
             </div>

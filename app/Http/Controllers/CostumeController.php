@@ -134,15 +134,15 @@ class CostumeController extends Controller
         $costume = Costume::findOrFail($id);
         return view('kostum.kostum-detail', compact('costume'));
     }
-    public function melihatBookingRequest()
-    {
-        $costumes = Costume::all();
-        return view('toko.melihat-booking-request', compact('costumes'));
-    }
+    // public function melihatBookingRequest()
+    // {
+    //     $costumes = Costume::all();
+    //     return view('toko.melihat-booking-request', compact('costumes'));
+    // }
   
-    public function pembayaranKostum($id)
-    {
-        $rental = Rental::with(['user','costume'])->findOrFail($id);
-        return view('kostum.pembayaran-kostum', compact('rental'));
-    }
+    // public function pembayaranKostum($id)
+    // {
+    //     $rental = Rental::with(['user','costume'])->findOrFail($id);
+    //     return view('kostum.pembayaran-kostum', compact('rental'));
+    // }
 }

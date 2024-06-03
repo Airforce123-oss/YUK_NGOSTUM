@@ -21,6 +21,6 @@ class TokoController extends Controller
     $store = Store::findOrFail($storeId);
     $costumes = Costume::where('store_id', $storeId)->get();
 
-    return view('toko.preview-toko', compact('costumes', 'store', 'storeId'));
+    return view('toko.guest-preview-toko', compact('costumes', 'store', 'storeId'));
 }
 }

@@ -21,6 +21,9 @@ return new class extends Migration
             $table->decimal('subtotal', 10, 2)->default(0);
             $table->date('start_date');
             $table->date('end_date');
+            $table->string('alamat_pengiriman')->nullable();
+            $table->string('metode_pembayaran')->nullable();
+            $table->string('metode_pengambilan')->nullable();
             $table->timestamps();
         });
     }
