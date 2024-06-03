@@ -23,11 +23,4 @@ class TokoController extends Controller
 
         return view('toko.guest-preview-toko', compact('costumes', 'store', 'storeId'));
     }
-
-    public function rincianTransaksi()
-    {
-        $storeId = auth()->user()->store->id;
-        $costumes = Costume::where('store_id', $storeId)->get();
-        return view('toko.rincian-transaksi', compact('costumes'));
-    }
 }
