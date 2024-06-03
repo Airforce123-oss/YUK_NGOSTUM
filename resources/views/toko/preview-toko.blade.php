@@ -31,6 +31,7 @@
     <h2 class="text-center text-2xl font-bold mb-6">{{ auth()->user()->store->nama_toko }}</h2>
     <div class="w-full h-full container mx-auto mt-8">
         <div class="container p-5 border-2 border-black bg-[#edece8] rounded-lg">
+            <h2 class="text-center text-2xl font-bold mb-6">Fadel Cosplays</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 @foreach ($costumes as $costume)
                     <div class="col-md-8 flex m-auto">
