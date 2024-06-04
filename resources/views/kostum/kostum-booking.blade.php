@@ -52,7 +52,7 @@
                      <label for="end_date">End Date:</label>
                         <input type="date" name="end_date" id="end_date">
                         <br>
-                    <button type="submit" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 no-underline">Sewa Sekarang</button>
+                    <button type="submit" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 no-underline">Sewa Sekarang aja</button>
                 </form>
             </div>
             </div>
