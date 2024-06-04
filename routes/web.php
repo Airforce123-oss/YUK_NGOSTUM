@@ -65,6 +65,7 @@ Route::middleware(['auth', 'role:toko'])->group(function () {
     Route::get('/delete-kostum/{id}', [CostumeController::class, 'hapusCostume']);
     Route::get('toko-preview', [TokoController::class, 'previewToko'])->name('preview-toko');
     Route::get('/melihat-booking-request', [CostumeController::class, 'melihatBookingRequest'])->name('booking-request');
+    Route::get('/rincian-transaksi', [TokoController::class, 'rincianTransaksi'])->name('rincian-transaksi');
 });
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
