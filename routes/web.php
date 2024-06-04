@@ -42,6 +42,7 @@ Route::post('/sesi/register', [SessionController::class, 'create'])->name('sessi
 
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
     Route::get('/detail-kostum/{id}', [CostumeController::class, 'detailCostume'])->name('detail.costume');
     Route::get('/booking-kostum/{id}', [BookingController::class, 'bookingPage'])->name('booking-page');
     Route::get('/bayar-kostum/{rental}', [BookingController::class, 'show'])->name('bayar.costume');
@@ -64,7 +65,9 @@ Route::middleware(['auth', 'role:toko'])->group(function () {
     Route::get('/update-kostum/{id}', [CostumeController::class, 'updateCostume']);
     Route::get('/delete-kostum/{id}', [CostumeController::class, 'hapusCostume']);
     Route::get('toko-preview', [TokoController::class, 'previewToko'])->name('preview-toko');
-    Route::get('/melihat-booking-request', [CostumeController::class, 'melihatBookingRequest'])->name('booking-request');
+
+    //pindahkan ke admin
+    Route::get('/melihat-booking-request', [BookingController::class, 'showBookingRequest'])->name('booking-request');
 });
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
