@@ -14,6 +14,9 @@ class Rental extends Model
     protected $fillable = [
         'costume_id',
         'user_id',
+        'email',
+        'harga',
+        'nama_toko',
         'start_date',
         'end_date',
         'subtotal',

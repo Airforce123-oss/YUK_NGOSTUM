@@ -49,6 +49,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/booking-kostum/{id}', [BookingController::class, 'bookingPage'])->name('booking-page');
     Route::get('/bayar-kostum/{rental}', [BookingController::class, 'show'])->name('bayar.costume');
     Route::post('/rental', [BookingController::class, 'store'])->name('store-rental');
+    Route::get('/melihat-booking-request', [BookingController::class, 'showBookingRequest'])->name('booking-request');
+
+    Route::get('/rincian-transaksi/{rental}', [BookingController::class, 'rincianTransaksi'])->name('rincian-transaksi');
     // Route::post('/pembayaran/{rentalId}', [BookingController::class, 'checkout'])->name('pay-rental');
 });
 
@@ -70,9 +73,9 @@ Route::middleware(['auth', 'role:toko'])->group(function () {
 
 
     //pindahkan ke admin
-    Route::get('/melihat-booking-request', [BookingController::class, 'showBookingRequest'])->name('booking-request');
+    //Route::get('/melihat-booking-request', [BookingController::class, 'showBookingRequest'])->name('booking-request');
 
-    Route::get('/rincian-transaksi', [TokoController::class, 'rincianTransaksi'])->name('rincian-transaksi');
+    //xRoute::get('/rincian-transaksi', [TokoController::class, 'rincianTransaksi'])->name('rincian-transaksi');
 });
 
 // Tiket
