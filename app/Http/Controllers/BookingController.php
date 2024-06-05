@@ -90,7 +90,9 @@ class BookingController extends Controller
     public function showBookingRequest()
     {
         $storeId = auth()->user()->store->id;
-        $rentals = Rental::with(['user','costume'])->get();
+        $rentals = Rental::whereHas('costume', function($query) use ($storeId) {
+            $query->where('store_id', $storeId);
+        })->with(['user', 'costume'])->get();
         return view('toko.booking-request', compact('rentals'));
     }
 }
