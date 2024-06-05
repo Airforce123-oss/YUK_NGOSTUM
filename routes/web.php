@@ -1,9 +1,10 @@
 <?php
-use App\Http\Controllers\EventController;
 use App\Models\Costume;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TokoController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EventController;
 use Illuminate\Contracts\Session\Session;
 use App\Http\Controllers\KostumController;
 use App\Http\Controllers\BookingController;
@@ -80,7 +81,8 @@ Route::get('/booking-tiket-event', [EventController::class, 'bookingEvent']);
 Route::get('/mengelola-informasi-event', [EventController::class, 'mengelolaEvent']);
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
-
+    Route::get('/admin-request', [AdminController::class, 'adminShowBookingRequest'])->name('admin');
+    Route::post('/admin-request', [AdminController::class, 'update'])->name('admin.update');
 });
 
 
