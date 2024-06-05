@@ -41,32 +41,48 @@
                     <span class="text-gray-500 ml-2">15RB Sewa</span>
                 </div>
                 <div class="text-red-500 text-2xl font-bold mb-2">Rp {{$costume->harga}} / 3 Hari</div>
-                <form action="/rental" method="POST">
+                <form action="/rental" method="POST" class="bg-white p-6 rounded shadow-md">
                     @csrf
-                    <label for="costume_name">Costume Name: {{ $costume->nama }}</label>
-                    <input type="hidden" name="costume_id" value="{{ $costume->id }}">
-                    <div class="text-gray-700 mb-4">Tanggal Booking</div>
-                    <label for="start_date">Start Date:</label>
-                        <input type="date" name="start_date" id="start_date">
-                        <br>
-                     <label for="end_date">End Date:</label>
-                        <input type="date" name="end_date" id="end_date">
-                        <br>
-                        <label for="alamat_pengiriman">Alamat Pengiriman</label><br>
-                        <input type="text" name="alamat_pengiriman" id="alamat_pengiriman">
-                        <p class="text-gray-500">Pilih Metode Pembayaran</p>
-                        <select name="metode_pembayaran" id="metode_pembayaran" class="bg-white border border-gray-300 rounded-lg px-3 py-2 mt-2">
+                    <div class="mb-4">
+                        <label for="costume_name" class="block text-gray-700 font-bold mb-2">Costume Name: {{ $costume->nama }}</label>
+                        <input type="hidden" name="costume_id" value="{{ $costume->id }}">
+                    </div>
+                
+                    <div class="mb-4">
+                        <label for="start_date" class="block text-gray-700 font-bold mb-2">Start Date:</label>
+                        <input type="date" name="start_date" id="start_date" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                    </div>
+                
+                    <div class="mb-4">
+                        <label for="end_date" class="block text-gray-700 font-bold mb-2">End Date:</label>
+                        <input type="date" name="end_date" id="end_date" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                    </div>
+                
+                    <div class="mb-4">
+                        <label for="alamat_pengiriman" class="block text-gray-700 font-bold mb-2">Alamat Pengiriman:</label>
+                        <input type="text" name="alamat_pengiriman" id="alamat_pengiriman" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                    </div>
+                
+                    <div class="mb-4">
+                        <p class="text-gray-700 font-bold mb-2">Pilih Metode Pembayaran</p>
+                        <select name="metode_pembayaran" id="metode_pembayaran" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2">
                             <option value="e_wallet">E-Wallet</option>
                         </select>
-                        <br>
-                        <p class="text-gray-500">Pilih Metode Pengiriman</p>
-                        <select name="metode_pengambilan" id="metode_pengambilan" class="bg-white border border-gray-300 rounded-lg px-3 py-2 mt-2">
+                    </div>
+                
+                    <div class="mb-4">
+                        <p class="text-gray-700 font-bold mb-2">Pilih Metode Pengiriman</p>
+                        <select name="metode_pengambilan" id="metode_pengambilan" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2">
                             <option value="diantar">Diantar</option>
                             <option value="diambil">Diambil</option>
                         </select>
-                        <br>
-                    <button type="submit" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 no-underline">Sewa Sekarang aja</button>
+                    </div>
+                
+                    <div class="text-center">
+                        <button type="submit" class="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600">Sewa Sekarang aja</button>
+                    </div>
                 </form>
+                
             </div>
             </div>
         </div>

@@ -1,10 +1,10 @@
 <?php
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EventController;
 use App\Models\Costume;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TokoController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\EventController;
 use Illuminate\Contracts\Session\Session;
 use App\Http\Controllers\KostumController;
 use App\Http\Controllers\BookingController;
@@ -47,6 +47,8 @@ Route::middleware(['auth'])->group(function () {
     //logout all
     Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
 });
+
+  Route::get('/admin-dashboard', [AdminController::class, 'AdminController']);
 
 
 Route::middleware(['auth', 'role:user'])->group(function () {

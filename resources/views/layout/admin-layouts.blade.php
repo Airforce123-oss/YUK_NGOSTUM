@@ -50,27 +50,19 @@
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white">
                     <h1 class="w-90 cursor-pointer text-[#FFFFFF]">Admin</h1>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start mt-3" id="menu">
-                        {{-- <li class="nav-item">
-                            <a href="{{route('preview-toko')}}" class="nav-link align-middle px-0">
-                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline text-white">Preview Toko</span>
+                        <li class="nav-item">
+                            <a href="" class="nav-link align-middle px-0">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline text-white">Dashboard</span>
                             </a>
-                        </li> --}}
-                        {{-- <li>
-                            <a href="{{route('toko')}}" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline text-white">Kostum</span> 
-                            </a>
-                        </li> --}}
+                        </li>
                         <li>
-                            <a href="" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline text-white">Booking Manager</span></a>
+                            <a href="" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline text-white">Pemesanan</span> 
+                            </a>
                         </li>
                         <li>
                             <a href="" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline text-white">Artikel Manager</span></a>
-                        </li>
-                        <li>
-                            <a href="" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline text-white">Artikel Preview</span></a>
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline text-white">Event</span></a>
                         </li>
                     </ul>
                     <hr>

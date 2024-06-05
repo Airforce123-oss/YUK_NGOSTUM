@@ -21,4 +21,9 @@ class AdminController extends Controller
         ]);
         return back();
     }
+
+    public function AdminController()
+    {
+        return view('admin.admin-dashboard');
+    }
 }
