@@ -86,4 +86,11 @@ class BookingController extends Controller
 
         return view('kostum.pembayaran-kostum', compact('rental', 'subtotal', 'shipping_cost', 'service_fee', 'total_payment'));
     }
+
+    public function showBookingRequest()
+    {
+        $storeId = auth()->user()->store->id;
+        $rentals = Rental::with(['user','costume'])->get();
+        return view('toko.booking-request', compact('rentals'));
+    }
 }
