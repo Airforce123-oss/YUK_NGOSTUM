@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\EventController;
 use App\Models\Costume;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -72,6 +73,11 @@ Route::middleware(['auth', 'role:toko'])->group(function () {
 
     Route::get('/rincian-transaksi', [TokoController::class, 'rincianTransaksi'])->name('rincian-transaksi');
 });
+
+// Tiket
+Route::get('/informasi-event', [EventController::class, 'event']);
+Route::get('/booking-tiket-event', [EventController::class, 'bookingEvent']);
+Route::get('/mengelola-informasi-event', [EventController::class, 'mengelolaEvent']);
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
 
