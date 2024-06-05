@@ -70,9 +70,21 @@ class BookingController extends Controller
     public function showBookingRequest()
     {
         $storeId = auth()->user()->store->id;
-        $rentals = Rental::whereHas('costume', function($query) use ($storeId) {
+        $rentals = Rental::whereHas('costume', function ($query) use ($storeId) {
             $query->where('store_id', $storeId);
         })->with(['user', 'costume'])->get();
         return view('toko.booking-request', compact('rentals'));
     }
+    public function rincianTransaksi($rentalId)
+    {   
+        $rental = Rental::findOrFail($rentalId);
+        $subtotal = $rental->subtotal;
+        $shipping_cost = 50000; // contoh biaya tetap ongkos kirim
+        $service_fee = 10000; // contoh biaya tetap layanan
+
+        $rental = Rental::findOrFail($rentalId);
+        $total_payment = $subtotal + $shipping_cost + $service_fee;
+        return view('toko.rincian-transaksi', compact('rental', 'subtotal', 'shipping_cost', 'service_fee', 'total_payment'));
+    }
+
 }

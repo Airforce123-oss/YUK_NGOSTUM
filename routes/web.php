@@ -78,6 +78,7 @@ Route::middleware(['auth', 'role:toko'])->group(function () {
     Route::get('toko-preview', [TokoController::class, 'previewToko'])->name('preview-toko');
     //Booking Request - Toko
     Route::get('/melihat-booking-request', [BookingController::class, 'showBookingRequest'])->name('booking-request');
+
 });
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
