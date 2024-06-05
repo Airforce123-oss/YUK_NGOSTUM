@@ -73,8 +73,9 @@
             </p>
         </div>
         <div class="mt-4">
-            <a href="{{ route('rincian-transaksi', ['rental' => $rental->id]) }}" type="button" class="bg-green-600 text-white text-center w-full py-2 rounded-lg hover:bg-green-700 no-underline">Buat Pesanan</a>
+            <a href="{{ route('rincian-transaksi', ['id' => $rental->id]) }}" type="button" class="bg-green-600 text-white text-center w-full py-2 rounded-lg hover:bg-green-700 no-underline">Buat Pesanan</a>
         </div>
+        
         
 </main>
 

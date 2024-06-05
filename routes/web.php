@@ -48,7 +48,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
 });
 
-  Route::get('/admin-dashboard', [AdminController::class, 'AdminController']);
+Route::get('/admin-dashboard', [AdminController::class, 'AdminController']);
 
 
 Route::middleware(['auth', 'role:user'])->group(function () {
@@ -65,6 +65,11 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     //Event
     Route::get('/informasi-event', [EventController::class, 'event']);
     Route::get('/booking-tiket-event', [EventController::class, 'bookingEvent']);
+    //pindahkan ke admin
+    Route::get('/melihat-booking-request', [BookingController::class, 'showBookingRequest'])->name('booking-request');
+
+    Route::get('/rincian-transaksi/{id}', [BookingController::class, 'rincianTransaksi'])->name('rincian-transaksi');
+
 
 });
 
