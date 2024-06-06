@@ -18,6 +18,6 @@ class EventController extends Controller
 
     public function mengelolaEvent()
     {
-        return view('event.mengelola-informasi-event');
+        return view('admin.mengelola-informasi-event');
     }
 }

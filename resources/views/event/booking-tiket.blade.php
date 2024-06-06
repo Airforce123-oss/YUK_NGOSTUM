@@ -27,5 +27,68 @@
             </button>
 </nav>
 
+<div class="container mx-auto mt-8 px-4 flex w-screen">
+    <!-- Sidebar -->
+    <div class="w-3/2 bg-white p-4 rounded shadow">
+        <div class="mb-4">
+            <input type="text" placeholder="Pencarian..." class="w-full px-4 py-2 border rounded">
+        </div>
+        <div class="mb-4">
+            <h3 class="font-bold text-2xl">Filter berdasarkan Tanggal</h3>
+            <input type="date" class="w-full px-4 py-2 border rounded mt-2">
+            <input type="date" class="w-full px-4 py-2 border rounded mt-2">
+        </div>
+        <div class="mb-4">
+            <input type="text" placeholder="Masukkan Lokasi" class="w-full px-4 py-2 border rounded">
+        </div>
+        <div class="mb-4">
+            <h3 class="font-bold text-2xl ">Kategori</h3>
+            <select class="w-full px-4 py-2 border rounded mt-2">
+                <option>Semua</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <h3 class="font-bold text-2xl ">Events</h3>
+            <div>
+                <label class="flex items-center mt-2">
+                    <input type="radio" name="events" class="form-radio">
+                    <span class="ml-2">Online Events</span>
+                </label>
+                <label class="flex items-center mt-2">
+                    <input type="radio" name="events" class="form-radio">
+                    <span class="ml-2">Offline Events</span>
+                </label>
+            </div>
+        </div>
+        <div>
+            <h3 class="font-bold text-2xl">Filter Harga</h3>
+            <input type="range" min="0" max="100" class="w-full mt-2">
+            <button class="bg-green-600 text-white w-full py-2 rounded mt-2">Filter Harga</button>
+        </div>
+    </div>
+     <!-- Main Content -->
+     <div class="w-3/4 ml-4">
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Event Card 1 -->
+            <div class="bg-white rounded shadow p-4">
+                <img src="/gambar-kostum/deliwafa.webp" alt="a" class="w-full h-42 object-cover rounded">
+                <h3 class="font-bold mt-4">Deliwafa Fest Vol.4</h3>
+                <p class="text-gray-600 mt-2"><i class="far fa-calendar-alt"></i> 13 Jul 2024</p>
+                <p class="text-gray-600"><i class="fas fa-map-marker-alt"></i> Surabaya</p>
+                <p class="text-red-600 font-bold mt-2">Rp.65.000</p>
+            </div>
+            <!-- Event Card 2 -->
+            <div class="bg-white rounded shadow p-4">
+                <img src="/gambar-kostum/rock.webp" alt="Deliwafa Fest Vol.4" class="w-full h-42 object-cover rounded">
+                <h3 class="font-bold mt-4">ROCKAMINATION Festival Madiun</h3>
+                <p class="text-gray-600 mt-2"><i class="far fa-calendar-alt"></i> 13 Jul 2024</p>
+                <p class="text-gray-600"><i class="fas fa-map-marker-alt"></i> Madiun</p>
+                <p class="text-red-600 font-bold mt-2">Rp.85.000</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 @endsection
