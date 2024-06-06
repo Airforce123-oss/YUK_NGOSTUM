@@ -62,7 +62,8 @@ class BookingController extends Controller
         // Total pembayaran
         $total_payment = $subtotal + $shipping_cost + $service_fee;
 
-        return view('kostum.pembayaran-kostum', compact('rental', 'subtotal', 'shipping_cost', 'service_fee', 'total_payment'));
+        return view('kostum.checkout-kostum', compact('rental', 'subtotal', 'shipping_cost', 'service_fee', 'total_payment'));
+        
     }
 
     //pay()
@@ -76,7 +77,7 @@ class BookingController extends Controller
         return view('toko.booking-request', compact('rentals'));
     }
     public function rincianTransaksi($rentalId)
-    {   
+    {
         $rental = Rental::findOrFail($rentalId);
         $subtotal = $rental->subtotal;
         $shipping_cost = 50000; // contoh biaya tetap ongkos kirim
@@ -87,4 +88,15 @@ class BookingController extends Controller
         return view('toko.rincian-transaksi', compact('rental', 'subtotal', 'shipping_cost', 'service_fee', 'total_payment'));
     }
 
+    public function pembayaranKostum($id)
+    {
+        $rental = Rental::find($id);
+        $subtotal = $rental->subtotal;
+        $shipping_cost = 50000; // contoh biaya tetap ongkos kirim
+        $service_fee = 10000; // contoh biaya tetap layanan
+
+        $total_payment = $subtotal + $shipping_cost + $service_fee;
+
+        return view('kostum.pembayaran-kostum', compact('rental', 'subtotal', 'shipping_cost', 'service_fee', 'total_payment'));
+    }
 }

@@ -22,61 +22,91 @@
         <li class="mx-4 my-6 md:my-0">
             <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Lainnya</a>
         </li>
-        <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white hover:bg-black-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="showDialog()" type="button" style="font-size:20px;">
-            Profil
-            </button>
+        <li class="mx-4 my-6 md:my-0">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Profil
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">Profil</a></li>
+                  <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
+                </ul>
+              </div>
+        </li>
+            
+          
 </nav>
 
-<main class="p-5" style="margin-top: -5%;">
-    <div class="mb-4">
-        <h2 class="text-2xl font-semibold text-green-800 text-center">CHECKOUT</h2>
-    </div>
-    <div class="bg-gray-50 p-4 rounded-lg shadow-inner">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-7 d-flex flex-column justify-content-left right-pane">
-                    <h3 class="text-lg font-bold text-red-500 mb-2">Alamat Pengiriman</h3>
-                    <h3 class="text-lg text-black mb-2">{{ $rental->alamat_pengiriman }}</h3>
-                    
-                        <div>
-                            <h3 class="text-lg font-bold text-red-500 mb-2">Nama Kostum</h3>
-                            <h3 class="text-lg text-black mb-2">{{ $rental->costume->nama }}</h3>
-                            <h3 class="text-lg font-bold text-red-500 mb-2">Metode Pembayaran</h3>
-                            <h3 class="text-lg text-black mb-2">{{ $rental->metode_pembayaran }}</h3>
-                            <h3 class="text-lg font-bold text-red-500 mb-2">Metode Pengambilan</h3>
-                            <h3 class="text-lg text-black mb-2">{{ $rental->metode_pengambilan }}</h3>
-                        </div>
-                </div>
-                    <div class="col-md-4 mx-auto text-center border border-dark border-3 w-30 h-30 bg-gray-200 flex items-left justify-center">
-                        <img class="text-gray-500 rounded-xl" src="{{ asset($rental->costume->image) }}"></img>
-                    </div>
+ <!-- Main Content -->
+ <div class="container mx-auto mt-8 px-4">
+    <div class="bg-white rounded shadow p-6 w-full">
+        <h2 class="text-2xl font-bold mb-6">Konfirmasi Pembayaran</h2>
+
+        <div class="mb-4 flex justify-between">
+            <div>
+                <p><span class="font-bold">Nama Pemesan:  </span>{{$rental->user->name}}</p>
+                <p><span class="font-bold">Alamat Pemesan: </span>{{ $rental->alamat_pengiriman }}</p>
+            </div>
+            <div>
+                <p><span class="font-bold">Nama Penjual:</span> Hartono</p>
             </div>
         </div>
 
-      
-        <div class="bg-white p-4 rounded-lg shadow-md">
-            <p class="flex justify-between text-gray-700">
-                <span>Subtotal untuk Produk:</span>
-                <span>Rp {{ number_format($subtotal, 0, ',', '.') }}</span>
-            </p>
-            <p class="flex justify-between text-gray-700">
-                <span>Total Ongkos Kirim:</span>
-                <span>Rp {{ number_format($shipping_cost, 0, ',', '.') }}</span>
-            </p>
-            <p class="flex justify-between text-gray-700">
-                <span>Biaya Layanan:</span>
-                <span>Rp {{ number_format($service_fee, 0, ',', '.') }}</span>
-            </p>
-            <p class="flex justify-between text-red-500 font-bold text-lg">
-                <span>Total Pembayaran:</span>
-                <span>Rp {{ number_format($total_payment, 0, ',', '.') }}</span>
-            </p>
+        <div class="mb-4">
+            <p><span class="font-bold">ID Transaksi:</span> 12********XY</p>
+            <p><span class="font-bold">Metode Pembayaran: </span>E-Wallet</p>
         </div>
-        <div class="mt-4">
-            <a href="{{ route('rincian-transaksi', ['id' => $rental->id]) }}" type="button" class="bg-green-600 text-white text-center w-full py-2 rounded-lg hover:bg-green-700 no-underline">Buat Pesanan</a>
-        </div>
-        
-        
-</main>
 
+        <div class="mb-6">
+            <h3 class="font-bold mb-2">Rincian Pesanan</h3>
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="py-2">No.</th>
+                        <th class="py-2">Nama Kostum</th>
+                        <th class="py-2">Harga Produk</th>
+                        <th class="py-2">Kuantitas</th>
+                        <th class="py-2">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border px-4 py-2">1</td>
+                        <td class="border px-4 py-2">{{ $rental->costume->nama }}</td>
+                        <td class="border px-4 py-2">{{ $rental->costume->harga }}</td>
+                        <td class="border px-4 py-2">1</td>
+                        <td class="border px-4 py-2">Rp {{ number_format($subtotal, 0, ',', '.') }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+
+        <div class="mb-6">
+            <h3 class="font-bold mb-2">Rincian Pembayaran</h3>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <p>Subtotal untuk Produk: Rp {{ number_format($subtotal, 0, ',', '.') }}</p>
+                    <p>Total Ongkos Kirim: Rp {{ number_format($shipping_cost, 0, ',', '.') }}</p>
+                    <p>Biaya Layanan: Rp {{ number_format($service_fee, 0, ',', '.') }}</p>
+                </div>
+                <div class="text-right">
+                    <p class="font-bold">Total Pembayaran: Rp {{ number_format($total_payment, 0, ',', '.') }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-center">
+         
+            <a href="{{ route('rincian-transaksi', ['id' => $rental->id]) }}" class="bg-green-500 text-white px-8 py-2 rounded">
+                <button>Bayar</button>
+            </a>
+           
+            <div class="flex items-center">
+                <!-- <p class="text-red-600 font-bold mr-2">Batas Pembayaran:</p> 
+                <p class="font-bold">05:00</p> 
+            -->
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

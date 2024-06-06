@@ -59,7 +59,9 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/detail-kostum/{id}', [CostumeController::class, 'detailCostume'])->name('detail.costume');
     Route::post('/rental', [BookingController::class, 'store'])->name('store-rental');
     //checkout
-    Route::get('/bayar-kostum/{rental}', [BookingController::class, 'show'])->name('bayar.costume');
+    Route::get('/checkout-kostum/{rental}', [BookingController::class, 'show'])->name('bayar.costume');
+    //Pembayaran
+    Route::get('/pembayaran-kostum/{id}', [BookingController::class, 'pembayaranKostum'])->name('pembayaran-kostum');
     //preview toko - guest
     Route::get('/guest-preview/{storeId}', [TokoController::class, 'guestPreviewToko'])->name('guest-previewToko');
     //Event

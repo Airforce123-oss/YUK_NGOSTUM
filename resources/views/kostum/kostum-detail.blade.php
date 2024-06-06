@@ -22,10 +22,21 @@
         <li class="mx-4 my-6 md:my-0">
             <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Lainnya</a>
         </li>
-        <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white hover:bg-black-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="showDialog()" type="button" style="font-size:20px;">
-            Profil
-            </button>
+        <li class="mx-4 my-6 md:my-0">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Profil
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">Profil</a></li>
+                  <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
+                </ul>
+              </div>
+        </li>
+            
+          
 </nav>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4 mx-auto text-center">

@@ -134,4 +134,5 @@ class CostumeController extends Controller
         $costume = Costume::findOrFail($id);
         return view('kostum.kostum-detail', compact('costume'));
     }
+ 
 }
