@@ -3,7 +3,7 @@
 @section('content')
 
  <!-- Main Content -->
- <div class="flex-1 pl-2" style="margin-left: -120px;">
+ <div class="flex-1 pl-2" style="margin-left: -150px;">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
