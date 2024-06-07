@@ -66,13 +66,14 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/guest-preview/{storeId}', [TokoController::class, 'guestPreviewToko'])->name('guest-previewToko');
     //Event
     Route::get('/informasi-event', [EventController::class, 'event']);
-    Route::get('/booking-tiket-event', [EventController::class, 'bookingEvent']);
+    //Route::get('/booking-tiket-event', [EventController::class, 'bookingEvent']);
     //pindahkan ke admin
     Route::get('/melihat-booking-request', [BookingController::class, 'showBookingRequest'])->name('booking-request');
 
     Route::get('/rincian-transaksi/{id}', [BookingController::class, 'rincianTransaksi'])->name('rincian-transaksi');
+    Route::post('/pay/{id}', [BookingController::class, 'buktiPembayaran'])->name('pembayaran');
 
-
+    
 });
 
 Route::middleware(['auth', 'role:toko'])->group(function () {

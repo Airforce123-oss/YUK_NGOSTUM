@@ -23,7 +23,8 @@ return new class extends Migration {
             $table->string('alamat_pengiriman')->nullable();
             $table->string('metode_pembayaran')->nullable();
             $table->string('metode_pengambilan')->nullable();
-            $table->string('status');
+            $table->string('status')->default('Pending');
+            $table->string('bukti_image')->nullable();
             $table->timestamps();
         });
     }

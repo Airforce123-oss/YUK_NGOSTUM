@@ -10,12 +10,12 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::all();
-        return view();
+        return view('event.informasi-event', compact('articles'));
     }
 
     public function create()
     {
-        return view();
+        return view('admin.tambah-event');
     }
 
     public function store(Request $request)
@@ -51,7 +51,7 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $article = Article::findOrFail($id);
-        return view();
+        return view('admin.edit-event', compact('article'));
     }
 
     public function update(Request $request)
@@ -93,7 +93,7 @@ class ArticleController extends Controller
         $article = Article::findOrFail($id);
         $article->delete();
 
-        return view();
+        return back();
     }
 
     //note hapus event controller

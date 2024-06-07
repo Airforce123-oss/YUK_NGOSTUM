@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Rental;
 use App\Models\Costume;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class BookingController extends Controller
 {
@@ -98,5 +99,33 @@ class BookingController extends Controller
         $total_payment = $subtotal + $shipping_cost + $service_fee;
 
         return view('kostum.pembayaran-kostum', compact('rental', 'subtotal', 'shipping_cost', 'service_fee', 'total_payment'));
+    }
+
+    public function buktiPembayaran(Request $request, $id)
+    {
+        $rental = Rental::findOrFail($id);
+
+        if ($request->hasFile('bukti_image')) {
+
+            $bukti_image = $request->file('bukti_image');
+            $imageName = time() . '.' . $bukti_image->getClientOriginalExtension();
+            $upload_path = 'gambar-kostum/';
+            $bukti_image->move(public_path($upload_path), $imageName);
+
+            // Update path gambar baru di database
+            $rental->update([
+                'bukti_image' => $upload_path . $imageName
+            ]);
+
+            return redirect(route('rincian-transaksi',['id' => $rental->id]));
+        }
+    }
+
+    public function destroy($id)
+    {
+        $rental = Rental::findOrFail($id);
+        $rental->delete();
+
+        return response()->json(['message' => 'Rental deleted successfully']);
     }
 }

@@ -43,6 +43,27 @@
             navLinks.classList.toggle('top-[9%]')
         }
     </script>
+    <script>
+        window.onload = function() {
+            let timeLeft = 900; // 5 menit dalam detik
+            const countdownElement = document.getElementById('countdown');
+            const interval = setInterval(() => {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                timeLeft--;
+
+                if (timeLeft < 0) {
+                    clearInterval(interval);
+                    countdownElement.textContent = 'Waktu Habis';
+                    // Simulasi penghapusan data dari database
+                    //saat waktu habis dikembalikan ke halaman sebelumnya
+                    console.log('Data booking dihapus dari database.');
+                    // Anda bisa mengganti console.log dengan kode untuk menghapus data di database
+                }
+            }, 1000);
+        };
+    </script>
 </body>
 </html>
 

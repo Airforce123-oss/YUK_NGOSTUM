@@ -35,6 +35,7 @@
                                             <th class="w-auto">Tanggal Akhir</th>
                                             <th class="w-auto">Total Harga</th>
                                             <th class="w-auto">Status</th>
+                                            <th class="w-auto">Bukti</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -96,6 +97,30 @@
                                                                             class="btn btn-primary">Simpan</button>
                                                                     </div>
                                                                 </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                        data-bs-target="#buktiPembayaran{{ $rental->id }}">
+                                                        Bukti
+                                                    </button>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="buktiPembayaran{{ $rental->id }}"
+                                                        tabindex="-1" aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                                                        Bukti Pembayaran
+                                                                    </h1>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <img src="{{$rental->bukti_image}}" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
