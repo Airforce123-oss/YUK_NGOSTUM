@@ -122,7 +122,7 @@
 
                 <div class="countdown-container">
                     <p class="text-red-600 font-bold mr-2">Batas Pembayaran:</p>
-                    <p class="font-bold" id="countdown">00:10</p>
+                    <p class="font-bold" id="countdown">15:00</p>
                 </div>
             </div>
         </div>
@@ -134,7 +134,7 @@
             }
         });
         window.onload = function() {
-            let timeLeft = 3; // 15 menit dalam detik
+            let timeLeft = 900; // 15 menit dalam detik
             const countdownElement = document.getElementById('countdown');
             const id = {{ $rental->id }}; // Mengambil rentalId dari server-side
             const interval = setInterval(() => {
