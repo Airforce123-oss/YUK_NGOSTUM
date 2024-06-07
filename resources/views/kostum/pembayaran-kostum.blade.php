@@ -1,6 +1,7 @@
 @extends('layout/aplikasi')
 
 @section('konten')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <nav class="p-5 bg-[#038175] shadow md:flex md:items-center md:justify-between h-20" style="margin-bottom: 90px; ">
         <div class="flex justify-between items-center">
             <span class="text-2xl font-[Poppins] cursor-pointer">
@@ -121,9 +122,44 @@
 
                 <div class="countdown-container">
                     <p class="text-red-600 font-bold mr-2">Batas Pembayaran:</p>
-                    <p class="font-bold" id="countdown">15:00</p>
+                    <p class="font-bold" id="countdown">00:10</p>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        window.onload = function() {
+            let timeLeft = 3; // 15 menit dalam detik
+            const countdownElement = document.getElementById('countdown');
+            const id = {{ $rental->id }}; // Mengambil rentalId dari server-side
+            const interval = setInterval(() => {
+                    const minutes = Math.floor(timeLeft / 60);
+                    const seconds = timeLeft % 60;
+                    countdownElement.textContent =
+                        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                    timeLeft--;
+
+                    if (timeLeft < 0) {
+                        clearInterval(interval);
+                        countdownElement.textContent = 'Waktu Habis';
+                        $.post('/hapus-rental', {
+                                id: id
+                            }, function(data, status) {
+                                alert("Data: " + data + "\nStatus: " + status);
+                                // Mengarahkan ke halaman dashboard setelah penghapusan
+                                window.location.href = '/dashboard';
+                            })
+                            .fail(function(xhr, status, error) {
+                                console.error("Error: " + error);
+                            });
+                    }
+                },
+                1000);
+        };
+    </script>
 @endsection
