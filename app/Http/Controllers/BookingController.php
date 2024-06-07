@@ -121,9 +121,9 @@ class BookingController extends Controller
         }
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $rental = Rental::findOrFail($id);
+        $rental = Rental::findOrFail($request->id);
         $rental->delete();
 
         return response()->json(['message' => 'Rental deleted successfully']);
