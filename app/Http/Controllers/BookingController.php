@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Rental;
 use App\Models\Costume;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class BookingController extends Controller
 {
@@ -104,21 +105,27 @@ class BookingController extends Controller
     {
         $rental = Rental::findOrFail($id);
 
-        if ($request->hasFile('image')) {
-            $imageLama = $costumes->image;
+        if ($request->hasFile('bukti_image')) {
 
-            if (Storage::exists($imageLama)) {
-                Storage::delete($imageLama);
-            }
-
-            $bukti_image = $request->file('image');
+            $bukti_image = $request->file('bukti_image');
             $imageName = time() . '.' . $bukti_image->getClientOriginalExtension();
             $upload_path = 'gambar-kostum/';
             $bukti_image->move(public_path($upload_path), $imageName);
 
             // Update path gambar baru di database
-            $rental->bukti_image = $upload_path . $imageName;
+            $rental->update([
+                'bukti_image' => $upload_path . $imageName
+            ]);
+
+            return redirect(route('rincian-transaksi',['id' => $rental->id]));
         }
-        $rental->save();
+    }
+
+    public function destroy($id)
+    {
+        $rental = Rental::findOrFail($id);
+        $rental->delete();
+
+        return response()->json(['message' => 'Rental deleted successfully']);
     }
 }

@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
     public function adminShowBookingRequest()
     {
-        $rentals = Rental::with(['user', 'costume'])->get();
+        $rentals = Rental::with(['user', 'costume'])->orderBy('id', 'desc')->get();
         return view('admin.admin-booking-request-manager', compact('rentals'));
     }
 

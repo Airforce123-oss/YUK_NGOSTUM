@@ -45,7 +45,7 @@
     </script>
     <script>
         window.onload = function() {
-            let timeLeft = 30; // 5 menit dalam detik
+            let timeLeft = 900; // 5 menit dalam detik
             const countdownElement = document.getElementById('countdown');
             const interval = setInterval(() => {
                 const minutes = Math.floor(timeLeft / 60);

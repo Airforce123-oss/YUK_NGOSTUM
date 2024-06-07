@@ -71,8 +71,9 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/melihat-booking-request', [BookingController::class, 'showBookingRequest'])->name('booking-request');
 
     Route::get('/rincian-transaksi/{id}', [BookingController::class, 'rincianTransaksi'])->name('rincian-transaksi');
+    Route::post('/pay/{id}', [BookingController::class, 'buktiPembayaran'])->name('pembayaran');
 
-
+    
 });
 
 Route::middleware(['auth', 'role:toko'])->group(function () {
