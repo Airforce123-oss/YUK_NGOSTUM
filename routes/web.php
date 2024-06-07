@@ -97,7 +97,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin-request', [AdminController::class, 'adminShowBookingRequest'])->name('admin');
     Route::post('/admin-request', [AdminController::class, 'update'])->name('admin.update');
     //Event article
-    Route::get('/mengelola-informasi-event', [EventController::class, 'mengelolaEvent']);
+    //Route::get('/mengelola-informasi-event', [EventController::class, 'mengelolaEvent']);
 });
 
 
