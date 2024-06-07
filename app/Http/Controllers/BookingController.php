@@ -99,4 +99,26 @@ class BookingController extends Controller
 
         return view('kostum.pembayaran-kostum', compact('rental', 'subtotal', 'shipping_cost', 'service_fee', 'total_payment'));
     }
+
+    public function buktiPembayaran(Request $request, $id)
+    {
+        $rental = Rental::findOrFail($id);
+
+        if ($request->hasFile('image')) {
+            $imageLama = $costumes->image;
+
+            if (Storage::exists($imageLama)) {
+                Storage::delete($imageLama);
+            }
+
+            $bukti_image = $request->file('image');
+            $imageName = time() . '.' . $bukti_image->getClientOriginalExtension();
+            $upload_path = 'gambar-kostum/';
+            $bukti_image->move(public_path($upload_path), $imageName);
+
+            // Update path gambar baru di database
+            $rental->bukti_image = $upload_path . $imageName;
+        }
+        $rental->save();
+    }
 }

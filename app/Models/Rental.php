@@ -20,7 +20,8 @@ class Rental extends Model
         'alamat_pengiriman',
         'metode_pembayaran',
         'metode_pengambilan',
-        'status'
+        'status',
+        'bukti_image'
     ];
 
     protected $table = 'rentals';

@@ -101,10 +101,9 @@
                 <button>Bayar</button>
             </a>
            
-            <div class="flex items-center">
-                <!-- <p class="text-red-600 font-bold mr-2">Batas Pembayaran:</p> 
-                <p class="font-bold">05:00</p> 
-            -->
+            <div class="countdown-container">
+                <p class="text-red-600 font-bold mr-2">Batas Pembayaran:</p> 
+                <p class="font-bold" id="countdown">00:30</p> 
             </div>
         </div>
     </div>
