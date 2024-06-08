@@ -20,7 +20,7 @@
             <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Notifikasi</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Lainnya</a>
+            <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Event</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
             <div class="dropdown">
@@ -45,24 +45,12 @@
         <div class="col-md-7 d-flex flex-column justify-content-left right-pane">
             <h1 class="font-weight-bold">{{$costume->nama}}</h1>
             <h3 class="font-weight-bold">Rp {{$costume->harga}}</h3>
-            
-            {{-- <button type="button" class="btn btn-primary btn-lg  mt-3">Booking Sekarang</button> --}}
-            <a href="{{ route('booking-page', ['id' => $costume->id]) }}" class="btn btn-primary btn-lg mt-3">Booking Sekarang</a>
-            <a href="{{ route('guest-previewToko', ['storeId' => $costume->store->id]) }}" class="btn btn-outline-secondary btn-lg mt-3">Kunjungi Toko</a>
-            {{-- <button class="btn btn-outline-secondary btn-lg mt-3">Kunjungi Toko</button> --}}
+        
+            <a href="{{ route('booking-page', ['id' => $costume->id]) }}" class="btn btn-primary btn-lg mt-3 mb-2">Booking Sekarang</a>
             <div class="product-description">
                 <h4>Deskripsi Produk</h4>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum cupiditate officia provident exercitationem. Accusamus aliquid reiciendis eum tenetur, nisi similique, sint id placeat quasi nulla expedita corporis labore nihil? Amet necessitatibus, praesentium temporibus porro quidem est laudantium dignissimos, ducimus labore perspiciatis reprehenderit esse, aperiam sed. Animi quisquam, laboriosam blanditiis vitae dolorum excepturi minus beatae optio, corporis quaerat tempore voluptatum rerum commodi voluptates, sed omnis necessitatibus? Doloribus consectetur sapiente, voluptate dolore, saepe nam nihil quasi odio adipisci illo dicta sit, tempore ea voluptatibus! Neque optio nam voluptatem accusamus dolore animi accusantium laborum magni vitae! Sapiente atque nulla mollitia reprehenderit? Ex corporis pariatur, eum minus quam nemo in eos, eaque quo illum voluptatum impedit reiciendis consequuntur sunt vel nihil dolor magnam cum. Enim doloribus velit eius dolorum officiis! Iste dignissimos amet vero et. Nobis aspernatur incidunt expedita illum voluptatibus vel magnam, nostrum, quod at, itaque nihil. Accusantium quidem quis dolores modi asperiores atque nulla odio sequi dignissimos nemo totam nisi quo illum unde, quas quaerat animi. Doloribus ex asperiores iure adipisci excepturi eaque voluptatum soluta sint. Necessitatibus repellendus minima veritatis porro quae inventore? Modi dolorum velit asperiores deleniti! Quos esse voluptatibus, similique nisi, corporis vero, ipsa asperiores in id rerum fuga aliquam!</p>
             </div>
-            {{-- <div class="product-specifications">
-                <h4>Spesifikasi Produk</h4>
-                <ul>
-                    <li>Spesifikasi 1</li>
-                    <li>Spesifikasi 2</li>
-                    <li>Spesifikasi 3</li>
-                    <li>Spesifikasi 4</li>
-                </ul>
-            </div> --}}
         </div>
     </div>
 </div>

@@ -21,7 +21,7 @@
             <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Notifikasi</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Lainnya</a>
+            <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Event</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
             <div class="dropdown">

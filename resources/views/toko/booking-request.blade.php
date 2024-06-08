@@ -48,7 +48,7 @@
                                     <td><div class="kostum-deskripsi">{{$rental->end_date}}</div></td>
                                     <td><div class="kostum-harga">{{$rental->subtotal}}</div></td>
                                     <td><span class="badge bg-secondary">{{$rental->status}}</span></td>
-                                    
+                                
                                     {{-- <td>
                                         <a href="/update-kostum/{{$costume->id}}" role="button">
                                             <button class="btn btn-primary mr-2">Update</button>

@@ -14,7 +14,7 @@
             </div>
             <div class="flex items-center gap-6">
                 <a class="bg-[#543310] text-white px-5 py-2 rounded-full hover:bg-[#87acec] no-underline" href="{{ route('tambah-kostum')}}" role="button" style="background-color:#17F9E3; color:black;">
-                    <i class="notika-icon notika-edit"></i> Tambah Costume
+                    <i class="notika-icon notika-edit"></i> Tambah Kostum
             </a>
             </div>
     </header>

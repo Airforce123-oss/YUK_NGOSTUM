@@ -378,7 +378,7 @@
               <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white hover:bg-black-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" onclick="showDialog()" type="button" style="font-size:20px;">
                   Yuk Bergabung
                   </button>
-      </nav>
+             </nav>
   
         <!-- Banner Section -->
   

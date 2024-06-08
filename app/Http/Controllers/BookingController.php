@@ -129,11 +129,12 @@ class BookingController extends Controller
         return response()->json(['message' => 'Rental deleted successfully']);
     }
 
-    public function invoice()
+    public function invoice($request)
     {
         $rental = Rental::findOrFail($request->id);
         
         //return halaman invoice
+
         return view('', compact('rental'));
     }
 }

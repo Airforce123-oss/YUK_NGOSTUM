@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -23,29 +24,24 @@ class ArticleController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'article_image' => 'required|mimes:jpg,jpeg,png|max:2048' 
+            'article_image' => 'required|mimes:jpg,jpeg,png|max:2048'
         ]);
 
-        // Ambil file gambar
         $article_image = $request->file('article_image');
 
         if ($article_image) {
-            // Buat nama file unik dengan ekstensi asli
             $imageName = time() . '.' . $article_image->getClientOriginalExtension();
-
-            // Tentukan path penyimpanan
             $upload_path = 'gambar-event/';
+            $article_image->move(public_path($upload_path), $imageName);
 
-            // Pindahkan file ke path penyimpanan
-            $article_image->move($upload_path, $imageName);
-
-            // Simpan informasi kostum ke dalam database
-            $article = new Costume();
+            $article = new Article();
             $article->title = $request->title;
             $article->content = $request->content;
             $article->article_image = $upload_path . $imageName;
             $article->save();
         }
+
+        return redirect()->route('articles.index');
     }
 
     public function edit($id)
@@ -54,47 +50,48 @@ class ArticleController extends Controller
         return view('admin.edit-event', compact('article'));
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        $article = findOrFail($request->id);
+        $article = Article::findOrFail($id);
 
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'article_image' => 'required|mimes:jpg,jpeg,png|max:2048' 
+            'article_image' => 'mimes:jpg,jpeg,png|max:2048'
         ]);
 
         if ($request->hasFile('article_image')) {
-            $imageLama = $article->article_image;
+            $oldImage = $article->article_image;
 
-            if (Storage::exists($imageLama)) {
-                Storage::delete($imageLama);
+            if (Storage::exists($oldImage)) {
+                Storage::delete($oldImage);
             }
 
-            $article_image = $request->file('image');
+            $article_image = $request->file('article_image');
             $imageName = time() . '.' . $article_image->getClientOriginalExtension();
-            $upload_path = 'gambar-kostum/';
+            $upload_path = 'gambar-event/';
             $article_image->move(public_path($upload_path), $imageName);
 
-            // Update path gambar baru di database
             $article->article_image = $upload_path . $imageName;
         }
 
         $article->title = $request->title;
         $article->content = $request->content;
-        $article->article_image = $upload_path . $imageName;
         $article->save();
 
-        return view();
+        return redirect()->route('articles.index');
     }
 
     public function destroy($id)
     {
         $article = Article::findOrFail($id);
+
+        if ($article->article_image && Storage::exists($article->article_image)) {
+            Storage::delete($article->article_image);
+        }
+
         $article->delete();
 
         return back();
     }
-
-    //note hapus event controller
 }

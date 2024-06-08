@@ -34,12 +34,6 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
                 </button>
-                <ul class="menu-items flex space-x-6">
-                    <li><a href="#" class="text-gray-700">Anime</a></li>
-                    <li><a href="#" class="text-gray-700">Karnaval</a></li>
-                    <li><a href="#" class="text-gray-700">Adat Budaya</a></li>
-                    <li><a href="#" class="text-gray-700">Buku Komik</a></li>
-                </ul>
             </nav>
         </div>
     </header>
