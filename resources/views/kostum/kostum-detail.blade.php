@@ -50,7 +50,7 @@
             <a href="{{ route('guest-previewToko', ['storeId' => $costume->store->id]) }}" class="btn btn-outline-secondary btn-lg mt-3">Kunjungi Toko</a>
             <div class="product-description">
                 <h4>Deskripsi Produk</h4>
-                <p>{{$costume->deskripsi}}</p>
+                <p>{!! nl2br(e($costume->deskripsi)) !!}</p>
             </div>
         </div>
     </div>

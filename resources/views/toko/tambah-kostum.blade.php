@@ -30,8 +30,8 @@
                         </div>
                         <div class="col-span-1">
                             <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                            {{-- <textarea name="deskripsi" id="deskripsi" cols="30" rows="10" class="mt-1 block w-full pl-3 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Masukkan Deskripsi Kostum" required></textarea> --}}
-                            <input type="text" name="deskripsi" id="deskripsi" class="mt-1 block w-full pl-3 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Masukkan Deskripsi Kostum" required>
+                            <textarea name="deskripsi" id="deskripsi" cols="30" rows="10" class="mt-1 block w-full pl-3 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Masukkan Deskripsi Kostum" required></textarea>
+                            {{-- <input type="text" name="deskripsi" id="deskripsi" class="mt-1 block w-full pl-3 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Masukkan Deskripsi Kostum" required> --}}
                         </div>
                     <div class="bg-gray-50 p-4 rounded-lg shadow-inner">
                         <h3 class="text-xl font-bold text-gray-800 mb-4">Harga</h3>
