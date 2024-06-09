@@ -67,11 +67,12 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/guest-preview/{storeId}', [TokoController::class, 'guestPreviewToko'])->name('guest-previewToko');
     //Event
     Route::get('/informasi-event', [ArticleController::class, 'index']);
-    Route::get('/booking-tiket-event', [ArticleController::class, 'bookingEvent']);
-    Route::get('/mengelola-informasi-event', [ArticleController::class, 'mengelolaEvent']);
+    
+    //Route::get('/booking-tiket-event', [ArticleController::class, 'bookingEvent']);
+    //Route::get('/mengelola-informasi-event', [ArticleController::class, 'mengelolaEvent']);
 
     //pindahkan ke admin
-    Route::get('/melihat-booking-request', [BookingController::class, 'showBookingRequest'])->name('booking-request');
+    //Route::get('/melihat-booking-request', [BookingController::class, 'showBookingRequest'])->name('booking-request');
 
     Route::get('/rincian-transaksi/{id}', [BookingController::class, 'rincianTransaksi'])->name('rincian-transaksi');
     Route::post('/pay/{id}', [BookingController::class, 'buktiPembayaran'])->name('pembayaran');

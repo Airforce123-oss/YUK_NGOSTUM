@@ -74,7 +74,7 @@ class BookingController extends Controller
         $storeId = auth()->user()->store->id;
         $rentals = Rental::whereHas('costume', function ($query) use ($storeId) {
             $query->where('store_id', $storeId);
-        })->with(['user', 'costume'])->get();
+        })->with(['user', 'costume'])->orderBy('id', 'desc')->get();
         return view('toko.booking-request', compact('rentals'));
     }
     public function rincianTransaksi($rentalId)

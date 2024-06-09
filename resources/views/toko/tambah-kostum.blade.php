@@ -23,29 +23,23 @@
             <div class="col-span-2">
                 <div class="bg-gray-50 p-4 rounded-lg shadow-inner mb-6">
                     <h3 class="text-xl font-bold text-gray-800 mb-4">General</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    
                         <div class="col-span-1">
                             <label for="nama" class="block text-sm font-medium text-gray-700">Nama Kostum</label>
                             <input type="text" name="nama" id="nama" class="mt-1 block w-full pl-3 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Masukkan Nama Kostum" required>
                         </div>
                         <div class="col-span-1">
                             <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
+                            {{-- <textarea name="deskripsi" id="deskripsi" cols="30" rows="10" class="mt-1 block w-full pl-3 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Masukkan Deskripsi Kostum" required></textarea> --}}
                             <input type="text" name="deskripsi" id="deskripsi" class="mt-1 block w-full pl-3 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Masukkan Deskripsi Kostum" required>
                         </div>
-                        <div class="mt-6">
-                            <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
-                            <select id="status" name="status" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-                                <option>Published</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-lg shadow-inner">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Harga</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="col-span-1">
-                            <label for="harga" class="block text-sm font-medium text-gray-700">Harga Dasar</label>
-                            <input type="text" name="harga" id="harga" class="mt-1 block w-full pl-3 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Masukkan Harga" required>
+                    <div class="bg-gray-50 p-4 rounded-lg shadow-inner">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Harga</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="col-span-1">
+                                <label for="harga" class="block text-sm font-medium text-gray-700">Harga Dasar</label>
+                                <input type="text" name="harga" id="harga" class="mt-1 block w-full pl-3 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Masukkan Harga" required>
+                            </div>
                         </div>
                     </div>
                 </div>
