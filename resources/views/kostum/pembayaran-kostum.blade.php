@@ -22,7 +22,8 @@
                     class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Notifikasi</a>
             </li>
             <li class="mx-4 my-6 md:my-0">
-                <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Event</a>
+                <a href="#"
+                    class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Event</a>
             </li>
             <li class="mx-4 my-6 md:my-0">
                 <div class="dropdown">
@@ -32,6 +33,7 @@
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="#">Profil</a></li>
+                        <li><a class="dropdown-item" href="{{route('riwayatTransaksi')}}">Riwayat Transaksi</a></li>
                         <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
                     </ul>
                 </div>
@@ -88,6 +90,30 @@
                         <p>Subtotal untuk Produk: Rp {{ number_format($subtotal, 0, ',', '.') }}</p>
                         <p>Total Ongkos Kirim: Rp {{ number_format($shipping_cost, 0, ',', '.') }}</p>
                         <p>Biaya Layanan: Rp {{ number_format($service_fee, 0, ',', '.') }}</p>
+                        <hr>
+                        <h3 class="font-bold mb-2">Metode Pembayaran</h3>
+                        <p>E-wallet: 082245005089</p>
+                        <button type="button" class="btn btn-primary w-20" data-bs-toggle="modal"
+                            data-bs-target="#qris">
+                            Qris
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="qris" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                            Yuk Ngostum!
+                                        </h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="text-right">
                         <p class="font-bold">Total Pembayaran: Rp {{ number_format($total_payment, 0, ',', '.') }}</p>
@@ -110,10 +136,10 @@
                         </div>
                 </div>
             </div>
-
+            <hr>
             <div class="flex justify-between items-center">
 
-                <button type="submit" class="btn btn-primary">Bayar</button>
+                <button type="submit" class="btn btn-primary w-40">Bayar</button>
                 </form>
 
                 <div class="countdown-container">

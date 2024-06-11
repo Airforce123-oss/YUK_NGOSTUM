@@ -144,4 +144,9 @@ class CostumeController extends Controller
         return view('kostum.kostum-detail', compact('costume'));
     }
  
+    public function riwayatTransaksi(Request $request)
+    {
+        $rental = Rental::with(['costume'])->where('user_id',auth()->user()->id)->orderBy('id', 'desc')->get();
+        return view('penyewa.penyewa-riwayatTransaksi', compact('rental'));
+    }
 }
