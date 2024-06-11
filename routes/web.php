@@ -67,6 +67,8 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/guest-preview/{storeId}', [TokoController::class, 'guestPreviewToko'])->name('guest-previewToko');
     //Event
     Route::get('/informasi-event', [ArticleController::class, 'index']);
+
+    Route::get('/riwayat-transaksi', [CostumeController::class, 'riwayatTransaksi'])->name('riwayatTransaksi');
     
     //Route::get('/booking-tiket-event', [ArticleController::class, 'bookingEvent']);
     //Route::get('/mengelola-informasi-event', [ArticleController::class, 'mengelolaEvent']);

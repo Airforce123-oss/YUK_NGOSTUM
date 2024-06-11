@@ -30,6 +30,7 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                   <li><a class="dropdown-item" href="#">Profil</a></li>
+                  <li><a class="dropdown-item" href="{{route('riwayatTransaksi')}}">Riwayat Transaksi</a></li>
                   <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
                 </ul>
               </div>
@@ -40,7 +41,7 @@
 <div class="max-w-full mx-auto bg-white p-8 rounded-lg shadow-md ">
     <div class="flex justify-between items-center mb-8">
         <div>
-            <h1 class="text-xl font-bold">New Invoice: xxxxxx</h1>
+            <h1 class="text-xl font-bold">Nomor Transaksi: {{$rental->id}}</h1>
         </div>
     </div>
 

@@ -30,6 +30,7 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                   <li><a class="dropdown-item" href="#">Profil</a></li>
+                  <li><a class="dropdown-item" href="{{route('riwayatTransaksi')}}">Riwayat Transaksi</a></li>
                   <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
                 </ul>
               </div>
