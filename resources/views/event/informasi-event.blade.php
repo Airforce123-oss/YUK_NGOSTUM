@@ -55,7 +55,25 @@
                 </div>
             </article>
 
+            @foreach ($articles as $article)
+
             <article class="bg-white shadow-md rounded overflow-hidden mt-6">
+                <div class="p-4">
+                    <img src="{{$article->article_image}}" alt="">
+                    <h2 class="text-2xl font-bold">{{$article->title}}</h2>
+                    {{-- <p class="text-sm text-gray-500">by Linda Ferras - today, 2:45 PM</p> --}}
+                    <p class="mt-2">{{$article->content}}</p>
+                    <div class="mt-4 flex space-x-2">
+                        <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Game</span>
+                        <span class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Senapan</span>
+                        <span class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">+2</span>
+                    </div>
+                </div>
+            </article>
+                
+            @endforeach
+
+            {{-- <article class="bg-white shadow-md rounded overflow-hidden mt-6">
                 <div class="p-4">
                     <h2 class="text-2xl font-bold">Rayakan HUT Ke-6, PUBG MOBILE Gelar Event Turnamen hingga Cosplay Competition</h2>
                     <p class="text-sm text-gray-500">by Linda Ferras - today, 2:45 PM</p>
@@ -66,9 +84,9 @@
                         <span class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">+2</span>
                     </div>
                 </div>
-            </article>
+            </article> --}}
 
-            <article class="bg-white shadow-md rounded overflow-hidden mt-6">
+            {{-- <article class="bg-white shadow-md rounded overflow-hidden mt-6">
                 <div class="p-4">
                     <h2 class="text-2xl font-bold">LACE 2024 Vol.1: Festival Budaya Pop dan Cosplay Terbesar di Sumatera Utara</h2>
                     <p class="text-sm text-gray-500">by Emilia - today, 11:23 AM</p>
@@ -79,7 +97,7 @@
                         <span class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Berita</span>
                     </div>
                 </div>
-            </article>
+            </article> --}}
         </section>
 
         <aside>

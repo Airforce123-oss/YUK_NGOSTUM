@@ -16,7 +16,7 @@ class ArticleController extends Controller
 
     public function manajemen()
     {
-        $articles = Article::all();
+        $articles = Article::orderBy('id','desc')->get();
         return view('admin.admin-manajemenArtikel', compact('articles'));
     }
 
@@ -85,7 +85,7 @@ class ArticleController extends Controller
         $article->content = $request->content;
         $article->save();
 
-        return redirect()->route('articles.index');
+        return redirect()->route('artikel-manajemen');
     }
 
     public function destroy($id)
