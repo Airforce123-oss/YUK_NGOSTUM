@@ -110,7 +110,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
-                                    <img src="" alt="">
+                                    <img src="/images/qris_yk.jpg" alt="">
                                 </div>
                             </div>
                         </div>
