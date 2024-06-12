@@ -20,6 +20,7 @@
 
                                         <th width="30%">Title</th>
                                         <th width="30%">Gambar</th>
+                                        <th width="30%">Action</th>
                                         {{-- <th width="30%">Content</th> --}}
                                     </tr>
                                 </thead>

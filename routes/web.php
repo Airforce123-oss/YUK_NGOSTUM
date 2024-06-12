@@ -27,11 +27,11 @@ use App\Http\Controllers\updateCostumeController;
 */
 
 Route::get('/', function () {
-    return redirect('landing-page');
+    return redirect('homePage');
 });
 Auth::routes();
 
-Route::get('/landing-page', [landingPageController::class, 'landingPage'])->name('user');
+Route::get('/homePage', [HalamanController::class, 'homePage'])->name('user');
 Route::get('/sesi', [SessionController::class, 'login']);
 Route::post('/sesi/login', [SessionController::class, 'dologin'])->name('session-login');
 
@@ -49,15 +49,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
 });
 
-Route::get('/admin-dashboard', [AdminController::class, 'AdminController']);
-
+Route::get('/detail-kostum/{id}', [CostumeController::class, 'detailCostume'])->name('detail.costume');
 
 Route::middleware(['auth', 'role:user'])->group(function () {
     //dashboard
-    Route::get('/dashboard', [CostumeController::class, 'tampilanDashboard'])->name('user');
+    Route::get('/landingPage', [HalamanController::class, 'landingPage'])->name('user');
     //halaman booking - detail kostum
     Route::get('/booking-kostum/{id}', [BookingController::class, 'bookingPage'])->name('booking-page');
-    Route::get('/detail-kostum/{id}', [CostumeController::class, 'detailCostume'])->name('detail.costume');
     Route::post('/rental', [BookingController::class, 'store'])->name('store-rental');
     //checkout
     Route::get('/checkout-kostum/{rental}', [BookingController::class, 'show'])->name('bayar.costume');
@@ -68,17 +66,8 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     //Event
     Route::get('/informasi-event', [ArticleController::class, 'index']);
 
-
-    Route::get('');
-
+    //transaksi
     Route::get('/riwayat-transaksi', [CostumeController::class, 'riwayatTransaksi'])->name('riwayatTransaksi');
-    
-    //Route::get('/booking-tiket-event', [ArticleController::class, 'bookingEvent']);
-    //Route::get('/mengelola-informasi-event', [ArticleController::class, 'mengelolaEvent']);
-
-    //pindahkan ke admin
-    //Route::get('/melihat-booking-request', [BookingController::class, 'showBookingRequest'])->name('booking-request');
-
     Route::get('/rincian-transaksi/{id}', [BookingController::class, 'rincianTransaksi'])->name('rincian-transaksi');
     Route::post('/pay/{id}', [BookingController::class, 'buktiPembayaran'])->name('pembayaran');
     Route::post('/hapus-rental', [BookingController::class, 'destroy'])->name('rental.destroy');
