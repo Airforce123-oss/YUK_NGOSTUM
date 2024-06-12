@@ -7,7 +7,7 @@
         <h2 class="text-3xl font-bold text-gray-800">Tambah artikel</h2>
         <p class="text-gray-500">Silakan Mengisi Input dibawah</p>
     </div>
-    <form method="post" action="{{ route('artikel-update')}}" enctype="multipart/form-data">
+    <form method="post" action="" enctype="multipart/form-data">
         @csrf
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="col-span-1">
