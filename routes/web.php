@@ -103,4 +103,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin-request', [AdminController::class, 'adminShowBookingRequest'])->name('admin');
     Route::post('/admin-request', [AdminController::class, 'update'])->name('admin.update');
     //Event article
+    Route::get('/admin/artikel/add', [ArticleController::class, 'create'])->name('artikel-add');
+    Route::get('/admin/artikel', [ArticleController::class, 'manajemen'])->name('artikel-manajemen');
+    Route::post('/admin/artikel/add', [ArticleController::class, 'store'])->name('tambah-artikel');
+    Route::get('/admin/artikel/update/{id}', [ArticleController::class, 'edit'])->name('artikel-edit');
+    // Route::post('/admin/artikel/update/{id}', [ArticleController::class, 'update'])->name('artikel-update');
+    Route::get('/admin/artikel/hapus/{id}', [ArticleController::class, 'destroy'])->name('artikel-hapus');
 });

@@ -56,13 +56,13 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('admin')}}" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <a href="{{route('admin')}}"  class="nav-link px-0 align-middle">
                                 <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline text-white">Pemesanan</span> 
                             </a>
                         </li>
                         <li>
-                            <a href="" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline text-white">Event</span></a>
+                            <a href="{{route('artikel-manajemen')}}" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline text-white">Artikel</span></a>
                         </li>
                     </ul>
                     <hr>
