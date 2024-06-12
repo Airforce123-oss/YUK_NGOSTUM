@@ -110,7 +110,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/artikel', [ArticleController::class, 'manajemen'])->name('artikel-manajemen');
     Route::post('/admin/artikel/add', [ArticleController::class, 'store'])->name('tambah-artikel');
     Route::get('/admin/artikel/update/{id}', [ArticleController::class, 'edit'])->name('artikel-edit');
-    // Route::post('/admin/artikel/update/{id}', [ArticleController::class, 'update'])->name('artikel-update');
+    Route::post('/admin/artikel/update/{id}', [ArticleController::class, 'update'])->name('artikel-update');
     Route::get('/admin/artikel/hapus/{id}', [ArticleController::class, 'destroy'])->name('artikel-hapus');
 });
 
