@@ -3,27 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Costume;
 
 class HalamanController extends Controller
 {
-    function index()
+    public function homePage()
     {
-        return view("halaman/index");
+        return view("LandingPage/landing_page");
     }
-    function tentang()
+
+    public function landingPage()
     {
-        return view ("halaman/tentang");
-    }
-    function kontak()
-    {
-        $judul = ' ini adalah Halaman Kontak';
-        $data = [
-            'judul' => 'ini adalah halaman kontak',
-            'kontak'=> [
-                'email' => 'haikal@gmail.com',
-                'youtube' => ';;;;;;'
-            ]
-        ];
-        return view ("halaman/kontak")->with($data); 
+        // Ambil data kostum yang memiliki store_id sesuai dengan ID pengguna yang sedang login
+        $costumes = Costume::all();
+
+        //mengembalikan view, halaman manajemen kostum
+        return view('sesi.landingPage', compact('costumes'));
     }
 }

@@ -62,54 +62,29 @@
                     <img src="{{$article->article_image}}" alt="">
                     <h2 class="text-2xl font-bold">{{$article->title}}</h2>
                     {{-- <p class="text-sm text-gray-500">by Linda Ferras - today, 2:45 PM</p> --}}
-                    <p class="mt-2">{{$article->content}}</p>
+                    {{-- <p class="mt-2">{{$article->content}}</p> --}}
+                    <div class="product-description">
+                        
+                        <p id="short-description">
+                            {!! Str::limit($article->content, 100, '...') !!}
+                        </p>
+                        <p id="full-description" style="display: none;">
+                            {!! nl2br(e($article->content)) !!}
+                        </p>
+                        <button id="toggle-description" class="btn btn-link">Muat Lebih Banyak</button>
+                    </div>
                     <div class="mt-4 flex space-x-2">
                         <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Game</span>
                         <span class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Senapan</span>
                         <span class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">+2</span>
                     </div>
                 </div>
-            </article>
-                
+            </article>   
             @endforeach
-
-            {{-- <article class="bg-white shadow-md rounded overflow-hidden mt-6">
-                <div class="p-4">
-                    <h2 class="text-2xl font-bold">Rayakan HUT Ke-6, PUBG MOBILE Gelar Event Turnamen hingga Cosplay Competition</h2>
-                    <p class="text-sm text-gray-500">by Linda Ferras - today, 2:45 PM</p>
-                    <p class="mt-2">Memasuki usia 6 tahun perilisan, PUBG MOBILE menggelar PUBG MOBILE Infinite 6 (PMI6) yang akan digelar pada pada 21-23 Maret 2024 di fX Sudirman, Jakarta.</p>
-                    <div class="mt-4 flex space-x-2">
-                        <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Game</span>
-                        <span class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Senapan</span>
-                        <span class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">+2</span>
-                    </div>
-                </div>
-            </article> --}}
-
-            {{-- <article class="bg-white shadow-md rounded overflow-hidden mt-6">
-                <div class="p-4">
-                    <h2 class="text-2xl font-bold">LACE 2024 Vol.1: Festival Budaya Pop dan Cosplay Terbesar di Sumatera Utara</h2>
-                    <p class="text-sm text-gray-500">by Emilia - today, 11:23 AM</p>
-                    <p class="mt-2">Little Akiba Cosplay & Entertainment (LACE) telah menjadi acara tahunan yang dinantikan oleh penggemar budaya pop dan cosplay sejak tahun 2015. Dengan semangat untuk mengenalkan Festival Seni dan Budaya Jepang kepada masyarakat Kota Medan, LACE kini menjadi event Jejepangan terbesar di Sumatera Utara.</p>
-                    <div class="mt-4 flex space-x-2">
-                        <span class="bg-purple-200 text-purple-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Sumatera</span>
-                        <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Event</span>
-                        <span class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Berita</span>
-                    </div>
-                </div>
-            </article> --}}
         </section>
 
         <aside>
-            <div class="bg-white shadow-md rounded p-4">
-                <div class="flex justify-between items-center">
-                    <span>Thursday</span>
-                    <span>Indonesia</span>
-                </div>
-                <div class="text-4xl font-bold">43°F</div>
-                <div class="text-gray-500">Cloudy</div>
-                <div class="text-gray-500">65% & km/h</div>
-            </div>
+            
 
             <div class="bg-white shadow-md rounded p-12 mt-6">
                 <h3 class="font-bold mb-4">Berita Lain</h3>
@@ -146,6 +121,23 @@
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', () => {
             document.querySelector('.menu-items').classList.toggle('hidden');
+        });
+    </script>
+    <script>
+        document.getElementById('toggle-description').addEventListener('click', function () {
+            var shortDesc = document.getElementById('short-description');
+            var fullDesc = document.getElementById('full-description');
+            var toggleButton = document.getElementById('toggle-description');
+    
+            if (shortDesc.style.display === 'none') {
+                shortDesc.style.display = 'block';
+                fullDesc.style.display = 'none';
+                toggleButton.textContent = 'Muat Lebih Banyak';
+            } else {
+                shortDesc.style.display = 'none';
+                fullDesc.style.display = 'block';
+                toggleButton.textContent = 'Tampilkan Lebih Sedikit';
+            }
         });
     </script>
 </body>

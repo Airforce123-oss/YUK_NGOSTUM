@@ -27,7 +27,7 @@ class ArticleController extends Controller
 
     public function create()
     {
-        return view('admin.tambah-event');
+        return view('admin.admin-tambahArtikel');
     }
 
     public function store(Request $request)
