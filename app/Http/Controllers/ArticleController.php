@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
+    public function mengelolaInformasiEvent()
+    {
+        return view('admin.mengelola-informasi-event');
+    }
+
     public function index()
     {
         $articles = Article::all();
@@ -22,7 +27,7 @@ class ArticleController extends Controller
 
     public function create()
     {
-        return view('admin.admin-tambahArtikel');
+        return view('admin.tambah-event');
     }
 
     public function store(Request $request)

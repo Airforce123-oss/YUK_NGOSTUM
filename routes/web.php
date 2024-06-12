@@ -68,6 +68,9 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     //Event
     Route::get('/informasi-event', [ArticleController::class, 'index']);
 
+
+    Route::get('');
+
     Route::get('/riwayat-transaksi', [CostumeController::class, 'riwayatTransaksi'])->name('riwayatTransaksi');
     
     //Route::get('/booking-tiket-event', [ArticleController::class, 'bookingEvent']);
@@ -110,3 +113,4 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     // Route::post('/admin/artikel/update/{id}', [ArticleController::class, 'update'])->name('artikel-update');
     Route::get('/admin/artikel/hapus/{id}', [ArticleController::class, 'destroy'])->name('artikel-hapus');
 });
+

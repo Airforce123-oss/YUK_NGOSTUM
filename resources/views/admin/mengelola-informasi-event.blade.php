@@ -20,46 +20,77 @@
             <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Notifikasi</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Lainnya</a>
+            <a href="informasi-event" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Event</a>
         </li>
-        <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white hover:bg-black-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="showDialog()" type="button" style="font-size:20px;">
-            Profil
-            </button>
+        <li class="mx-4 my-6 md:my-0">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Profil
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">Profil</a></li>
+                  <li><a class="dropdown-item" href="{{route('riwayatTransaksi')}}">Riwayat Transaksi</a></li>
+                  <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
+                </ul>
+              </div>
+        </li>
+            
+          
 </nav>
 
-<div class="flex justify-center items-center min-h-screen-2">
-  <div class="bg-white shadow-md rounded-lg p-8 max-w-md w-full" style="background-image: url('circle-doodle-bg-768x547.png'); background-size: cover;">
-      <h2 class="text-2xl font-bold text-teal-700 mb-6">Kelola Event</h2>
-      <form>
-          <div class="mb-4">
-              <label class="block text-gray-700 text-sm font-bold mb-2" for="namaIvent">Nama Event</label>
-              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="namaIvent" type="text" placeholder="Masukkan Nama Event">
-          </div>
-          <div class="mb-4">
-              <label class="block text-gray-700 text-sm font-bold mb-2" for="posterIvent">Poster Event</label>
-              <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                  Masukkan Gambar
-              </button>
-          </div>
-          <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="posterIvent">Penulis Event</label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="waktuPelaksanaan" type="text" placeholder="Masukkan Wakt Penulis Event">
+
+<div class="data-table-area bg-[white]" style="margin-top: 10px; border: 2px solid #17F9E3;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="data-table-list">
+                    <div class="table-responsive">
+                        <table id="data-table-basic" class="table table-striped">
+                            <thead> 
+                                <tr>
+                                    <th>No.</th>
+                                    <th width="30%">Nama Event</th>
+                                    <th width="30%">Gambar</th>
+                                    <th width="30%">Deskripsi</th>
+                                    <th width="30%">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td><div class="kostum-nama"></div></td>
+                                    <td><img src="" alt="card-1" class="card-img-top" style="width: 200px; height: 200px;"></a></td>
+                                    <td><div class="kostum-deskripsi"></div></td>
+                                    <td>
+                                        <a href="{{ route('tambah-event')}}" role="button">
+                                            <button class="btn btn-primary mr-2">Tambah</button>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href=""" role="button">
+                                            <button class="btn btn-primary mr-2">Update</button>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="">
+                                            <button class="btn btn-danger">Delete</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                         <div>
+                            Total Item:
+                   
+                        </div> 
+                         <div class="d-flex justify-content-center" aria-label="Page navigation"> 
+                         
+                         </div>
+                    </div>
+                </div>
+            </div>
         </div>
-          <div class="mb-4">
-              <label class="block text-gray-700 text-sm font-bold mb-2" for="waktuPelaksanaan">Waktu Pelaksanaan</label>
-              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="waktuPelaksanaan" type="text" placeholder="Masukkan Waktu Pelaksanaan">
-          </div>
-          <div class="mb-4">
-              <label class="block text-gray-700 text-sm font-bold mb-2" for="deskripsiIvent">Deskripsi Event</label>
-              <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="deskripsiIvent" type="text" placeholder="Masukkan Deskripsi Event">
-          </div>
-          <div class="flex items-center justify-between">
-              <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                  Simpan Perubahan
-              </button>
-          </div>
-      </form>
-  </div>
+    </div>
 </div>
 
 
