@@ -31,7 +31,7 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-Route::get('/homePage', [HalamanController::class, 'homePage'])->name('user');
+Route::get('/landingPage', [HalamanController::class, 'landingPage'])->name('user');
 Route::get('/sesi', [SessionController::class, 'login']);
 Route::post('/sesi/login', [SessionController::class, 'dologin'])->name('session-login');
 
@@ -53,7 +53,7 @@ Route::get('/detail-kostum/{id}', [CostumeController::class, 'detailCostume'])->
 
 Route::middleware(['auth', 'role:user'])->group(function () {
     //dashboard
-    Route::get('/landingPage', [HalamanController::class, 'landingPage'])->name('user');
+    Route::get('/homePage', [HalamanController::class, 'HomePage'])->name('user');
     //halaman booking - detail kostum
     Route::get('/booking-kostum/{id}', [BookingController::class, 'bookingPage'])->name('booking-page');
     Route::post('/rental', [BookingController::class, 'store'])->name('store-rental');

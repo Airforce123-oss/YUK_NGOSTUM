@@ -19,10 +19,9 @@
         <li class="mx-4 my-6 md:my-0">
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Profil
+                  Menu
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Profil</a></li>
                   <li><a class="dropdown-item" href="{{route('riwayatTransaksi')}}">Riwayat Transaksi</a></li>
                   <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
                 </ul>
