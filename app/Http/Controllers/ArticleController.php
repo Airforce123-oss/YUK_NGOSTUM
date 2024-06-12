@@ -14,9 +14,15 @@ class ArticleController extends Controller
         return view('event.informasi-event', compact('articles'));
     }
 
+    public function manajemen()
+    {
+        $articles = Article::all();
+        return view('admin.admin-manajemenArtikel', compact('articles'));
+    }
+
     public function create()
     {
-        return view('admin.tambah-event');
+        return view('admin.admin-tambahArtikel');
     }
 
     public function store(Request $request)
@@ -41,13 +47,13 @@ class ArticleController extends Controller
             $article->save();
         }
 
-        return redirect()->route('articles.index');
+        return redirect()->route('artikel-manajemen');
     }
 
     public function edit($id)
     {
         $article = Article::findOrFail($id);
-        return view('admin.edit-event', compact('article'));
+        return view('admin.admin-editArtikel', compact('article'));
     }
 
     public function update(Request $request, $id)
