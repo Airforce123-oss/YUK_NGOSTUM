@@ -33,7 +33,7 @@
                                     <th>No.</th>
                                     <th width="30%">Nama</th>
                                     <th width="30%">Gambar</th>
-                                    <th width="30%">Deskripsi</th>
+                                    {{-- <th width="30%">Deskripsi</th> --}}
                                     <th width="30%">Harga</th>
                                     <th width="30%">Action</th>
                                 </tr>
@@ -44,7 +44,7 @@
                                     <td>{{$costumes->firstItem() + $key}}</td>
                                     <td><div class="kostum-nama">{{$costume->nama}}</div></td>
                                     <td><img src="{{asset($costume->image) }} " alt="card-1" class="card-img-top" style="width: 200px; height: 200px;"></a></td>
-                                    <td><div class="kostum-deskripsi">{{$costume->deskripsi}}</div></td>
+                                    {{-- <td><div class="kostum-deskripsi">{{$costume->deskripsi}}</div></td> --}}
                                     <td><div class="kostum-harga">{{$costume->harga}}</div></td>
 
                                     <td>

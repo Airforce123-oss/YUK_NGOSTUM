@@ -15,21 +15,14 @@
 
     <ul class="md:flex md:items-center z-[1] md:z-auto md:static absolute w-full left-0 md:w-auto">
         <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-xl hover:text-white duration-500" style="color: white !important; text-decoration: none; font-size:20px;">Cari Costume Apa?</a>
-        </li>
-        <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Notifikasi</a>
-        </li>
-        <li class="mx-4 my-6 md:my-0">
             <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Event</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Profil
+                  Menu
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Profil</a></li>
                   <li><a class="dropdown-item" href="{{route('riwayatTransaksi')}}">Riwayat Transaksi</a></li>
                   <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
                 </ul>
@@ -38,7 +31,7 @@
             
           
 </nav>
-<div class="max-w-full mx-auto bg-white p-8 rounded-lg shadow-md ">
+<div class="max-w-full mx-auto bg-white px-8 rounded-lg shadow-md ">
     <div class="flex justify-between items-center mb-8">
         <div>
             <h1 class="text-xl font-bold">Nomor Transaksi: {{$rental->id}}</h1>
@@ -104,14 +97,11 @@
                     </div>
                 </div>
             </div>
-            <div class="space-y-4">
-                <button class="w-full bg-green-600 text-white py-2 px-4 rounded-lg">Kirim Invoice</button>
-                <button class="w-full bg-gray-200 text-gray-700 py-2 px-4 rounded-lg">Download</button>
-            </div>
+            
         </div>
     </div>
-
-    <div class="flex justify-end space-x-4 mt-8">
+    <hr>
+    <div class="flex justify-start space-x-4 ml-6 mt-8">
         <div>
             <p class="font-bold">Subtotal</p>
             <p class="text-center">Rp {{ number_format($subtotal, 0, ',', '.') }}</p>

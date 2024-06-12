@@ -14,12 +14,6 @@
 
     <ul class="md:flex md:items-center z-[1] md:z-auto md:static absolute w-full left-0 md:w-auto">
         <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-xl hover:text-white duration-500" style="color: white !important; text-decoration: none; font-size:20px;">Cari Costume Apa?</a>
-        </li>
-        <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Notifikasi</a>
-        </li>
-        <li class="mx-4 my-6 md:my-0">
             <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Event</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
@@ -50,10 +44,33 @@
             <a href="{{ route('guest-previewToko', ['storeId' => $costume->store->id]) }}" class="btn btn-outline-secondary btn-lg mt-3">Kunjungi Toko</a>
             <div class="product-description">
                 <h4>Deskripsi Produk</h4>
-                <p>{!! nl2br(e($costume->deskripsi)) !!}</p>
+                <p id="short-description">
+                    {!! Str::limit($costume->deskripsi, 100, '...') !!}
+                </p>
+                <p id="full-description" style="display: none;">
+                    {!! nl2br(e($costume->deskripsi)) !!}
+                </p>
+                <button id="toggle-description" class="btn btn-link">Muat Lebih Banyak</button>
             </div>
         </div>
     </div>
 </div>
+<script>
+    document.getElementById('toggle-description').addEventListener('click', function () {
+        var shortDesc = document.getElementById('short-description');
+        var fullDesc = document.getElementById('full-description');
+        var toggleButton = document.getElementById('toggle-description');
+
+        if (shortDesc.style.display === 'none') {
+            shortDesc.style.display = 'block';
+            fullDesc.style.display = 'none';
+            toggleButton.textContent = 'Muat Lebih Banyak';
+        } else {
+            shortDesc.style.display = 'none';
+            fullDesc.style.display = 'block';
+            toggleButton.textContent = 'Tampilkan Lebih Sedikit';
+        }
+    });
+</script>
     
 @endsection
