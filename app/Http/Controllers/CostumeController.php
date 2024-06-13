@@ -67,16 +67,16 @@ class CostumeController extends Controller
 
     public function tambahCostume()
     {
-         //$userId = auth()->user()->id;
-         $storeId = auth()->user()->store->id;
+        //  //$userId = auth()->user()->id;
+        //  $storeId = auth()->user()->store->id;
 
-         // Ambil data kostum yang memiliki store_id sesuai dengan ID pengguna yang sedang login
-         $costumes = Costume::where('store_id', $storeId)
-             ->orderBy('created_at', 'desc')
-             ->paginate(1);
-         return view('toko.tambah-kostum', compact('costumes'));
-        //mengembalikan view, form tambah kostum
-        //return view('toko.tambah-kostum');
+        //  // Ambil data kostum yang memiliki store_id sesuai dengan ID pengguna yang sedang login
+        //  $costumes = Costume::where('store_id', $storeId)
+        //      ->orderBy('created_at', 'desc')
+        //      ->paginate(1);
+        //  return view('toko.tambah-kostum', compact('costumes'));
+        // //mengembalikan view, form tambah kostum
+        return view('toko.tambah-kostum');
     }
 
     public function update(Request $request)

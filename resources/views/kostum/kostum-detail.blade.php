@@ -13,9 +13,9 @@
     </div>
 
     <ul class="md:flex md:items-center z-[1] md:z-auto md:static absolute w-full left-0 md:w-auto">
-        <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Event</a>
-        </li>
+        {{-- <li class="mx-4 my-6 md:my-0">
+            <a href="informasi-event" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Event</a>
+        </li> --}}
         <li class="mx-4 my-6 md:my-0">
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

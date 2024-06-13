@@ -6,7 +6,9 @@
 <nav class="p-5 bg-[#038175] shadow md:flex md:items-center md:justify-between h-20" style="margin-bottom: 90px; ">
     <div class="flex justify-between items-center">
         <span class="text-2xl font-[Poppins] cursor-pointer">
-            <h1 class="h-10 inline" style="color: white">YUK NGOSTUM</h1>
+            <a href="{{route('user')}}">
+                <h1 class="h-10 inline" style="color: white">YUK NGOSTUM</h1>
+            </a>
          </span>
          <span class="text-3xl cursor-pointer mx-2 md:hidden block">
             <ion-icon name="menu"></ion-icon> 
@@ -14,9 +16,9 @@
     </div>
 
     <ul class="md:flex md:items-center z-[1] md:z-auto md:static absolute w-full left-0 md:w-auto">
-        <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Event</a>
-        </li>
+        {{-- <li class="mx-4 my-6 md:my-0">
+            <a href="informasi-event" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Event</a>
+        </li> --}}
         <li class="mx-4 my-6 md:my-0">
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -47,7 +49,7 @@
                 </div>
             </div>
             <div class="bg-gray-100 p-4 rounded-lg mb-4">
-                <p class="font-bold">Invoice Number</p>
+                {{-- <p class="font-bold">Invoice Number</p> --}}
                 <p>Metode Pembayaran : {{ $rental->metode_pembayaran }}</p>
                 <p>Metode Pengambilan :  {{ $rental->metode_pengambilan }}</p>
                
@@ -62,15 +64,15 @@
                     <thead>
                         <tr>
                             <th class="text-left">Nama Kostum</th>
-                            <th class="text-left">Harga</th>
-                            <th class="text-left">Durasi Sewa</th>
+                            {{-- <th class="text-left">Harga</th> --}}
+                            {{-- <th class="text-left">Durasi Sewa</th> --}}
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>{{ $rental->costume->nama }}</td>
-                            <td>{{$rental->costume->harga}}</td>
-                            <td>3 Hari</td>
+                            {{-- <td>{{$rental->costume->harga}}</td> --}}
+                            {{-- <td>3 Hari</td> --}}
                         </tr>
                     </tbody>
                 </table>
@@ -103,7 +105,7 @@
     <hr>
     <div class="flex justify-start space-x-4 ml-6 mt-8">
         <div>
-            <p class="font-bold">Subtotal</p>
+            <p class="font-bold">Harga</p>
             <p class="text-center">Rp {{ number_format($subtotal, 0, ',', '.') }}</p>
         </div>
         <div>
