@@ -14,7 +14,7 @@
             <div class="col-span-1">
                 <div class="bg-gray-50 p-4 rounded-lg shadow-inner">
                     <div class="flex flex-col items-center">
-                        <label for="image" class="block text-sm font-medium text-gray-700 mb-2">Thumbnail</label>
+                        <label for="image" class="block text-sm font-medium text-gray-700 mb-2">Thumbnaill</label>
                         <img id="imagePreview" src="#" alt="Placeholder Image" class="w-40 h-40 object-cover rounded-lg mb-4 hidden">
                         <input type="file" name="image" id="image" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-600 hover:file:bg-indigo-100">
                         <p class="mt-2 text-xs text-gray-500">Ubah Gambar Produk Kostum. Hanya gambar berformat *.png, *.jpg, dan *.jpeg yang diterima.</p>
