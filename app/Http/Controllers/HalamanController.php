@@ -7,17 +7,17 @@ use App\Models\Costume;
 
 class HalamanController extends Controller
 {
-    public function homePage()
+    public function landingPage()
     {
         return view("LandingPage/landing_page");
     }
 
-    public function landingPage()
+    public function Homepage()
     {
         // Ambil data kostum yang memiliki store_id sesuai dengan ID pengguna yang sedang login
         $costumes = Costume::all();
 
         //mengembalikan view, halaman manajemen kostum
-        return view('sesi.landingPage', compact('costumes'));
+        return view('sesi.homePage', compact('costumes'));
     }
 }
