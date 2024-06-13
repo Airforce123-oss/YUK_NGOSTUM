@@ -64,14 +64,13 @@
                     {{-- <p class="text-sm text-gray-500">by Linda Ferras - today, 2:45 PM</p> --}}
                     {{-- <p class="mt-2">{{$article->content}}</p> --}}
                     <div class="product-description">
-                        
-                        <p id="short-description">
+                        <p id="short-description{{$article->id}}">
                             {!! Str::limit($article->content, 100, '...') !!}
                         </p>
-                        <p id="full-description" style="display: none;">
+                        <p id="full-description{{$article->id}}" style="display: none;">
                             {!! nl2br(e($article->content)) !!}
                         </p>
-                        <button id="toggle-description" class="btn btn-link">Muat Lebih Banyak</button>
+                        <button id="toggle-description{{$article->id}}" class="btn btn-link">Muat Lebih Banyak</button>
                     </div>
                     <div class="mt-4 flex space-x-2">
                         <span class="bg-green-200 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Game</span>
@@ -79,7 +78,24 @@
                         <span class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">+2</span>
                     </div>
                 </div>
-            </article>   
+            </article>  
+            <script>
+                document.getElementById('toggle-description'+{{$article->id}}).addEventListener('click', function () {
+                    var shortDesc = document.getElementById('short-description'+{{$article->id}});
+                    var fullDesc = document.getElementById('full-description'+{{$article->id}});
+                    var toggleButton = document.getElementById('toggle-description'+{{$article->id}});
+            
+                    if (shortDesc.style.display === 'none') {
+                        shortDesc.style.display = 'block';
+                        fullDesc.style.display = 'none';
+                        toggleButton.textContent = 'Muat Lebih Banyak';
+                    } else {
+                        shortDesc.style.display = 'none';
+                        fullDesc.style.display = 'block';
+                        toggleButton.textContent = 'Tampilkan Lebih Sedikit';
+                    }
+                });
+            </script> 
             @endforeach
         </section>
 
@@ -121,23 +137,6 @@
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', () => {
             document.querySelector('.menu-items').classList.toggle('hidden');
-        });
-    </script>
-    <script>
-        document.getElementById('toggle-description').addEventListener('click', function () {
-            var shortDesc = document.getElementById('short-description');
-            var fullDesc = document.getElementById('full-description');
-            var toggleButton = document.getElementById('toggle-description');
-    
-            if (shortDesc.style.display === 'none') {
-                shortDesc.style.display = 'block';
-                fullDesc.style.display = 'none';
-                toggleButton.textContent = 'Muat Lebih Banyak';
-            } else {
-                shortDesc.style.display = 'none';
-                fullDesc.style.display = 'block';
-                toggleButton.textContent = 'Tampilkan Lebih Sedikit';
-            }
         });
     </script>
 </body>
