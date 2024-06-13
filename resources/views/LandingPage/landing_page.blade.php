@@ -454,10 +454,10 @@
                       <div class="p-1">
                           <h1 class="block mb-4 text-sm font-medium text-gray-900 dark:text-white" style="text-align: center; font-size: 30px; color:#038175; font-weight: bold;">MASUK YUK NGOSTUM</h1>
                           <h1 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" style="text-align: center; font-size: 15px;">Saya Ingin Menjadi</h1>
-                          <a class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white mt-10 font-[Poppins] text-center no-underline" style="color: white; font-size: 20px; background-color:#038175;" href="sesi" role="button">Pencari Kostum</a>
+                          <a class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white mt-10 font-[Poppins] text-center no-underline" style="color: white; font-size: 20px; background-color:#038175;" href="sesi" role="button">Penyewa</a>
                       </div>
                       <div>
-                          <a class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-300 dark:text-white font-[Poppins] text-center no-underline" style="color:white; font-size: 20px; background-color:#038175;" href="sesi" role="button">Pemilik Kostum</a>
+                          <a class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-300 dark:text-white font-[Poppins] text-center no-underline" style="color:white; font-size: 20px; background-color:#038175;" href="sesi" role="button">Toko</a>
                       </div>
                   </form>
               </div>

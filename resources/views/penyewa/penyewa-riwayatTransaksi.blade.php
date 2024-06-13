@@ -133,16 +133,16 @@ transition: 1s;
         </div>
 
         <ul class="md:flex md:items-center z-[1] md:z-auto md:static absolute w-full left-0 md:w-auto">
-            <li class="mx-4 my-6 md:my-0">
+            {{-- <li class="mx-4 my-6 md:my-0">
                 <a href="informasi-event" class="text-xl hover:text-white duration-500"style="color: white !important; text-decoration: none; font-size:20px;">Event</a>
-            </li>
+            </li> --}}
             <li class="mx-4 my-6 md:my-0">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                       Menu
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li><a class="dropdown-item" href="{{route('riwayatTransaksi')}}">Riwayat Transaksi</a></li>
+                      <li><a class="dropdown-item" href="{{route('riwayatTransaksi')}}">Riwayat Booking</a></li>
                       <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
                     </ul>
                   </div>

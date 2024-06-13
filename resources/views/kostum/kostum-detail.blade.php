@@ -22,7 +22,7 @@
                   Menu
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="{{route('riwayatTransaksi')}}">Riwayat Transaksi</a></li>
+                  <li><a class="dropdown-item" href="{{route('riwayatTransaksi')}}">Riwayat Booking</a></li>
                   <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
                 </ul>
               </div>
@@ -39,8 +39,10 @@
             <h1 class="font-weight-bold">{{$costume->nama}}</h1>
             <h3 class="font-weight-bold">Rp {{$costume->harga}}</h3>
         
+            @if(auth()->user()->role !== "toko")
             <a href="{{ route('booking-page', ['id' => $costume->id]) }}" class="btn btn-primary btn-lg mt-3 mb-2">Booking Sekarang</a>
             <a href="{{ route('guest-previewToko', ['storeId' => $costume->store->id]) }}" class="btn btn-outline-secondary btn-lg mt-3">Kunjungi Toko</a>
+            @endif
             <div class="product-description">
                 <h4>Deskripsi Produk</h4>
                 <p id="short-description">
